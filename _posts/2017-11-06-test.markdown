@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "A test"
+date:   2017-11-06 00:05:25 +0200
+categories: 
+---
+
+It is known that 
+
+{% katex %}
+c = \pm\sqrt{a^2 + b^2}
+{% endkatex %}
