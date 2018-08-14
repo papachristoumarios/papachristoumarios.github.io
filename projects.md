@@ -15,7 +15,7 @@ NLP methods and practices.
 
 Results are published at [3gm.ellak.gr](https://3gm.ellak.gr)
 
-Technologies Used: Python, gensim, spaCy, numpy, sklearn, flask, bash
+Technologies Used: Python, gensim, spaCy, numpy, sklearn, flask, bash, MongoDB
 
 ## Ratle
 
@@ -24,6 +24,12 @@ _November 2017 - present (start-up)_
 I am co-founder and software engineer of a [fintech](https://en.wikipedia.org/wiki/Financial_technology) startup called Ratle. We have implemented a fully-working and automated contactless transaction system that aims to eliminate the need of the cashiers and the struggle of time-consuming waiting queues. At the time being, the payment is done automatically based on indoor positioning done with beacons which that track the products you want to buy. Our website is at [www.ratle-labs.com](http://www.ratle-labs.com).
 
 Technologies Used: Typescript, HTML, CSS, Google Firebase, Beacons, Time-varying denoising techniques
+
+## TEDx NTUA Website
+
+Responsible for website development (developed in Laravel PHP framework) and technical support.You can find more at [2018.tedxntua.com/en](https://2018.tedxntua.com/en)
+
+Technologies Used: PHP, Laravel, HTML/CSS, JavaScript, MySQL
 
 ## SignGlove
 
@@ -46,7 +52,7 @@ activities on already acquainted species. Finally, it performs morphometric anal
 
 Technologies Used: Python, NumPy, OpenCV
 
-LEGO 3D Printing-Milling Machine
+## LEGO 3D Printing-Milling Machine
 
 Approx. 2010 (Freelance Project)
 
