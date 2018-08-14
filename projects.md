@@ -8,7 +8,7 @@ permalink: /projects/
 
 ## 3gm – Google Summer of Code
 
-May 2018 - August 2018 (Summer internship)
+_May 2018 - August 2018 (Summer internship)_
 
 This project aims to provide an automated codex of with the most recent versions of each law in Greek Legislation via
 NLP methods and practices.
@@ -26,6 +26,8 @@ I am co-founder and software engineer of a [fintech](https://en.wikipedia.org/wi
 Technologies Used: Typescript, HTML, CSS, Google Firebase, Beacons, Time-varying denoising techniques
 
 ## TEDx NTUA Website
+
+_October 2017 - April 2018_
 
 Responsible for website development (developed in Laravel PHP framework) and technical support.You can find more at [2018.tedxntua.com/en](https://2018.tedxntua.com/en)
 
