@@ -565,3 +565,7 @@ a.pagination-item:hover {
 p {
   text-align: justify;
 }
+
+.side-links {
+  font-size: 2rem;
+}
