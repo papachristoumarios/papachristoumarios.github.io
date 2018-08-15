@@ -21,7 +21,7 @@ Technologies Used: Python, gensim, spaCy, numpy, sklearn, flask, bash, MongoDB
 
 _November 2017 - present (start-up)_
 
-I am co-founder and software engineer of a [fintech](https://en.wikipedia.org/wiki/Financial_technology) startup called Ratle. We have implemented a fully-working and automated contactless transaction system that aims to eliminate the need of the cashiers and the struggle of time-consuming waiting queues. At the time being, the payment is done automatically based on indoor positioning done with beacons which that track the products you want to buy. Our website is at [www.ratle-labs.com](http://www.ratle-labs.com).
+I am co-founder and software engineer of a [fintech](https://en.wikipedia.org/wiki/Financial_technology) startup called Ratle. We have implemented a fully-working and automated contactless transaction system that aims to eliminate the need of the cashiers and the struggle of time-consuming waiting queues. At the time being, the payment is done automatically based on indoor positioning done with beacons which that track the products you want to buy. Our website is at [www.ratle-labs.com](http://www.ratle-labs.com). [Test on real (pilot) store](https://www.youtube.com/watch?v=XemEQaNxL3Q&feature=youtu.be)
 
 Technologies Used: Typescript, HTML, CSS, Google Firebase, Beacons, Time-varying denoising techniques
 
@@ -56,7 +56,7 @@ Technologies Used: Python, NumPy, OpenCV
 
 ## LEGO 3D Printing-Milling Machine
 
-Approx. 2010 (Freelance Project)
+_Approx. 2010 (Freelance Project)_
 
 This is a project in which a special (reverse-engineered) RepRap 3D printer and milling machine. Using LEGO as modular
 components make the machine is made hybrid with the capability of placing a specialized extruder instead of the milling
