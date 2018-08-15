@@ -3,8 +3,6 @@ layout: page
 title: About
 ---
 
-# About
-
 ## Short Bio
 
 <p align="justify" >
