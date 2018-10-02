@@ -26,31 +26,27 @@ This definition tells us that demo/foo.c lies in Layer 0 and demo/boo.c lies in 
 
 The contents of the files are:
 
-```
+```c
 // demo/foo.c
 #include "boo.h"
-```
 
-```
 int f(int x) {
 	return g(x);
 }
 ```
 
+
+
 and
 
-```
+```C
 // demo/boo.c
 #include "foo.h"
-```
 
-```
 int g(int x) {
 	return x; 
 }
-```
 
-```
 int h(int x) {
 	return f(x);  
 }
@@ -68,7 +64,7 @@ The first of the three options depicted above is a valid option whereas the seco
 
 These edges can be generated using GNU Cflow via the command:
 
-```
+```BASH
 cflow <changed-files> <direct-dependencies> -d 2
 ```
 
@@ -80,7 +76,7 @@ Run on the above example it detects the violation, and the CI routine test fails
 
 You can supply it with the commit hash you want with the `-c` flag and the layer definition files via `-l` . Finally, an `--asert` option is available for making passing/failing tests for CI just like you did with `pytest` on Python files in other projects. For example:
 
-```
+```bash
 acyclicode -l demo/layers.json -c <commit-hash> --assert
 ```
 
