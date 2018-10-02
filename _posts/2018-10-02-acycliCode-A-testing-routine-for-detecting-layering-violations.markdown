@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "acycliCode: A testing routine for detecting layering violations"
-date:   2018-02-10 00:05:20 +0200
+date:   2018-10-02 00:05:20 +0200
 categories:
 ---
 
