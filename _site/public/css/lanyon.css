@@ -563,7 +563,7 @@ a.pagination-item:hover {
 }
 
 p {
-  text-align: justify;
+  text-align: justify !important;
 }
 
 .side-links {
