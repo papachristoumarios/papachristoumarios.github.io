@@ -24,9 +24,9 @@ Technologies Used: Python, gensim, spaCy, numpy, sklearn, flask, bash, MongoDB
 
 ## Ratle
 
-_November 2017 - present (start-up)_
+_November 2017 - October 2018 (start-up)_
 
-I am co-founder and software engineer of a [fintech](https://en.wikipedia.org/wiki/Financial_technology) startup called Ratle. We have implemented a fully-working and automated contactless transaction system that aims to eliminate the need of the cashiers and the struggle of time-consuming waiting queues. At the time being, the payment is done automatically based on indoor positioning done with beacons which that track the products you want to buy. Our website is at [www.ratle-labs.com](http://www.ratle-labs.com). [Test on real (pilot) store](https://www.youtube.com/watch?v=XemEQaNxL3Q&feature=youtu.be)
+I am co-founder and software engineer of a [fintech](https://en.wikipedia.org/wiki/Financial_technology) startup called Ratle. We have implemented a fully-working and automated contactless transaction system that aims to eliminate the need of the cashiers and the struggle of time-consuming waiting queues. At the time being, the payment is done automatically based on indoor positioning done with beacons which that track the products you want to buy. Our website is at [www.ratle-labs.com](http://www.ratle-labs.com). [Test on real (pilot) store](https://www.youtube.com/watch?v=XemEQaNxL3Q&feature=youtu.be). The project was suspended due to increased academic load.
 
 Technologies Used: Typescript, HTML, CSS, Google Firebase, Beacons, Time-varying denoising techniques
 
