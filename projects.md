@@ -3,6 +3,7 @@ layout: page
 title: Projects
 permalink: /projects/
 ---
+Most of my projects can be found via [my GitHub page](https://github.com/papachristoumarios). 
 
 # Past & Current Projects
 
