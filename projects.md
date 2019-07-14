@@ -6,12 +6,17 @@ permalink: /projects/
 
 # Past & Current Projects
 
+## SADE
+
+_August 2018 - May 2019_ 
+
+This project aims to provide software clusterings using vector semantics and the call graph. The results were published at ESEC/FSE 2019 and can be found [here](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/manuscript.pdf).
+
 ## 3gm – Google Summer of Code
 
 _May 2018 - August 2018 (Summer internship)_
 
-This project aims to provide an automated codex of with the most recent versions of each law in Greek Legislation via
-NLP methods and practices.
+This project aims to provide an automated codex of with the most recent versions of each law in Greek Legislation via NLP methods and practices.
 
 Results are published at [3gm.ellak.gr](https://3gm.ellak.gr)
 
