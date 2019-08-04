@@ -5,7 +5,7 @@ title: About
 
 ## Short Bio
 
-Marios is a Senior Undergraduate Student at National Technical University of Athens. His research interests include Machine Learning, Software Engineering and Algorithms. 
+Marios is a Senior Undergraduate Student at National Technical University of Athens. His research interests include Machine Learning, Software Engineering and Algorithms. I am currently doing my undergraduate thesis on Machine Learning under the supervision of Prof. Dimitris Fotakis. 
 
 ## CV
 
