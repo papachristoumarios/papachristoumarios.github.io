@@ -12,7 +12,9 @@ I am also a researcher at [Business Analytics Lab (BALab)](https://www.balab.aue
 My research interests include Machine Learning (specializing in Graphs), Software Engineering and Algorithms. 
 
  * [Google Scholar](https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en) 
- * [ResearchGate](https://www.researchgate.net/profile/Marios_Papachristou))
+ * [ResearchGate](https://www.researchgate.net/profile/Marios_Papachristou)
+
+ * [Selected Projects](https://papachristoumarios.github.io/projects/)
 
 ## CV
 
