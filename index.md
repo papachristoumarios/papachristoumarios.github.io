@@ -3,8 +3,6 @@ layout: page
 title: About
 ---
 
-## Short Bio
-
 I am a Senior Undergraduate Student at National Technical University of Athens. I am currently doing my undergraduate thesis on Machine Learning under the supervision of Prof. [Dimitris Fotakis](https://www.softlab.ntua.gr/~fotakis/).
 
 I am also a researcher at [Business Analytics Lab (BALab)](https://www.balab.aueb.gr), supervised by Prof. [Diomidis Spinellis](https://www2.dmst.aueb.gr/dds/).
@@ -16,8 +14,6 @@ My research interests include Machine Learning (specializing in Graphs), Softwar
  * [Selected Projects](https://papachristoumarios.github.io/projects/)
 
 I have previously interned at Google Summer of Code developing a [project](https://github.com/eellak/gsoc2018-3gm) for the [automation of codification](https://en.wikipedia.org/wiki/Codification_(law)) of Greek Legislation under [3gm.ellak.gr](https://3gm.ellak.gr/).
-
-## CV
 
 A more detailed CV can be found [here](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf).
 
