@@ -3,17 +3,17 @@ layout: page
 title: Projects
 permalink: /projects/
 ---
-Most of my projects can be found via [my GitHub page](https://github.com/papachristoumarios). 
+Most of my projects can be found via [my GitHub page](https://github.com/papachristoumarios).
 
 # Past & Current Projects
 
-## SADE
+### SADE
 
-_August 2018 - May 2019_ 
+_August 2018 - May 2019_
 
 This project aims to provide software clusterings using vector semantics and the call graph. The results were published at ESEC/FSE 2019 and can be found [here](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/manuscript.pdf).
 
-## 3gm – Google Summer of Code
+### 3gm – Google Summer of Code
 
 _May 2018 - August 2018 (Summer internship)_
 
@@ -23,7 +23,7 @@ Results are published at [3gm.ellak.gr](https://3gm.ellak.gr)
 
 Technologies Used: Python, gensim, spaCy, numpy, sklearn, flask, bash, MongoDB
 
-## Ratle
+### Ratle
 
 _November 2017 - October 2018 (start-up)_
 
@@ -31,7 +31,7 @@ I am co-founder and software engineer of a [fintech](https://en.wikipedia.org/wi
 
 Technologies Used: Typescript, HTML, CSS, Google Firebase, Beacons, Time-varying denoising techniques
 
-## TEDx NTUA Website
+### TEDx NTUA Website
 
 _October 2017 - April 2018_
 
@@ -39,7 +39,7 @@ Responsible for website development (developed in Laravel PHP framework) and tec
 
 Technologies Used: PHP, Laravel, HTML/CSS, JavaScript, MySQL
 
-## SignGlove
+### SignGlove
 
 _March 2016 (Hackathon Contest)_
 
@@ -48,7 +48,7 @@ transforming sign language to speakable words which was built during ECESCON 9 H
 
 Technologies Used: Python Android Scripting Layer, Kivy, NumPy, ctypes, C++
 
-## TritonFPR
+### TritonFPR
 
 _July 2014-August 2014 (Research Project at Hellenic Centre for Marine Research)_
 
@@ -60,7 +60,7 @@ activities on already acquainted species. Finally, it performs morphometric anal
 
 Technologies Used: Python, NumPy, OpenCV
 
-## LEGO 3D Printing-Milling Machine
+### LEGO 3D Printing-Milling Machine
 
 _Approx. 2010 (Freelance Project)_
 
