@@ -17,7 +17,15 @@ I have previously interned at Google Summer of Code developing a [project](https
 
 A more detailed CV can be found [here](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf).
 
-## Research Papers
+### Research Papers
 
 1. Marios Papachristou. "Software Clusterings with Vector Semantics and the Call Graph". ESEC/FSE 2019. [[paper](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/manuscript.pdf)][[poster](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/poster/poster.pdf)][[slides](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/slides/slides.pdf)]
 2. Kostakis, Vasilis, and Marios Papachristou. "Commons-based peer production and digital fabrication: The case of a RepRap-based, Lego-built 3D printing-milling machine." *Telematics and Informatics* 31.3 (2014): 434-443. [[paper](http://www.p2plab.gr/en/wp-content/uploads/2013/05/Telematics-Informatics.pdf)]
+
+
+### Presentations at Conferences
+
+ 1. ESEC/FSE 2019. (August 2019)
+ 2. FOSSCOMM 2018, University of Crete. Speaker. (October 2018) [[video](https://www.youtube.com/watch?v=_UIGsy85Ehw)]
+ 3. FOSSCOMM 2013, Harokopion University of Athens. Attended as main speaker and presenter. (April 2013)
+ 4. Google Computer Science for High Schools (GCS4HS) [[video](https://www.youtube.com/watch?v=LHcqZHar2JM)]
