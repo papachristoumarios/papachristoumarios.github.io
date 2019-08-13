@@ -7,5 +7,5 @@ script:
     - git config --global user.email "papachristoumarios@gmail.com"
     - git config --global user.name "Marios Papachristou"
     - git commit -am 'Auto build CV'
-    - git push -f -q https://papachristoumarios:$GH_TOKEN@github.com/papachristoumarios/papachristoumarios.github.io master &>/dev/null
+    - git push --quiet https://papachristoumarios:$GH_TOKEN@github.com/papachristoumarios/papachristoumarios.github.io.git master 
 
