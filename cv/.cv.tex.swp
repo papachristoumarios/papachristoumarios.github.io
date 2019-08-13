@@ -82,7 +82,7 @@ Apolytirion, Valedictorian, top 1\% in National Exams, GPA: 19.8/20
 \section{Professional \\ Experience}
 \field{Google Summer of Code (Summer Internship)}  {\emph{April 2018-September 2018}}
 \begin{compactitem}
-\item[--] Developed a fully functional tool for text mining, cross-linking and automated codification of Greek Legislation using Natural Languaging Processing Methods and Practices.
+\item[--] Developed a fully functional project for text mining, cross-linking and automated codification of Greek Legislation using Natural Languaging Processing Methods and Practices. Project is hosted at \href{https://3gm.ellak.gr}{\nolinkurl{3gm.ellak.gr}}. \href{https://github.com/eellak/gsoc2018-3gm}{\nolinkurl{[repository]}}
 \begin{compactitem}
 \item[--] Cross-link legislative texts to dynamic graphs
 \item[--] Syntax and Semantic Analysis of Amendments using a hybrid algorithm with statistical parsing and heuristics
@@ -179,7 +179,7 @@ Apolytirion, Valedictorian, top 1\% in National Exams, GPA: 19.8/20
 Dimitris Fotakis \hfill (Assoc. Professor at NTUA, Thesis Advisor, \texttt{fotakis@cs.ntua.gr}) \\
 Diomidis Spinellis \hfill (Professor at AUEB, \texttt{dds@aueb.gr}) \\
 Vasilis Kostakis \hfill (Prof. at TalTech, Harvard BKC, \texttt{kostakis@law.harvard.edu}) \\
-Nectarios Koziris \hfill (Prof. at NTUA, \texttt{nkoziris@cslab.ece.ntua.gr}
+Nectarios Koziris \hfill (Prof. at NTUA, \texttt{nkoziris@cslab.ece.ntua.gr)}
 
 \section{Hobbies}
 Cycling, Competitive Programming, Basketball, Reading, Drama, Social Dancing
