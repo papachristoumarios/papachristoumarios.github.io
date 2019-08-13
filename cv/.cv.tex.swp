@@ -39,14 +39,13 @@
 \section{Research \\ Interests} Machine Learning, Recommender Systems, Software Engineering, Algorithms
 
 \section{Education}
-\field{National Technical University of Athens}  {\emph{2015-- (expected graduation in 2020)}} \\
+\field{National Technical University of Athens}  {\emph{2015-- (expected graduation in 2020)}} 
 Diploma (5-year joint degree, 300 ECTS) Electrical \& Computer Engineering (ECE)
-
 \begin{compactitem}
 \item[--] Highest Honours (top 2\%). Expected Cummulative GPA:   
-\item[--] \emph{Major:} \underline{Computer Science}: Machine Learning, Algorithms, Speech and Natural Language Processing, Digital Signal Processing, Control Systems, Applied Mathematics, Software Engineering, Operating Systems \\
+\item[--] \emph{Major:} \underline{Computer Science}: Machine Learning, Algorithms, Speech and Natural Language Processing, Digital Signal Processing, Control Systems, Applied Mathematics, Software Engineering, Operating Systems 
 \end{compactitem} 
-\field{1st General Lyceum of Hymettus} {\emph{2012--2015}} \\
+\field{1st General Lyceum of Hymettus} {\emph{2012--2015}} 
 Apolytirion, Valedictorian, top 1\% in National Exams, GPA: 19.8/20
 
 
@@ -75,7 +74,12 @@ Apolytirion, Valedictorian, top 1\% in National Exams, GPA: 19.8/20
 
 \begin{compactitem}
 
-\item[--] Publish self-made Lego 3D Printing-Milling machine at age 16 with Prof. Vasilis Kostakis
+\item[--] Publish self-made Lego 3D Printing-Milling machine at age 16 with Prof. Vasilis Kostakis \href{https://github.com/papachristoumarios/lego-mindstorms-3d-printing-milling-machine}{\nolinkurl{[repository]}}
+\end{compactitem}
+
+\textbf{Hellenic Center for Marine Research} \hfill \emph{June 2014 -- August 2014}
+\begin{compactitem}
+\item[--] Develop a system for marine spieces identification and morphometric analysis using features and ORB, SIFT and SURF descriptors in OpenCV \href{https://github.com/papachristoumarios/triton-fpr}{\nolinkurl{[repository]}}
 \end{compactitem}
  
 
@@ -120,28 +124,27 @@ Apolytirion, Valedictorian, top 1\% in National Exams, GPA: 19.8/20
 \begin{comment}
 \section{Data \\ Analysis \& \\ Visualization \\ Tools} 
 \begin{compactitem}
-\item[--] Python (Advanced)
-\item[--] Bash (Advanced)
-\item[--] MATLAB (Advanced)
-\item[--] GNU Octave (Advanced)
+\item[--] Python 
+\item[--] Bash 
+\item[--] MATLAB 
+\item[--] GNU Octave 
 \item[--] R
-\item[--] Matplotlib (Advanced)
-\item[--] GNUPlot (Advanced)
+\item[--] Matplotlib 
+\item[--] GNUPlot 
 \item[--] Pandas
 \item[--] Seaborn
-\item[--] MySQL (Advanced)
-\item[--] MongoDB (Advanced)
+\item[--] MySQL 
+\item[--] MongoDB 
 \end{compactitem}
 \end{comment}
 
 \section{Technical \\ Skills}
 
-\field{Programming Languages} {} {Python (Advanced), C/C++ (Advanced), Java (Advanced), JavaScript/TypeScript (Advanced), Bash (Advanced), OCaml (Advanced), PHP, R, SQL (Advanced) } \\
-\field{Scientific Programming} {} {SAGE Computer Algebra System (Advanced), GNU Octave (Advanced), MATLAB (Advanced), Scilab, NumPy (Advanced), SciPy (Advanced), OpenCV (Advanced)} \\
-\field{Machine Learning Frameworks} {} {PyTorch (Advanced), Keras, Sklearn (Advanced), spaCy (Advanced)} \\
-\field{Data Analysis and Visualization} {} {matplotlib (Advanced), MATLAB (Advanced), pandas, Bash (Advanced)}
-\field{Databases} {MySQL, MongoDB (Advanced), PostgreSQL, Firebase}
-\field{Typesetting} {\LaTeX}
+\field{Programming Languages}  {Python, C/C++, Java, JavaScript/TypeScript, Bash, OCaml, PHP, R, SQL  } 
+\field{Scientific Programming} {SAGE, Octave, MATLAB, Scilab, NumPy, SciPy, OpenCV, NetworkX } 
+\field{Machine Learning Frameworks}  {PyTorch, Keras, Sklearn, spaCy } 
+\field{Data Analysis and Visualization} {matplotlib, MATLAB, pandas, Bash } 
+\field{Databases} {MySQL, MongoDB, PostgreSQL, Firebase}
 \field{Web Frameworks} {Django, AngularJS, Ionic}
 \field{Version Control} {Git, Subversion}
 \field{Typesetting} {\LaTeX, WYSIWYG Typewriting}
