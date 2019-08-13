@@ -8,5 +8,4 @@ script:
     - git config --global user.email "papachristoumarios@gmail.com"
     - git config --global user.name "Marios Papachristou"
     - git commit -am 'Auto build CV'
-    - git config --global push.default simple
-    - git push --quiet   
+    - git push origin master 
