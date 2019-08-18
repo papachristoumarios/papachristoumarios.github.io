@@ -17,11 +17,17 @@ I have previously interned at Google Summer of Code developing a [project](https
 
 A more detailed CV can be found [here](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf).
 
+**Contact:** (last\_name)(first\_name) \[at\] gmail \[dot\] com 
+
 ### Research Papers
 
 1. Marios Papachristou. "Software Clusterings with Vector Semantics and the Call Graph". ESEC/FSE 2019. [[paper](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/manuscript.pdf)][[poster](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/poster/poster.pdf)][[slides](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/slides/slides.pdf)]
 2. Kostakis, Vasilis, and Marios Papachristou. "Commons-based peer production and digital fabrication: The case of a RepRap-based, Lego-built 3D printing-milling machine." *Telematics and Informatics* 31.3 (2014): 434-443. [[paper](http://www.p2plab.gr/en/wp-content/uploads/2013/05/Telematics-Informatics.pdf)]
 
+### Working Papers/Theses
+
+1. Learning User Interests from Influencers In Online Social Networks. _Working Paper_
+2. Personalized Recommendations with Limited Information. _Undergraduate Thesis_
 
 ### Presentations at Conferences
 
