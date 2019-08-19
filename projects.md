@@ -5,7 +5,13 @@ permalink: /projects/
 ---
 Most of my projects can be found via [my GitHub page](https://github.com/papachristoumarios).
 
-# Past & Current Projects
+Here you can have a look at my past and current projects
+
+### Autogyro Control for the CanSat Competition
+
+Develop an autogyro control system for the descent of a payload as part of the CanSat Competition, organized by NASA and the American Astronautical Society as part of the [White Noise](https://whitenoise.gr) Team, winning the 4th position, out of 93 teams. 
+
+My responsibilities included the descent control system design which controlled the payload through control fins. I used optimal control for the control of the system and clustering for inverting the fin model used for simulation. The control software can be found [here](https://github.com/white-noise-ntua/autogyro-control) and the rest of the code for the mission [here](https://github.com/white-noise-ntua). 
 
 ### SADE
 
