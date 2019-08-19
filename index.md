@@ -21,8 +21,8 @@ A more detailed CV can be found [here](https://github.com/papachristoumarios/pap
 
 ### Research Papers
 
-1. Marios Papachristou. "Software Clusterings with Vector Semantics and the Call Graph". ESEC/FSE 2019. [[paper](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/manuscript.pdf)][[poster](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/poster/poster.pdf)][[slides](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/slides/slides.pdf)]
-2. Kostakis, Vasilis, and Marios Papachristou. "Commons-based peer production and digital fabrication: The case of a RepRap-based, Lego-built 3D printing-milling machine." *Telematics and Informatics* 31.3 (2014): 434-443. [[paper](http://www.p2plab.gr/en/wp-content/uploads/2013/05/Telematics-Informatics.pdf)]
+1. **Papachristou, Marios**. "Software clusterings with vector semantics and the call graph." Proceedings of the 2019 27th ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering. ACM, 2019. [[paper](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/manuscript.pdf)][[poster](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/poster/poster.pdf)][[slides](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/slides/slides.pdf)]
+2. Kostakis, Vasilis, and **Marios Papachristou**. "Commons-based peer production and digital fabrication: The case of a RepRap-based, Lego-built 3D printing-milling machine." *Telematics and Informatics* 31.3 (2014): 434-443. [[paper](http://www.p2plab.gr/en/wp-content/uploads/2013/05/Telematics-Informatics.pdf)]
 
 ### Working Papers/Theses
 
