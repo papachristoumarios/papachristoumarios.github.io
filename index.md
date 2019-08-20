@@ -3,9 +3,9 @@ layout: page
 title: About
 ---
 
-<div class="profile">
-    <img align="center" src="profile_small.png"/> 
-</div>
+{:.profile}
+![profile](profile_small.png)
+
 
 I am a Senior Undergraduate Student at National Technical University of Athens. I am currently doing my undergraduate thesis on Machine Learning under the supervision of Prof. [Dimitris Fotakis](https://www.softlab.ntua.gr/~fotakis/).
 
@@ -38,4 +38,8 @@ A more detailed CV can be found [here](https://github.com/papachristoumarios/pap
  1. ESEC/FSE 2019. (August 2019)
  2. FOSSCOMM 2018, University of Crete. Speaker. (October 2018) [[video](https://www.youtube.com/watch?v=_UIGsy85Ehw)]
  3. FOSSCOMM 2013, Harokopion University of Athens. Attended as main speaker and presenter. (April 2013)
- 4. Google Computer Science for High Schools (GCS4HS) [[video](https://www.youtube.com/watch?v=LHcqZHar2JM)]
+ 4. Google Computer Science for High Schools (GCS4HS) [[video](https://www.youtube.com/watch?v=LHcqZHar2JM)
+
+.center {
+    text-align: center;   
+}
