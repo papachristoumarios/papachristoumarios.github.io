@@ -40,6 +40,3 @@ A more detailed CV can be found [here](https://github.com/papachristoumarios/pap
  3. FOSSCOMM 2013, Harokopion University of Athens. Attended as main speaker and presenter. (April 2013)
  4. Google Computer Science for High Schools (GCS4HS) [[video](https://www.youtube.com/watch?v=LHcqZHar2JM)
 
-.center {
-    text-align: center;   
-}
