@@ -3,9 +3,9 @@ layout: page
 title: About
 ---
 
-<p align="center">
-    <img src="profile_small.png"></img> 
-</p>
+<div class="profile">
+    <img align="center" src="profile_small.png"/> 
+</div>
 
 I am a Senior Undergraduate Student at National Technical University of Athens. I am currently doing my undergraduate thesis on Machine Learning under the supervision of Prof. [Dimitris Fotakis](https://www.softlab.ntua.gr/~fotakis/).
 
