@@ -3,6 +3,10 @@ layout: page
 title: About
 ---
 
+<p align="center">
+    <img src="profile_small.png"></img> 
+</p>
+
 I am a Senior Undergraduate Student at National Technical University of Athens. I am currently doing my undergraduate thesis on Machine Learning under the supervision of Prof. [Dimitris Fotakis](https://www.softlab.ntua.gr/~fotakis/).
 
 I am also a researcher at [Business Analytics Lab (BALab)](https://www.balab.aueb.gr), supervised by Prof. [Diomidis Spinellis](https://www2.dmst.aueb.gr/dds/).
