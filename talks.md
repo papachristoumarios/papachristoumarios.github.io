@@ -6,7 +6,9 @@ permalink: /talks/
 
 * ACAC 2019. Lightning Talk.
   * [Software Clusterings with Vector Semantics and the Call Graph](https://github.com/papachristoumarios/software-clusterings-with-vector-semantics-and-call-graph/raw/master/slides/slides.pdf)
+
 ---
+
 * FOSSCOMM 2018, University of Crete. Speaker. (October 2018) [[video](https://www.youtube.com/watch?v=_UIGsy85Ehw)]
 
 ---
