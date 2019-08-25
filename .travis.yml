@@ -1,12 +1,17 @@
 sudo: required
 dist: trusty
 email: false
+branches:
+    only:
+        - master
+
 before_install:
     - sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended
 script:
     - pdflatex -interaction=nonstopmode -halt-on-error -output-directory cv/ cv/cv.tex
+    - git checkout build
     - git config --global user.email "papachristoumarios@gmail.com"
     - git config --global user.name "Marios Papachristou"
     - git commit -am 'Auto build CV'
-    - git push -q https://papachristoumarios:$GH_TOKEN@github.com/papachristoumarios/papachristoumarios.github.io.git HEAD:master 
+    - git push -q https://papachristoumarios:$GH_TOKEN@github.com/papachristoumarios/papachristoumarios.github.io.git HEAD:build
 
