@@ -31,8 +31,7 @@ A more detailed CV can be found [here](https://github.com/papachristoumarios/pap
 
 ### Working Papers/Theses
 
-1. Learning User Interests from Influencers In Online Social Networks. _Working Paper_
-2. Personalized Recommendations with Limited Information. _Undergraduate Thesis_
+1. Personalized Recommendations with Limited Information. _Undergraduate Thesis_
 
 ### Presentations at Conferences
 
