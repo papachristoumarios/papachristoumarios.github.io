@@ -13,5 +13,5 @@ script:
     - git config --global user.email "papachristoumarios@gmail.com"
     - git config --global user.name "Marios Papachristou"
     - git commit -am 'Auto build CV'
-    - git push -q -f https://papachristoumarios:$GH_TOKEN@github.com/papachristoumarios/papachristoumarios.github.io.git HEAD:build
+    - git push -q https://papachristoumarios:$GH_TOKEN@github.com/papachristoumarios/papachristoumarios.github.io.git HEAD:build
 
