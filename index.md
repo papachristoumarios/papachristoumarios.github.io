@@ -16,6 +16,7 @@ My research interests include Machine Learning (specializing in Graphs), Softwar
  * [GitHub](https://github.com/papachristoumarios)
  * [Google Scholar](https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en)
  * [ResearchGate](https://www.researchgate.net/profile/Marios_Papachristou)
+ * [LinkedIn](https://www.linkedin.com/in/papachristoumarios/)
  * [Selected Projects](https://papachristoumarios.github.io/projects/)
 
 I have previously interned at Google Summer of Code developing a [project](https://github.com/eellak/gsoc2018-3gm) for the [automation of codification](https://en.wikipedia.org/wiki/Codification_(law)) of Greek Legislation under [3gm.ellak.gr](https://3gm.ellak.gr/).
