@@ -3,6 +3,19 @@
 \usepackage{enumitem}
 \usepackage{paralist}
 \usepackage{comment}
+\usepackage[dvipsnames]{xcolor}
+
+\newcommand\myshade{85}
+\colorlet{mylinkcolor}{blue}
+\definecolor{chestnut}{rgb}{0.8, 0.36, 0.36}
+\newcommand{\marios}[1]{\textcolor{chestnut}{Marios: #1}}
+\hypersetup{
+  linkcolor  = mylinkcolor!\myshade!black,
+  citecolor  = mylinkcolor!\myshade!black,
+  urlcolor   = mylinkcolor!\myshade!black,
+  colorlinks = true,
+}
+
 
 
 \usepackage{helvet}
@@ -15,7 +28,7 @@
 
 \begin{document}
 
-%-------------------------------------------------------------------------------
+%------------------------------------X-------------------------------------------
 %    NAME AND ADDRESS SECTION
 %-------------------------------------------------------------------------------
 \name{\textsc{Marios A. Papachristou}}
@@ -26,9 +39,11 @@
 % -linked-in profile
 
 \address{\textsc{GitHub}: \href{http://github.com/papachristoumarios}{\nolinkurl{papachristoumarios}}
- \\
-\textsc{Address: Archadjikaki 5, Athens, Greece, 17237 }}
-\address{\textsc{email}: \url{papachristoumarios@gmail.com} \\ \textsc{Mobile:} (+30) 6979614463}
+% \\ 
+%\textsc{Address: Archadjikaki 5, Athens, Greece, 17237 }
+}
+\address{\textsc{email}: \url{papachristoumarios@gmail.com} % \\ \textsc{Mobile:} (+30) 6979614463
+}
 
 % Uncomment to add a third address
 %\address{Address 3 line 1\\Address 3 line 2\\Address 3 line 3}
@@ -133,8 +148,8 @@ Diploma (5-year joint degree, 300 ECTS) Electrical \& Computer Engineering (ECE)
 \section{Teaching \\ Assistantship \\ Experience} 
 \textbf{Undergraduate Teaching Assistant}
 \begin{compactitem}
-    \item[--] Discrete Mathematics (4th Semester) \hfill \emph{Spring 2018}
-    \item[--] Programming Techniques (2nd Semester) \hfill \emph{Spring 2017}
+    \item[--] Discrete Mathematics (4th Semester) \hfill \emph{Spring 2017}
+    \item[--] Programming Techniques (2nd Semester) \hfill \emph{Spring 2016}
     \item[--] Introduction to Computer Programming (1st Semester) \hfill \emph{Fall 2016, Fall 2017}
 \end{compactitem}
 
@@ -208,6 +223,7 @@ Vasilis Kostakis \hfill (Prof. at TalTech, Harvard BKC, P2P Lab, \texttt{kostaki
 \section{Hobbies}
 Cycling, Bike Restoration, Competitive Programming, Basketball, Reading, Drama
 
+\section{Last Updated} \today
 
 \begin{comment}
 

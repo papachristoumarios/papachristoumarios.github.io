@@ -22,7 +22,7 @@ My research interests include Machine Learning (specializing in Graphs), Softwar
 
 I have previously interned at Google Summer of Code developing a [project](https://github.com/eellak/gsoc2018-3gm) for the [automation of codification](https://en.wikipedia.org/wiki/Codification_(law)) of Greek Legislation under [3gm.ellak.gr](https://3gm.ellak.gr/).
 
-A more detailed CV can be found [here](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/build/cv/cv.pdf).
+A more detailed CV can be found [here](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf).
 
 **Contact:** (last\_name)(first\_name) \[at\] gmail \[dot\] com 
 
