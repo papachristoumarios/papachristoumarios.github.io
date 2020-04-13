@@ -6,13 +6,9 @@ title: About
 {:.profile}
 ![profile](profile_small.png)
 
-I am a Senior Undergraduate Student at National Technical University of Athens. I am currently doing my undergraduate thesis on Machine Learning under the supervision of Prof. [Dimitris Fotakis](https://www.softlab.ntua.gr/~fotakis/).
+I am a Senior Undergraduate Student at National Technical University of Athens. I am currently doing my undergraduate thesis on Machine Learning under the supervision of Prof. [Dimitris Fotakis](https://www.softlab.ntua.gr/~fotakis/). I am also a researcher at [Business Analytics Lab (BALab)](https://www.balab.aueb.gr), supervised by Prof. [Diomidis Spinellis](https://www2.dmst.aueb.gr/dds/). Starting from Fall 2020, I will be joining the Department of Computer Science at Cornell University as a Ph.D. student. My research interests include Machine Learning (specializing in Graphs), Software Engineering and Algorithms. I have previously interned at Google Summer of Code developing a [project](https://github.com/eellak/gsoc2018-3gm) for the [automation of codification](https://en.wikipedia.org/wiki/Codification_(law)) of Greek Legislation under [3gm.ellak.gr](https://3gm.ellak.gr/).
 
-I am also a researcher at [Business Analytics Lab (BALab)](https://www.balab.aueb.gr), supervised by Prof. [Diomidis Spinellis](https://www2.dmst.aueb.gr/dds/).
-
-Starting from Fall 2020, I will be joining the Department of Computer Science at Cornell University as a Ph.D. student. 
-
-My research interests include Machine Learning (specializing in Graphs), Software Engineering and Algorithms.
+My work is accessible via the following _profiles_
 
  * [GitHub](https://github.com/papachristoumarios)
  * [Google Scholar](https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en)
@@ -20,7 +16,6 @@ My research interests include Machine Learning (specializing in Graphs), Softwar
  * [LinkedIn](https://www.linkedin.com/in/papachristoumarios/)
  * [Selected Projects](https://papachristoumarios.github.io/projects/)
 
-I have previously interned at Google Summer of Code developing a [project](https://github.com/eellak/gsoc2018-3gm) for the [automation of codification](https://en.wikipedia.org/wiki/Codification_(law)) of Greek Legislation under [3gm.ellak.gr](https://3gm.ellak.gr/).
 
 A more detailed CV can be found [here](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf).
 
