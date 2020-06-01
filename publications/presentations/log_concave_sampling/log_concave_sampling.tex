@@ -341,7 +341,7 @@ The global truncation error $\| \epsilon_n \|$ is $O(\eta^m)$.
     The collocation method assumes that the solution is locally approximated as 
     
     \begin{equation}
-        x(t) = \sum_{j = 0}^m a_j \phi_j(t)
+        p(t) = \sum_{j = 0}^m a_j \phi_j(t)
     \end{equation}
 
     where $\{ \phi_j \}_{0 \le j \le m}$ are basis functions (e.g. polynomials). 
@@ -353,12 +353,15 @@ The global truncation error $\| \epsilon_n \|$ is $O(\eta^m)$.
     
     \begin{align*}
         t_{n + 1}^j &= t_n + c_j \eta \\
-        a_{n + 1}^0 & = x_n \\
-        \dot x_{n + 1}^j & = F(x_{n + 1}^j) (c_j - c_{j -1}) \eta \\
-        \dot x_{n + 1}^j & = \sum_{j = 0}^m a_{n + 1}^j \dot \phi_{n + 1}^j(t_{n + 1}^j)
+        p_{n + 1} (t_{n + 1}^0) & = x_n \\
+        \dot p_{n + 1} (t_{n + 1}^j) & = F(p_{n + 1}(t_{n + 1}^j)) \qquad j \in [m]^*
     \end{align*}
 
-    Alternatively one solves an $m \times m$ system of the form $\dot \Phi_{n + 1} a_{n+1} = \dot X_{n + 1}$. If the matrix of the basis derivatives is not full-rank then a solution to $\min_{a_{n + 1}} \frac 1 2  \| \dot \Phi_{n + 1} a_{n+1} - \dot X_{n + 1}  \|_2^2$ is seeked (e.g. using SVD).
+    Alternatively if $F$ is a linear mapping one solves an $m \times m$ system of the form $\dot \Phi_{n + 1} a_{n+1} = \dot X_{n + 1}$. If the matrix of the basis derivatives is not full-rank then a solution to $\min_{a_{n + 1}} \frac 1 2  \| \dot \Phi_{n + 1} a_{n+1} - \dot X_{n + 1}  \|_2^2$ is seeked (e.g. using SVD).
+
+    \medskip
+    
+    If $F$ is non-linear one can in general use iterative methods (NR) to compute the coefficients $ \{ a_{n + 1}^j \}_{n \ge 0, j \in [m]}$
 
     \framebreak
     
@@ -371,6 +374,26 @@ The global truncation error $\| \epsilon_n \|$ is $O(\eta^m)$.
      \end{enumerate}
 
 \end{frame}
+
+
+\begin{frame}{Leapfrog Integrator (2nd order)}
+
+The Leapfrog integrator is used to solve the equation $\ddot x = F(x, t)$ 
+
+\medskip
+
+The method proceeds as follows
+
+\begin{align*}
+    v_{i + 1/2} & = v_i + \frac \eta 2 F(x_i) \\
+    x_{i + 1} & = x_i + \eta v_{i + 1 /2} \\
+    v_{i + 1} & = v_{i + 1/2} + \frac \eta 2 F(x_{i + 1})
+\end{align*}
+
+
+
+\end{frame}
+
 
 \begin{frame}{}
     \vfill
