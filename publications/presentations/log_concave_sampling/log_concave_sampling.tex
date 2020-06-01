@@ -38,13 +38,12 @@ Today's talk will concentrate on
 \textbf{Sampling from high-dimensional log-concave densities}
 
 \begin{enumerate}
-    \item Main ideas 
-    \item Un-Truncated Sampling
-    \item Truncated Sampling
-    \item Methods 
-    \item Technical Implementations (for GSoC)
+    \item Introduction to log-concave sampling.
+    \item ODE Solvers.
+    \item Boundary Oracles.
 \end{enumerate}
-    
+
+
 \end{frame}
 
 \begin{frame}{Google Summer of Code 2020}
@@ -519,9 +518,20 @@ The global truncation error $\| \epsilon_n \|$ is $O(\eta^m)$.
         \item Calculate $g(x_{i + 1}) = \max_{1 \le j \le M} g_j(x_{i + 1})$. If $|g(x_{i + 1)}| \le \epsilon$, output $x_{i + 1}, t_{i + 1}$, else repeat. 
     \end{enumerate}
     
-    
+\end{frame}
+
+\begin{frame}{Next Talk(s)}
+
+Next talk(s) will be occupied with 
+
+\begin{enumerate}
+    \item Algorithmic Issues for the sampling problem (mixing time, bounds etc.).
+    \item Theoretical contributions to the problem.
+    \item Implementation details.
+\end{enumerate}
     
 \end{frame}
+
 
 \begin{frame}{}
     \vfill
