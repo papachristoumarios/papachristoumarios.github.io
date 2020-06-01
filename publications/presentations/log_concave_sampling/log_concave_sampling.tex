@@ -438,14 +438,98 @@ The global truncation error $\| \epsilon_n \|$ is $O(\eta^m)$.
 
 
 \begin{frame}[allowframebreaks]{Computing Intersections with $\partial K$}
-    Of particular interest is the computation of the intersection of the ray between a point $x$ inside $K$ and a proposal $\tilde x \not \in K$. 
+    
+    
+    Of particular interest is the computation of the intersection of an (implicit) curve between a point $x$ inside the convex body $K$ and a proposal $\tilde x \not \in K$. 
+    
+    \medskip
+
+    \textbf{Case 1.} The curve is a \emph{line segment} and $K$ is a convex polytope.
+
+    We parametrize the line segment between $x$ and $\tilde x$ with $\gamma(t) = t x + (1 - t) \tilde x$ where $t \in [0, 1]$. We seek $t_u = \sup \{ t \in [0, 1] | \gamma(t) \in \partial K \}$ and $u = \gamma(t_u)$ as the solution to the boundary intersection problem. 
     
     \medskip
     
-    We parametrize the line segment between $x$ and $\tilde x$ with $\gamma(t) = t x + (1 - t) \tilde x$ where $t \in [0, 1]$. 
-
-
+    We use the Cyrus-Beck  \cite{cyrus1978generalized} algorithm
     
+    \framebreak
+    
+    Let $z \in \partial K$ be known and let $n$ represent the normal vector at $z$. We compute the quantity 
+    
+    \begin{equation*}
+        n^T (\gamma(t) - z) \begin{cases} = 0 & \gamma(t) \in \partial K \\
+        < 0 & \gamma(t) \notin K \\
+        > 0 & \gamma(t) \in K \setminus \partial K
+        \end{cases}
+    \end{equation*}
+
+    Solving the equation $n^T (\gamma(t) - z)$ for $t$ we get 
+    
+    $$t = \frac {n^T (z - x)} {n^T (\tilde x - x)}$$
+
+    We compute the above for all the $N$ normals of the polytope and keep the maximum value that lies in $[0, 1]$. The min value can also be kept in case we want the other intersetion point as well. Complexity is $O(Nd)$
+    
+    \framebreak
+    
+    \textbf{Case 2.} The curve has the form $\gamma(t) = \sum_{i = 1}^m a_i \phi_i(t)$, $\{ \phi_j \}_{j \in [m]}$ are basis functions, and $K$ is a convex polytope.
+    
+    \medskip
+    
+    We use the same procedure as above, however now we cannot solve directly for $t$. We, for example, can use the Newton-Raphson root finder to solve the transcendental equation.
+    
+    \begin{equation*}
+        t^{(r + 1)} = t^{(r)} - \frac {\sum_{j \in [m]} (n^T a_j) \phi_j(t^{(r)}) - n^T z } {\sum_{j \in [m]} (n^T a_j) \dot \phi_j(t^{(r)})} \qquad r \in [R]
+    \end{equation*}
+
+    Complexity is $O(NdR)$ where $R$ is the maximum number of iterations the NR solver must be called to find a root. 
+    
+    \textbf{Problems.} Convergence, Well-posedness (denominator getting too small)
+
+    \framebreak
+    
+    \textbf{Case 3.} The convex body $K$ has the form $K = \{ x \in \mathbb R^d | g(x) \le 0 \}$ where $g(x) = \max_{1 \le i \le M} g_i(x)$ where $g_1, \dots, g_M$ are twice-differentiable convex functions that are $\mu$-strongly-convex. 
+    
+    \medskip
+    
+    \textbf{Examples.} $L_2$ Balls, Spectrahedra etc.
+    
+    \medskip
+    
+    \textbf{Idea.} Linearize the convex body around $x + h$
+    
+    $$0 \ge g_i(x + h) \ge g_i(x) + \langle \nabla g_i(x), h \rangle + \frac {\mu \| h \|^2}  2 $$
+    
+    The linearized convex polytope $P(x)$ around $x$ is 
+    
+    $$J(x) h \le b$$
+    
+    where $J(x)$ is the Jacobian matrix around $x$ with entries $J_{ij}(x) = \frac {\partial g_i(x)} {\partial x_j}$ and $b$ has entries $b_i = -g_i(x)$.
+    
+    \framebreak 
+    
+    The linear approximation error is $O(\| h \|^2)$.     A high-level algorithm proceeds as follows.
+    
+    \medskip
+
+    We are given a curve $\gamma(t)$ and a starting point $x_0 = \gamma(0)$, an accuracy $\epsilon > 0$, and a step counter $i$ initialized at 0.
+    
+    \begin{enumerate}
+        
+        \item Find $P(x_i)$ around $x_i$ and the intersection point of $\gamma(t)$ with $P(x_i)$ (see Case 1, Case 2). Let that point be $x_{i + 1} = \gamma(t_{i + 1})$
+        \item Calculate $g(x_{i + 1}) = \max_{1 \le j \le M} g_j(x_{i + 1})$. If $|g(x_{i + 1)}| \le \epsilon$, output $x_{i + 1}, t_{i + 1}$, else repeat. 
+    \end{enumerate}
+    
+    
+    
+\end{frame}
+
+\begin{frame}{}
+    \vfill
+    \centering
+    \Huge {
+        \textbf{Thank you!}
+    }
+    \vfill
 \end{frame}
 
 
