@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[10pt]{beamer}
 \usetheme{CambridgeUS}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -128,7 +128,7 @@ If the function is twice differentiable with gradient $\nabla f$ and Hessian mat
     
     \medskip
     
-    \textbf{Idea:} The distribution $\pi(x)$ can be thought as the stationary measure of a Markov Chain that is $\pi(x) = \lim_{k \to \infty} \pi_k(x)$. 
+    \textbf{Idea.} The distribution $\pi(x)$ can be thought as the stationary measure of a Markov Chain that is $\pi(x) = \lim_{k \to \infty} \pi_k(x)$. 
 
     \framebreak
     
@@ -148,6 +148,28 @@ If the function is twice differentiable with gradient $\nabla f$ and Hessian mat
     It can be shown analytically that the above process converges to a stationary distribution $\pi(x)$.
     
     \textbf{Intuition when $a(x,y) = a(y,x)$:} The sampler has incentive to move towards higher-density areas (but lower density areas are also allowed)
+    
+\end{frame}
+
+\begin{frame}{Algorithmic Challenges}
+
+The main Algorithmic Challenges for (log-concave) sampling are in general
+
+\begin{enumerate}
+    \item The \textbf{Mixing Time} of the Markov Chain, that is how fast (\# iterations) a Markov Chain with transition operator $\mathcal T$ starting from an initial distribution $\pi_0$ reaches $\pi$ within Total Variation Distance of at most $\delta > 0$ (more next time)
+    
+    $$t_{mix}(\delta) = \inf \left \{ k \ge 0 | \| \mathcal T^k (\pi_0) - \pi \|_{TV} \le \delta \right \}$$
+    
+    where $\| P - Q \|_{TV} = \sup_{A \in \mathcal F} |P(A) - Q(A)|$ and $\mathcal F$ is a $\sigma$-algebra on the state space $K$. 
+    
+    \item The \textbf{Cost-Per Iteration} that is 
+    
+    $$\binom {\text {Cost-per}} {\text{iteration}} = \binom {\text {Cost-per}} {\text{ODE step}} + \binom {\text {Cost-per boundary}} {\text{oracle (if truncated)}}$$
+    
+\end{enumerate}
+
+
+
     
 \end{frame}
 
@@ -390,7 +412,7 @@ The method proceeds as follows
     v_{i + 1} & = v_{i + 1/2} + \frac \eta 2 F(x_{i + 1})
 \end{align*}
 
-
+\textbf{Examples of interest.} Particle dynamics (HMC, Langevin)
 
 \end{frame}
 
