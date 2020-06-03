@@ -151,6 +151,8 @@ If the function is twice differentiable with gradient $\nabla f$ and Hessian mat
     
 \end{frame}
 
+
+
 \begin{frame}{Algorithmic Challenges}
 
 The main Algorithmic Challenges for (log-concave) sampling are in general
@@ -195,8 +197,8 @@ The main Algorithmic Challenges for (log-concave) sampling are in general
     and Hamilton's equations simulate the particle's behaviour
     
     \begin{align*}
-        \dot x & = v \\
-        \dot v & = - \nabla f(x)
+        \dot x & = \frac {\partial H} {\partial v} =  v \\
+        \dot v & = - \frac {\partial H} {\partial x} =  - \nabla f(x)
     \end{align*}
     
     \framebreak
@@ -268,7 +270,7 @@ The main Algorithmic Challenges for (log-concave) sampling are in general
     \item Probabilistic Graphical Models
     
 \end{enumerate}
-    
+
 \end{frame}
 
 
@@ -516,6 +518,23 @@ The method proceeds as follows
     
     \framebreak
     
+    \textbf{H-polytope.} The polytope is given by the form $Ax \le b$ where $A$ consists of $M$ row vectors $a_1, \dots, a_M \in \mathbb R^d$ and $b = (b_1, \dots, b_M)^T$. On each facet we use $a_i$ as normal vector and if $b_i = 0$ then we use $\vec 0$ as a point on the facet. If $b_i \neq 0$, there exists at least one index $r$ such that $a_r \neq 0$ (otherwise the problem is trivial) we use the point $u$ with coordinates $u_j = \frac {b_i} {a_j} \mathbf 1 \{ j = r \}$ for $1 \le j \le d$. 
+    
+    \framebreak
+    
+    \textbf{V-polytope.} The polytope is given by its convex hull $V$ which contains $M$ points $v_1, \dots, v_M \in \mathbb R^d$. The point $\gamma(t) = tx + (1 -t) \tilde x$ is on the boundary for some $t_0 \in [0, 1]$ (given that $x \in K$) if $t_0$ is the maximum value of $t \in [0,1]$ such that there exist $\lambda_1, \dots, \lambda_M \ge 0$ with $\sum_{i  =1}^M \lambda_i = 1$ and $\gamma(t_0) = \sum_{i = 1}^M \lambda_i v_i$, which translates to the following LP problem which has $O(Md)$ constraints
+    
+    \begin{align*}
+        \text{maximize} \quad & t & \\
+        \text{subject to} \quad & 0 \le t \le 1 & \\
+        & \lambda_i \ge 0 & i \in [M] \\
+        & \sum_{i = 1}^M \lambda_i = 1 \\
+        & t x + (1 - t) \tilde x + \sum_{i = 1}^M \lambda_i v_i = 0 
+    \end{align*}
+    
+    
+    \framebreak
+    
     \textbf{Case 2.} The curve has the form $\gamma(t) = \sum_{i = 1}^m a_i \phi_i(t)$, $\{ \phi_j \}_{j \in [m]}$ are basis functions, and $K$ is a convex polytope.
     
     \medskip
@@ -552,7 +571,7 @@ The method proceeds as follows
     
     \framebreak 
     
-    The linear approximation error is $O(\| h \|^2)$.     A high-level algorithm proceeds as follows.
+    The linear approximation error is at most $\frac {\mu} 2 \| h \|^2$.     A high-level algorithm (Local-search-based) proceeds as follows.
     
     \medskip
 
