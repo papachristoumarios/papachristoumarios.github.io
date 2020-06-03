@@ -292,7 +292,7 @@ $$\dot x(t) = F(x(t), t) \qquad x(0) = x_0$$
 If $F$ is Lipschitz continuous in $x$ and continuous in $t$ then the above has a unique solution $x(t) = \phi(t)$
 \end{theorem}
 
-The HMC equations have $F(x(t), v(t), t) = \begin{pmatrix} v(t) \\ - \nabla f(x(t)) \end{pmatrix}$ which is $\max\{ 1, L \}$-Lipschitz (continuous) since $f$ is $L$-smooth and $v(t)$ is 1-Lipschitz
+The HMC equations have $F(x(t), v(t), t) = \begin{pmatrix} v(t) \\ - \nabla f(x(t)) \end{pmatrix}$ which is Lipschitz (continuous) since $f$ is $L$-smooth and $v(t)$ is 1-Lipschitz
 
 \framebreak
 
@@ -317,12 +317,14 @@ The dynamical behaviour of $ \{ \epsilon_n \}_{n \ge 0}$ provides inshights rega
     
     \begin{align*}
         t_n & = t_{n - 1} + \eta \\
-        x_n & = x_{n - 1} + \eta F(x_n, t_n)
+        x_n & = x_{n - 1} + \eta F(x_{n - 1})
     \end{align*}
     
     It can be proven that 
     
     $$\| \epsilon_n \| \le \frac {\eta m} {2L} \left ( \exp(t_n - t_0) - 1 \right ) = K(t_n) \cdot \eta$$
+    
+    Hence the error of the Euler Solver is $O(\eta)$. 
     
 \end{frame}
 
@@ -371,6 +373,15 @@ The global truncation error $\| \epsilon_n \|$ is $O(\eta^m)$.
     where $\{ \phi_j \}_{0 \le j \le m}$ are basis functions (e.g. polynomials). 
     The constants $ \{ a_j \}_{0 \le j \le m}$ are found by interpolation on the derivative of $x$ at points given by $t_{n + 1}^j = t_n + c_j \eta$ as in the RK methods. 
     
+    As choices for bases one has many choices, some of which being
+    
+    \begin{enumerate}
+        \item Polynomials $\phi_n^j(t) = (t - t_n)^j$ 
+        \item Lagrange polynomials $\phi_n^j(t) = \prod_{r \neq j} \frac {t - t_r} {t_j - t_r}$
+        \item Rational functions $\phi_n^j(t) = \frac {p_n^j(t)} {q_n^j(t)}$ with $q_n^j (t) \neq 0$ in the ROIs. 
+     \end{enumerate}
+
+    
     \framebreak
     
     The system of equations for the interpolation is given by 
@@ -387,15 +398,6 @@ The global truncation error $\| \epsilon_n \|$ is $O(\eta^m)$.
     
     If $F$ is non-linear one can in general use iterative methods (NR) to compute the coefficients $ \{ a_{n + 1}^j \}_{n \ge 0, j \in [m]}$
 
-    \framebreak
-    
-    As choices for bases one has many choices, some of which being
-    
-    \begin{enumerate}
-        \item Polynomials $\phi_n^j(t) = (t - t_n)^j$ 
-        \item Lagrange polynomials $\phi_n^j(t) = \prod_{r \neq j} \frac {t - t_r} {t_j - t_r}$
-        \item Rational functions $\phi_n^j(t) = \frac {p_n^j(t)} {q_n^j(t)}$ with $q_n^j (t) \neq 0$ in the ROIs. 
-     \end{enumerate}
 
 \end{frame}
 
@@ -518,7 +520,7 @@ The method proceeds as follows
     
     \framebreak
     
-    \textbf{H-polytope.} The polytope is given by the form $Ax \le b$ where $A$ consists of $M$ row vectors $a_1, \dots, a_M \in \mathbb R^d$ and $b = (b_1, \dots, b_M)^T$. On each facet we use $a_i$ as normal vector and if $b_i = 0$ then we use $\vec 0$ as a point on the facet. If $b_i \neq 0$, there exists at least one index $r$ such that $a_r \neq 0$ (otherwise the problem is trivial) we use the point $u$ with coordinates $u_j = \frac {b_i} {a_j} \mathbf 1 \{ j = r \}$ for $1 \le j \le d$. 
+    \textbf{H-polytope.} The polytope is given by the form $Ax \le b$ where $A$ consists of $N$ row vectors $a_1, \dots, a_N \in \mathbb R^d$ and $b = (b_1, \dots, b_N)^T$. On each facet we use $a_i$ as normal vector and if $b_i = 0$ then we use $\vec 0$ as a point on the facet. If $b_i \neq 0$, there exists at least one index $r$ such that $a_r \neq 0$ (otherwise the problem is trivial) we use the point $u = (0, 0, \dots, b_i / a_r, \dots, 0)^T$ which lies on the hyperplane, that is $a_i^T u = b_i$. Worst-case complexity is $O(Nd)$. 
     
     \framebreak
     
@@ -529,9 +531,10 @@ The method proceeds as follows
         \text{subject to} \quad & 0 \le t \le 1 & \\
         & \lambda_i \ge 0 & i \in [M] \\
         & \sum_{i = 1}^M \lambda_i = 1 \\
-        & t x + (1 - t) \tilde x + \sum_{i = 1}^M \lambda_i v_i = 0 
+        & t x + (1 - t) \tilde x - \sum_{i = 1}^M \lambda_i v_i = 0 
     \end{align*}
     
+    Solvable via $\texttt{lp\_solve}$ (functionality already exists)
     
     \framebreak
     
@@ -539,7 +542,7 @@ The method proceeds as follows
     
     \medskip
     
-    We use the same procedure as above, however now we cannot solve directly for $t$. We, for example, can use the Newton-Raphson root finder to solve the transcendental equation.
+    \textbf{H-polytope.} We use the same procedure as above, however now we cannot solve directly for $t$. We, for example, can use the Newton-Raphson root finder to solve the transcendental equation.
     
     \begin{equation*}
         t^{(r + 1)} = t^{(r)} - \frac {\sum_{j \in [m]} (n^T a_j) \phi_j(t^{(r)}) - n^T z } {\sum_{j \in [m]} (n^T a_j) \dot \phi_j(t^{(r)})} \qquad r \in [R]
@@ -548,6 +551,21 @@ The method proceeds as follows
     Complexity is $O(NdR)$ where $R$ is the maximum number of iterations the NR solver must be called to find a root. 
     
     \textbf{Problems.} Convergence, Well-posedness (denominator getting too small)
+
+    \framebreak
+    
+    \textbf{V-polytope.} The problem of Case I is a general optimization problem 
+    
+    \begin{align*}
+        \text{maximize} \quad & t & \\
+        \text{subject to} \quad & t \ge 0 \\
+        & \lambda_i \ge 0 & i \in [M] \\
+        & \sum_{i = 1}^M \lambda_i = 1 \\
+        & \sum_{i = 1}^M a_j \phi_j(t) - \sum_{i = 1}^M \lambda_i v_i = 0 
+    \end{align*}
+    
+    Can be addressed using the KKT conditions. 
+    
 
     \framebreak
     
