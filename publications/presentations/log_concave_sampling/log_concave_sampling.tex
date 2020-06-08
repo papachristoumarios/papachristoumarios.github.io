@@ -4,6 +4,15 @@
 \usepackage{amsfonts}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{subfig}
+\usepackage{tikz}
+\usepackage{tabu}
+\usepackage{booktabs}
+
+\definecolor{cof}{RGB}{219,144,71}
+\definecolor{pur}{RGB}{186,146,162}
+\definecolor{greeo}{RGB}{91,173,69}
+\definecolor{greet}{RGB}{52,111,72}
 
 
 \usepackage[utf8]{inputenc}
@@ -106,6 +115,46 @@ Convex functions have some very nice properties, and their use is widespread in 
     
 \framebreak    
     
+
+\begin{figure}[t]
+    \centering
+    \subfloat[$L^1$-ball]{
+    \begin{tikzpicture}[thick,scale=5]
+    \coordinate (A1) at (0,0);
+    \coordinate (A2) at (0.6,0.2);
+    \coordinate (A3) at (1,0);
+    \coordinate (A4) at (0.4,-0.2);
+    \coordinate (B1) at (0.5,0.5);
+    \coordinate (B2) at (0.5,-0.5);
+    
+    \begin{scope}[thick,dashed,,opacity=0.6]
+    \draw (A1) -- (A2) -- (A3);
+    \draw (B1) -- (A2) -- (B2);
+    \end{scope}
+    \draw[fill=cof,opacity=0.6] (A1) -- (A4) -- (B1);
+    \draw[fill=pur,opacity=0.6] (A1) -- (A4) -- (B2);
+    \draw[fill=greeo,opacity=0.6] (A3) -- (A4) -- (B1);
+    \draw[fill=greet,opacity=0.6] (A3) -- (A4) -- (B2);
+    \draw (B1) -- (A1) -- (B2) -- (A3) --cycle;
+    \end{tikzpicture}
+    } \qquad
+    \subfloat[$L^2$-ball]{
+    \begin{tikzpicture}
+    \shade[ball color = pur, opacity = 0.6] (0,0) circle (2cm);
+    \draw (0,0) circle (2cm);
+    \draw (-2,0) arc (180:360:2 and 0.6);
+    \draw[dashed] (2,0) arc (0:180:2 and 0.6);
+    \fill[fill=black] (0,0) circle (1pt);
+    \draw[dashed] (0,0 ) -- node[above]{} (2,0);
+    \end{tikzpicture}
+    }
+    \caption{Examples of convex bodies.}
+    \label{fig:examples}
+\end{figure}
+    
+    
+\framebreak    
+    
 If the function is twice differentiable with gradient $\nabla f$ and Hessian matrix $\nabla^2 f$ then
 \begin{itemize}
     \item We say that $f$ is $L$-smooth iff $\| \nabla f(x) - \nabla f(y) \| \le L \| x - y \|$ or $\nabla^2 f(x) \preceq L \cdot I_d$.
@@ -114,12 +163,15 @@ If the function is twice differentiable with gradient $\nabla f$ and Hessian mat
     
     or $\nabla^2 f(x) \succeq m \cdot I_d$.
     
+    \item The above generalize in a looser setting as well.     
+    
     \item We define the \textbf{condition number} of $f$ to be the ratio of max/min eigenvalues of the Hessian, that is $\kappa = L / m$.
     
 \end{itemize}
 \end{frame}
 
-\begin{frame}[allowframebreaks]{Log-concave Sampling}
+\begin{frame}[allowframebreaks]{Random Walks and Sampling}
+
     Our goal is sampling from $\pi(x) \propto \exp(-f(x))$. 
     
     \medskip
@@ -130,6 +182,10 @@ If the function is twice differentiable with gradient $\nabla f$ and Hessian mat
     
     \textbf{Idea.} The distribution $\pi(x)$ can be thought as the stationary measure of a Markov Chain that is $\pi(x) = \lim_{k \to \infty} \pi_k(x)$. 
 
+    \medskip
+
+    The dependence on the dimension $d$ and the condition number $\kappa$ of $f$ are interesting.
+    
     \framebreak
     
     One of the first algorithms to do it is the Metropolis-Hastings Algorithm. The general idea of Metropolis Hastings is 
@@ -153,7 +209,7 @@ If the function is twice differentiable with gradient $\nabla f$ and Hessian mat
 
 
 
-\begin{frame}{Algorithmic Challenges}
+\begin{frame}[allowframebreaks]{Algorithmic Challenges}
 
 The main Algorithmic Challenges for (log-concave) sampling are in general
 
@@ -167,8 +223,34 @@ The main Algorithmic Challenges for (log-concave) sampling are in general
     \item The \textbf{Cost-Per Iteration} that is 
     
     $$\binom {\text {Cost-per}} {\text{iteration}} = \binom {\text {Cost-per}} {\text{ODE step}} + \binom {\text {Cost-per boundary}} {\text{oracle (if truncated)}}$$
+
+    \end{enumerate}
+
+
+    \framebreak
     
-\end{enumerate}
+        
+    \begin{table}
+        \centering
+        \begin{tabu} to \textwidth {X[3] X X[3] X}
+        \toprule
+            Method & Support & Mixing Time & Distance \\
+        \midrule
+            MALA/HMC \cite{dwivedi2019log} & $\mathbb R^d$ &  $\tilde O(\max \{ \kappa d, \kappa^{1.5} \sqrt d \})$ & TVD \\
+            MALA/HMC \cite{lee2020logsmooth} & $\mathbb R^d$ & $\tilde O(\kappa d)$ & TVD \\
+            ULD \cite{shen2019randomized} & $\mathbb R^d$ & $\tilde O(\kappa^{7/6} / \epsilon^{1/3} + \kappa / \epsilon^{2/3}) $ & $\mathcal W_2$ \\
+            Our conjecture (log-concave) & $K$  & $\tilde O(\kappa d)$ & TVD \\
+            \midrule 
+            Coord. Hit-and-Run \cite{haraldsdottir2017chrr} &  $K$ & $O(d^2)$ & TVD \\
+            Billiard Walk \cite{gryazina2014random} & $K$ & $O(d^2)$ & TVD  \\
+            Our conjecture (uniform) & $K$ & $\tilde O(d)$ & TVD \\
+        \bottomrule
+        \end{tabu}
+        \caption{Known results for the mixing time of random-walk methods. Above: First-order Methods. Below: Zero-order Methods. $K$ is a convex body. The notation $\tilde O(\cdot)$ ignores logarithmic factors. The logarithmic factors (in the case of convex-body support) depend on the condition number and the ``shape'' of the polytope.}
+        \label{table:methods}
+    \end{table}
+
+    
 
 
 
@@ -186,7 +268,7 @@ The main Algorithmic Challenges for (log-concave) sampling are in general
 
 \begin{frame}[allowframebreaks]{Hamiltonian Monte Carlo}
     
-    The state-space is continuous and the samples can be proposed via solving Hamilton's equations for a particle with position $x$ and velocity $v$ under a conservative potential $f(x)$ that applies a force $-\nabla f(x)$. 
+    The state-space is continuous and the samples can be proposed via solving Hamilton's equations for a particle with position $x$ and velocity $v$ under a conservative potential $f(x)$ that applies a force $-\nabla f(x)$. \cite{duane1987hybrid}
     
     The Hamiltonian of the particle is defined as 
     
@@ -207,11 +289,11 @@ The main Algorithmic Challenges for (log-concave) sampling are in general
     
     \medskip
     
-    The Metropolis Filter in this case for a proposal $(\tilde x, \tilde v)$ given a state $(x, v)$ is $\min \left \{ 1, \exp( H(\tilde x, \tilde v) - H(x, v) \right \}$.
+    The Metropolis Filter in this case for a proposal $(\tilde x, \tilde v)$ given a state $(x, v)$ is $\min \left \{ 1, \exp( H(\tilde x, \tilde v) - H(x, v) ) \right \}$.
     
     \medskip
     
-    Ideally note that $\dot H = \langle \nabla_{x, v} H, (\dot x, \dot v) \rangle = \langle (v, \nabla f(x)), (- \nabla f(x), v) \rangle = 0$ and hence the Metropolis probability is always 1. 
+    Ideally (i.e. with infinite precision) note that $\dot H = \langle \nabla_{x, v} H, (\dot x, \dot v) \rangle = \langle (v, \nabla f(x)), (- \nabla f(x), v) \rangle = 0$ and hence the Metropolis probability is always 1. 
     
     \medskip
     
@@ -219,13 +301,15 @@ The main Algorithmic Challenges for (log-concave) sampling are in general
     
     \framebreak
     
-    Finally, the ODE admits a separable stationary measure proportional to
+    \textbf{Correctness.} The ODE admits a separable stationary measure proportional to
     
     $$\pi(x, v) \propto \exp(-H(x,v))$$
     
     The marginal density with respect to $x$ is therefore
     
     $$\pi(x) = \int_{\mathbb R^d} \pi(x, v) d v \propto \exp(-f(x))$$
+    
+    Hence the sequence of samples $x_1, \dots, x_i, \dots$ that the algorithm produces are $\epsilon$-close (in total variation distance) from the distribution $\pi(x)$. We need to make sure that the chain has ``mixed'' before ``trusting'' the samples.
     
 \end{frame}
     
@@ -259,15 +343,25 @@ The main Algorithmic Challenges for (log-concave) sampling are in general
     
 \end{frame}
 
-\begin{frame}{Sampling Applications}
+\begin{frame}[allowframebreaks]{Sampling Applications}
 
 \begin{enumerate}
-    \item Integral Calculation (Volume Calculation etc.)
+    \item Integral Calculation (Monte-Carlo Integration)
     \item Control systems
     \item Generative Adversarial Networks
     \item Logistic Regression
     \item Financial Modeling
     \item Probabilistic Graphical Models
+    
+    \medskip
+    
+    \textbf{Example: Monte-Carlo Integration.} We are interested in computing $\int_K \pi(x) g(x) dx $. Given samples $x_1, \dots, x_N$ from $\pi$ (truncated in $K$) the integral is a.a.s. approximated as
+    
+    \begin{equation*}
+        \int_K \pi(x) g(x) d x \approx \frac 1 N \sum_{i = 1}^N g(x_i)
+    \end{equation*}
+    
+    
     
 \end{enumerate}
 
@@ -520,7 +614,7 @@ The method proceeds as follows
     
     \framebreak
     
-    \textbf{H-polytope.} The polytope is given by the form $Ax \le b$ where $A$ consists of $N$ row vectors $a_1, \dots, a_N \in \mathbb R^d$ and $b = (b_1, \dots, b_N)^T$. On each facet we use $a_i$ as normal vector and if $b_i = 0$ then we use $\vec 0$ as a point on the facet. If $b_i \neq 0$, there exists at least one index $r$ such that $a_r \neq 0$ (otherwise the problem is trivial) we use the point $u = (0, 0, \dots, b_i / a_r, \dots, 0)^T$ which lies on the hyperplane, that is $a_i^T u = b_i$. Worst-case complexity is $O(Nd)$. 
+    \textbf{H-polytope.} The polytope is given by the form $Ax \le b$ where $A$ consists of $N$ row vectors $A_1, \dots, A_N \in \mathbb R^d$ and $b = (b_1, \dots, b_N)^T$. On each facet we use $A_i$ as normal vector and if $b_i = 0$ then we use $\vec 0$ as a point on the facet. If $b_i \neq 0$, there exists at least one index $r$ such that $A_{ir} \neq 0$ (otherwise the problem is trivial) we use the point $u = (0, 0, \dots, b_i / A_{ir}, \dots, 0)^T$ which lies on the hyperplane, that is $A_i^T u = b_i$. Worst-case complexity is $O(Nd)$. 
     
     \framebreak
     
@@ -545,11 +639,13 @@ The method proceeds as follows
     \textbf{H-polytope.} We use the same procedure as above, however now we cannot solve directly for $t$. We, for example, can use the Newton-Raphson root finder to solve the transcendental equation.
     
     \begin{equation*}
-        t^{(r + 1)} = t^{(r)} - \frac {\sum_{j \in [m]} (n^T a_j) \phi_j(t^{(r)}) - n^T z } {\sum_{j \in [m]} (n^T a_j) \dot \phi_j(t^{(r)})} \qquad r \in [R]
+        t^{(r + 1)} = t^{(r)} - \frac {\sum_{j \in [m]} (n^T a_j) \phi_j(t^{(r)}) - n^T z } {\sum_{j \in [m]} (n^T a_j) \dot \phi_j(t^{(r)})}
     \end{equation*}
 
-    Complexity is $O(NdR)$ where $R$ is the maximum number of iterations the NR solver must be called to find a root. 
+    Complexity is $O(NdRm)$ where $R$ is the maximum number of iterations the NR solver must be called to find a root. 
     
+    \underline{Alternatively.} Solve optimization problem $\max_{t \ge 0} t$ subject to $A \gamma(t) \le b$. The constraint translates to $\tilde A \Phi \le b$ where $\Phi$ is a column vector that contains $\phi_j(t)$ and $\tilde A$ is the product of the matrix $A$ and the coefficient matrix. 
+     
     \textbf{Problems.} Convergence, Well-posedness (denominator getting too small)
 
     \framebreak
@@ -564,8 +660,8 @@ The method proceeds as follows
         & \sum_{i = 1}^M a_j \phi_j(t) - \sum_{i = 1}^M \lambda_i v_i = 0 
     \end{align*}
     
-    Can be addressed using the KKT conditions. 
-    
+
+    Can be solved via interior-point-methods (e.g. using the COIN-OR IPOPT toolbox)
 
     \framebreak
     
@@ -602,6 +698,36 @@ The method proceeds as follows
     \end{enumerate}
     
 \end{frame}
+
+\begin{frame}{Progress Report for GSoC}
+ 
+    The working repository can be found here
+    
+    \begin{center}
+        \url{https://github.com/papachristoumarios/volume_approximation}
+    \end{center}
+ 
+    What has been implemented (including testing and source code docs)
+    
+    \begin{enumerate}
+    \item ODE Solvers (\texttt{include/ode\_solvers})
+    \begin{enumerate}
+        \item Euler Sovler
+        \item RK Solvers (RK4, Midpoint, etc.)
+        \item Leapfrog Solver
+        \item Bulirsch–Stoer-Richardson Solver
+        \item Collocation Method (ongoing)
+    \end{enumerate}
+    \item Research Paper (ongoing)
+    \item Boundary Oracles curves of the form $\gamma(t) = \sum_j a_j \phi_j(t)$ (ongoing)
+    \item Samplers: HMC with reflections 
+    \end{enumerate}
+ 
+    \textbf{Next Steps.} SDEs (Langevin), R bindings, more Documentation, more Testing 
+    
+    
+\end{frame}
+
 
 \begin{frame}{Next Talk(s)}
 
