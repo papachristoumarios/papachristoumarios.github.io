@@ -192,7 +192,7 @@ If the function is twice differentiable with gradient $\nabla f$ and Hessian mat
     
     \begin{enumerate}
         \item Assume that you are at a state $x$ 
-        \item Perform a transition to a new nearby state $y$ and make a proposal
+        \item Perform a transition to a new nearby state $y$ and make a proposal for transitioning to $y$
         \item Accept the proposal to move to $y$ with probability (Metropolis Filter)
         
         $$\min \left  \{ 1, \frac { a (x, y) \pi(y) } {a (y, x) \pi (x)} \right \}$$
@@ -273,15 +273,29 @@ The main Algorithmic Challenges for (log-concave) sampling are in general
     The Hamiltonian of the particle is defined as 
     
     \begin{equation*}
-        H(x, v) = \frac 1 2 \| v \|^2 + f(x)
+        H(x, v) = \color{red}{\underbrace{\frac 1 2 \| v \|^2}_{\text{kinetic energy}}} + \color{blue}{\underbrace{f(x)}_{\text{potential energy}}}
+        
     \end{equation*}
     
-    and Hamilton's equations simulate the particle's behaviour
+    \begin{figure}
+        \centering
+        \includegraphics[ width=0.4\textwidth]{publications/presentations/log_concave_sampling/mass_spring.png}
+        \caption{1D Mass-Spring System with mass $m = 1$ and spring constant $k = 1$ has a Hamiltonian $H(x, v) = \frac 1 2  v^2 + \frac 1 2 x^2$}
+        \label{fig:my_label}
+    \end{figure}
+    
+    \framebreak
+    
+     Hamilton's equations simulate the particle's behaviour in the conservative field
     
     \begin{align*}
         \dot x & = \frac {\partial H} {\partial v} =  v \\
         \dot v & = - \frac {\partial H} {\partial x} =  - \nabla f(x)
     \end{align*}
+    
+    \medskip
+    
+    In our previous example $\dot x = v$ and $\dot v = - x$ that is $\ddot x + x = 0$ which gives rise to the well-known simple harmonic oscilator $x(t) = A \cos (\omega t + \phi)$ 
     
     \framebreak
     
@@ -310,6 +324,38 @@ The main Algorithmic Challenges for (log-concave) sampling are in general
     $$\pi(x) = \int_{\mathbb R^d} \pi(x, v) d v \propto \exp(-f(x))$$
     
     Hence the sequence of samples $x_1, \dots, x_i, \dots$ that the algorithm produces are $\epsilon$-close (in total variation distance) from the distribution $\pi(x)$. We need to make sure that the chain has ``mixed'' before ``trusting'' the samples.
+    
+    \framebreak
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\textheight]{publications/presentations/log_concave_sampling/typical_1.png} \quad
+        \includegraphics[width=0.5\textheight]{publications/presentations/log_concave_sampling/typical_path.png}
+        \caption{The typical set of a Markov Chain. Formally, the typical path is defined the set of points $x$ where the product $\pi(x) dx $ is concentrated  }
+        \label{fig:my_label}
+    \end{figure}
+    
+    \framebreak
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.4\textwidth]{publications/presentations/log_concave_sampling/satelite.png} \quad
+         \includegraphics[width=0.4\textwidth]{publications/presentations/log_concave_sampling/crushing.png}
+        \caption{Intuition behind HMC Sampling from \cite{betancourt2017conceptual}. Left: The vector field of $f$ is pointing towards the minimizer of $f$, that is $x^*$. The goal of the sampler (satelite) is to move on the red trajectory where the running sample mean approaches the expected value of $x$, that is $\mathbb E_{\pi} [x]$. Right: A gradient-inspired method (steepest descent $\dot x = - \nabla f(x)$) fails to maintain orbit around Earth (minimizer) and crushes into it.}
+        \label{fig:my_label}
+    \end{figure}
+    
+    \framebreak
+    
+    \begin{figure}
+        \centering
+        \includegraphics[height=0.4\textheight]{publications/presentations/log_concave_sampling/hmc.png} \quad
+        \includegraphics[height=0.4\textheight]{publications/presentations/log_concave_sampling/bad_trajectories.png}
+        \caption{\textbf{HMC Idea. (Left)} The position $x$ of the sampler (orbiter) is corrected with a momentum term $v$ that counteracts the effects of ``gravity'' and keeps the sampler into orbit. 
+        The HMC equations $\dot x = v$ and $\dot v = -\nabla f(x)$ assist the satelite to maintain orbit. 
+        Middle: Adding too little momentum and the satelite crushes to the center again. Right: Adding to much momentum acts like a slingshot.  }
+        \label{fig:my_label}
+    \end{figure}
     
 \end{frame}
     
@@ -661,7 +707,7 @@ The method proceeds as follows
     \end{align*}
     
 
-    Can be solved via interior-point-methods (e.g. using the COIN-OR IPOPT toolbox)
+    Can be solved via interior-point-methods such as line-search filters (e.g. using the COIN-OR IPOPT toolbox)
 
     \framebreak
     
