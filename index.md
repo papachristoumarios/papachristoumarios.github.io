@@ -29,7 +29,7 @@ A more detailed CV can be found [here](https://github.com/papachristoumarios/pap
 
 ### Working Papers/Theses
 
-1. **Papachristou, Marios**. "Stochastic Opinion Dynamics for User Interest Prediction in Online Social Networks". Diploma Thesis. *Advisor: Prof. Dimitris Fotakis*. [[slides](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/publications/thesis/presentation.pdf)][[thesis](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/publications/thesis/thesis.pdf)]
+1. **Papachristou, Marios**. "Stochastic Opinion Dynamics for User Interest Prediction in Online Social Networks". Diploma Thesis. *Advisor: Prof. Dimitris Fotakis*. [[slides](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/publications/thesis/presentation.pdf)][[thesis](http://artemis.cslab.ece.ntua.gr:8080/jspui/handle/123456789/17587)]
 
 
 ### Presentations at Conferences
