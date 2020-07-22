@@ -202,7 +202,17 @@ Note that the `GradientFunctor` is a functor responsible for returning all the d
     $$\frac {d^n x}{dt^n} = F(x, t)$$
 </center>
 
-which in the case of HMC returns the pair $$(v, - \nabla f(x))$$ using the index counter. Accordingly, one is allowed to define higher-order ODEs (in the C++ API) restricted to a cartesian product of domains $$K_1, \dots, K_n$$ (which in the case of HMC is $$K \times \mathbb R^d \subseteq \mathbb R^d \times \mathbb R^d$$).  
+which in the case of HMC returns the pair $$(v, - \nabla f(x))$$ using the index counter after transforming the  higher-order ODE to a first-order ODE in a higher-dimensional space, namely
+
+<center>
+    $$\dot x_i = \begin{cases} F(x_1, t) & i = n \\ x_{i - 1} & 1 \le i \le n - 1 \end{cases}$$
+</center>
+
+
+
+
+
+ Accordingly, one is allowed to define higher-order ODEs (in the C++ API) restricted to a cartesian product of domains $$K_1, \dots, K_n$$ (which in the case of HMC is $$K \times \mathbb R^d \subseteq \mathbb R^d \times \mathbb R^d$$).  
 
 
 
