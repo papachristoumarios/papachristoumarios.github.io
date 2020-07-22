@@ -204,7 +204,7 @@ We discern the following classes
 </center>
 which in the case of HMC returns the pair $$(v, - \nabla f(x))$$ using the index counter after transforming the  higher-order ODE to a first-order ODE in a higher-dimensional space, namely
 <center>
-    $$\dot x_i = \begin{cases} F(x_1, t) & i = n \\ x_{i - 1} & 1 \le i \le n - 1 \end{cases}$$
+    $$\dot x_i = \begin{cases} F(x_1, t) & i = n \\ x_{i + 1} & 1 \le i \le n - 1 \end{cases}$$
 </center>
 One can also restrict the ODEs to a Cartesian product of domains $$K_1, \dots, K_n$$ (which in the case of HMC is $$K \times \mathbb R^d \subseteq \mathbb R^d \times \mathbb R^d$$).  
 
@@ -216,6 +216,7 @@ One then can define the sampler as
 ```cpp
 template <typename NT>
 void test_hmc(){
+	// typedefs
     typedef Cartesian<NT>    Kernel;
     typedef typename Kernel::Point    Point;
     typedef std::vector<Point> pts;
@@ -229,7 +230,7 @@ void test_hmc(){
     IsotropicQuadraticFunctor::parameters<NT> params;
     params.order = 2;
 
-   	// Define the functors
+    // Define the functors
     neg_gradient_func F(params);
     neg_logprob_func f(params);
 
