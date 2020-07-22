@@ -118,7 +118,7 @@ A more challenging, from an algorithmic standpoint, setting is when the distribu
    $$\pi_S(x) = \frac {\pi(x) \mathbf 1 \{ x \in S \}} {\int_S \pi(s) ds}$$
 </center>
 
-The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary normal. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection.  
+The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary normal, that corresponds to the smallest $$t_0 \in [0, 1]$$ such that the point $$t_0 x + (1 - t_0) \tilde x \in \partial S$$. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection. When the trajectory between the initial point and the proposed point is more complicated, for example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves)
 
 
 
@@ -196,7 +196,9 @@ struct IsotropicQuadraticFunctor {
 };
 ```
 
-Note that the `GradientFunctor` is a functor responsible for returning all the derivatives of the HMC ODE, which is considered to have the general form of 
+We discern the following classes
+
+* Note that the `GradientFunctor` is a functor responsible for returning all the derivatives of the HMC ODE, which is considered to have the general form of 
 
 <center>
     $$\frac {d^n x}{dt^n} = F(x, t)$$
@@ -208,17 +210,14 @@ which in the case of HMC returns the pair $$(v, - \nabla f(x))$$ using the index
     $$\dot x_i = \begin{cases} F(x_1, t) & i = n \\ x_{i - 1} & 1 \le i \le n - 1 \end{cases}$$
 </center>
 
+One can also restrict the ODEs to a Cartesian product of domains $$K_1, \dots, K_n$$ (which in the case of HMC is $$K \times \mathbb R^d \subseteq \mathbb R^d \times \mathbb R^d$$).  
+
+*  `FunctionFunctor` class is a functor that returns $$f(x)$$ with the `operator()` method
+* The `parameters` class which holds any required parameters and must contain the derivative order of the oracle.
 
 
 
 
- Accordingly, one is allowed to define higher-order ODEs (in the C++ API) restricted to a cartesian product of domains $$K_1, \dots, K_n$$ (which in the case of HMC is $$K \times \mathbb R^d \subseteq \mathbb R^d \times \mathbb R^d$$).  
-
-
-
-
-
- `FunctionFunctor` class is a functor that returns $$f(x)$$ with the `operator()` method
 
 
 
