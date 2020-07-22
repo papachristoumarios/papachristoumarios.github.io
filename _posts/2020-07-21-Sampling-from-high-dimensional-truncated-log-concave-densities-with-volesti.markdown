@@ -112,7 +112,13 @@ The algorithm produces a proposal $$(\tilde x, \tilde v)$$ doing a half-step for
 
 #### Solving HMC in a truncated setting
 
-A more challenging, from an algorithmic standpoint, setting is when the distribution $$\pi(x)$$ is truncated to a convex body.   
+A more challenging, from an algorithmic standpoint, setting is when the distribution $$\pi(x)$$ is truncated to a convex body. More specifically if $$\pi(x)$$ has support $$K$$ then the truncation of $$\pi$$ to $$S \subseteq K$$ is defined as
+
+<center>
+   \pi_S(x) = \frac {\pi(x) \mathbf 1 \{ x \in S \}} {\int_S \pi(s) ds} 
+</center>
+
+Generally, GeomScale considers $$S$$ to be a convex polytope $$Ax \le b$$ where $$A \in \mathbb R^{m \times d}$$, $$x \in \mathbb R^d$$, and $$b \in \mathbb R^m$$. 
 
 
 
