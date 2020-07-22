@@ -3,6 +3,7 @@ layout: post
 title: "Sampling from high-dimensional (truncated) log-concave densities with GeomScale: A Gentle Introduction"
 date: 2020-07-21 17:00:00 +0200
 categories:
+hidden: true
 ---
 
 > This article serves as a reference article for my _Google Summer of Code 2020_ internship at the GeomScale organization. The project repository can be found [here](https://github.com/GeomScale/volume_approximation).
@@ -206,6 +207,7 @@ which in the case of HMC returns the pair $$(v, - \nabla f(x))$$ using the index
 <center>
     $$\dot x_i = \begin{cases} F(x_1, t) & i = n \\ x_{i + 1} & 1 \le i \le n - 1 \end{cases}$$
 </center>
+
 One can also restrict the ODEs to a Cartesian product of domains $$K_1, \dots, K_n$$ (which in the case of HMC is $$K \times \mathbb R^d \subseteq \mathbb R^d \times \mathbb R^d$$).  
 
 *  `FunctionFunctor` class is a functor that returns $$f(x)$$ with the `operator()` method
