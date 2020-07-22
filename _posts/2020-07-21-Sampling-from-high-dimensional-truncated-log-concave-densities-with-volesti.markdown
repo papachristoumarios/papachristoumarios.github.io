@@ -7,7 +7,7 @@ categories:
 
 > This article serves as a reference article for my _Google Summer of Code 2020_ internship at the GeomScale organization. The project repository can be found [here](https://github.com/GeomScale/volume_approximation).
 
-**THE ARTICLE IS A WORK IN PROGRESS**
+**THE ARTICLE IS A WORK IN PROGRESS., AND IS UPDATED DAILY**
 
 
 
@@ -118,11 +118,11 @@ A more challenging, from an algorithmic standpoint, setting is when the distribu
    $$\pi_S(x) = \frac {\pi(x) \mathbf 1 \{ x \in S \}} {\int_S \pi(s) ds}$$
 </center>
 
-The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary normal, that corresponds to the smallest $$t_0 \in [0, 1]$$ such that the point $$t_0 x + (1 - t_0) \tilde x \in \partial S$$. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection. When the trajectory between the initial point and the proposed point is more complicated, for example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves)
+The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary normal, that corresponds to the smallest $$t_0 \in [0, 1]$$ such that the point $$t_0 x + (1 - t_0) \tilde x \in \partial S$$. The resulting boundary point is used as a pivot point for the reflection of the position and the velocity term. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection. When the trajectory between the initial point and the proposed point is more complicated, for example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves) or interior-point methods in case the problem is approached from a non-linear optimization perspective or a transform-based approach (such as the Chebyshev transform). 
 
+### Using the R API of GeomScale (for beginners)
 
-
-
+TBA.
 
 
 
@@ -199,31 +199,76 @@ struct IsotropicQuadraticFunctor {
 We discern the following classes
 
 * Note that the `GradientFunctor` is a functor responsible for returning all the derivatives of the HMC ODE, which is considered to have the general form of 
-
 <center>
     $$\frac {d^n x}{dt^n} = F(x, t)$$
 </center>
-
 which in the case of HMC returns the pair $$(v, - \nabla f(x))$$ using the index counter after transforming the  higher-order ODE to a first-order ODE in a higher-dimensional space, namely
-
 <center>
     $$\dot x_i = \begin{cases} F(x_1, t) & i = n \\ x_{i - 1} & 1 \le i \le n - 1 \end{cases}$$
 </center>
-
 One can also restrict the ODEs to a Cartesian product of domains $$K_1, \dots, K_n$$ (which in the case of HMC is $$K \times \mathbb R^d \subseteq \mathbb R^d \times \mathbb R^d$$).  
 
 *  `FunctionFunctor` class is a functor that returns $$f(x)$$ with the `operator()` method
 * The `parameters` class which holds any required parameters and must contain the derivative order of the oracle.
 
+One then can define the sampler as
+
+```cpp
+template <typename NT>
+void test_hmc(){
+    typedef Cartesian<NT>    Kernel;
+    typedef typename Kernel::Point    Point;
+    typedef std::vector<Point> pts;
+    typedef HPolytope<Point> Hpolytope;
+    typedef BoostRandomNumberGenerator<boost::mt19937, NT> RandomNumberGenerator;
+    typedef IsotropicQuadraticFunctor::GradientFunctor<Point> neg_gradient_func;
+    typedef IsotropicQuadraticFunctor::FunctionFunctor<Point> neg_logprob_func;
+    typedef LeapfrogODESolver<Point, NT, Hpolytope, neg_gradient_func> Solver;
+
+   	// Define and set the order for the HMC equations
+    IsotropicQuadraticFunctor::parameters<NT> params;
+    params.order = 2;
+
+   	// Define the functors
+    neg_gradient_func F(params);
+    neg_logprob_func f(params);
+
+    RandomNumberGenerator rng(1);
+    
+    // Define the sampler parameters
+    HamiltonianMonteCarloWalk::parameters<NT> hmc_params;
+    unsigned int dim = 10;
+    
+    // Generate the domain of truncation (H-Cube in 10 dimensions)
+    Hpolytope P = gen_cube<Hpolytope>(dim, false);
+    
+    // Naively picked starting point. A warm start can be considered to be a truncated Gaussian sample with zero mean
+    Point x0(dim);
+
+    // Initialize the sampler	
+    HamiltonianMonteCarloWalk::Walk
+      <Point, Hpolytope, RandomNumberGenerator, neg_gradient_func, neg_logprob_func, Solver>
+      hmc(&P, x0, F, f, hmc_params);
+
+    // Initialize a point to calculate the ergodic mean	
+    Point mean(dim);
+    
+    // Draw 15000 samples 
+    int n_samples = 15000;
+
+    for (int i = 0; i < n_samples; i++) {
+      hmc.apply(rng, 1);
+      if (i > n_samples / 3) {
+        mean = mean + hmc.x;
+      }
+    }
+
+    mean = (1.0 / n_samples) * mean;
+}
+
+```
 
 
-
-
-
-
-### Using the R API of GeomScale
-
-TBA.
 
 
 
