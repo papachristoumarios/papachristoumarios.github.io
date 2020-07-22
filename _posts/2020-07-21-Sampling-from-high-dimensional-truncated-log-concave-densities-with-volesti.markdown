@@ -126,9 +126,97 @@ The adjustment to the HMC equations is that in the truncated setting, is imposin
 
 
 
-### Using the C++ API of GeomScale
+### Using the C++ API of GeomScale (for experts)
 
- 
+ First one has to define a custom density. For example, below we consider the density $$\pi(x) \propto \exp(-f(x))$$ with $$f(x) = \frac 1 2 a x^T x$$ . We need two classes for defining the density, one which defines $$f(x)$$ and the other which defines the _negative gradient_ $$-\nabla f(x) = - a x$$. The following piece of code defines such functions
+
+```cpp
+struct IsotropicQuadraticFunctor {
+
+  // Holds function oracle and gradient oracle for the function 1/2 a ||x||^2
+  template <
+      typename NT
+  >
+  struct parameters {
+    NT alpha = NT(1);
+    unsigned int order = 1;
+  };
+
+  template
+  <
+      typename Point
+  >
+  struct GradientFunctor { // defines - nabla f(x)
+    typedef typename Point::FT NT;
+    typedef std::vector<Point> pts;
+
+    parameters<NT> params;
+
+    GradientFunctor() {};
+
+    GradientFunctor(parameters<NT> &params_) {
+      params.order = params_.order;
+      params.alpha = params_.alpha;
+    };
+
+    // The index i represents the state vector index
+    Point operator() (unsigned int const& i, pts const& xs, NT const& t) const {
+      if (i == params.order - 1) {
+        return (-params.alpha) * xs[0]; // returns - a*x
+      } else {
+        return xs[i + 1]; // returns derivative
+      }
+    }
+
+  };
+
+  template
+  <
+    typename Point
+  >
+  struct FunctionFunctor { // defines f(x)
+    typedef typename Point::FT NT;
+
+    parameters<NT> params;
+
+    FunctionFunctor() {};
+
+    FunctionFunctor(parameters<NT> &params_) {
+      params.order = params_.order;
+      params.alpha = params_.alpha;
+    };
+
+    // The index i represents the state vector index
+    NT operator() (Point const& x) const {
+      return 0.5 * params.alpha * x.dot(x);
+    }
+
+  };
+
+};
+```
+
+Note that the `GradientFunctor` is a functor responsible for returning all the derivatives of the HMC ODE, which is considered to have the general form of 
+
+<center>
+    $$\frac {d^n x}{dt^n} = F(x, t)$$
+</center>
+
+which in the case of HMC returns the pair $$(v, - \nabla f(x))$$ using the index counter. Accordingly, one is allowed to define higher-order ODEs (in the C++ API) restricted to a cartesian product of domains $$K_1, \dots, K_n$$ (which in the case of HMC is $$K \times \mathbb R^d \subseteq \mathbb R^d \times \mathbb R^d$$).  
+
+
+
+
+
+ `FunctionFunctor` class is a functor that returns $$f(x)$$ with the `operator()` method
+
+
+
+### Using the R API of GeomScale
+
+TBA.
+
+
 
 
 
