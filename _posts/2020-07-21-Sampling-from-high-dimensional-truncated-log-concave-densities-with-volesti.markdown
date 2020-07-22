@@ -7,6 +7,8 @@ categories:
 
 > This article serves as a reference article for my _Google Summer of Code 2020_ internship at the GeomScale organization. The project repository can be found [here](https://github.com/GeomScale/volume_approximation).
 
+**THE ARTICLE IS A WORK IN PROGRESS**
+
 
 
 ## Problem Definition
