@@ -74,11 +74,17 @@ $$\mathcal H(x, v) = - \log \pi(x, v) = \mathcal K(v \mid x) + \mathcal U(x)$$
  One can note that if $$\pi(x) = \exp(-f(x))$$, then $$\mathcal U(x) = f(x)$$. Moreover, usually the variable $$v$$ is independent of $$x$$ and thus the Hamiltonian depends on $$v$$ only. Now, starting from an initial state, the walker generates proposals via evolving Hamilton's equations, that is 
 
 <center>
-	$$\dot x = + \frac {\partial \mathcal K} {\partial v}$$ <br>
-    $$\dot v = - \frac {\partial \mathcal U} {\partial x}$$ 
+	$$\dot x = + \frac {\partial \mathcal H} {\partial v}$$
+    $$\dot v = - \frac {\partial \mathcal H} {\partial x}$$ 
 </center>
 
-  
+  It is straightforward to observe that the Hamiltonian $$\mathcal H(x, v)$$ is preserved over time, that is 
+
+<center>
+    $$\dot \mathcal H = \frac {\partial H}{\partial x} \dot x + \frac {\partial H}{\partial v} \dot v = - \dot x \dot v + \dot x \dot v = 0$$
+</center>
+
+
 
 
 
