@@ -84,6 +84,12 @@ $$\mathcal H(x, v) = - \log \pi(x, v) = \mathcal K(v \mid x) + \mathcal U(x)$$
     $$\dot {\mathcal H} = \frac {\partial H}{\partial x} \dot x + \frac {\partial H}{\partial v} \dot v = - \dot x \dot v + \dot x \dot v = 0$$
 </center>
 
+since the stationary measure is proportional to $$\pi(x, v) \propto \exp(- \mathcal H(x,v))$$ one can simulate this process and then integrate out $$v$$ to keep samples from $$\pi(x)$$.  Ideally, if a computer had infinite precision, we could simulate the equations for some time and gather samples without using the Metropolis filter due to the preservation of the Hamiltonian. However, in a computer simulation one has to use a numerical integrator to solve Hamilton's equations. From now on, we assume the simple form of the Hamiltonian
+
+<center>
+    $$\mathcal H(x, v) = \frac 1 2 \| v \|^2 + f(x)$$
+</center>
+
 
 
 
