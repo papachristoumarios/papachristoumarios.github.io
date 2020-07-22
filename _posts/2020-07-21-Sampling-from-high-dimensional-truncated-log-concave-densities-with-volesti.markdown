@@ -95,7 +95,7 @@ In a computer, the HMC equations are usually solved using the _leapfrog integrat
 <center>
     $$\hat v = v - \frac \eta 2 \nabla f(x)$$
     $$\tilde x = x + \eta \hat v$$
-    $$\tilde v = \hat v - \frac {\eta} 2 \nabla f(x)$$
+    $$\tilde v = \hat v - \frac {\eta} 2 \nabla f(\tilde x)$$
 </center>
 
 The algorithm produces a proposal $$(\tilde x, \tilde v)$$ doing a half-step for the velocity term, then doing a full-step to upgrade the position and, finally, another half-step to update the velocity. Then, one uses a Metropolis filter to measure the change in the Hamiltonian, that is $$\min \{ 1, \exp(\mathcal H(x, v) - \mathcal H(\tilde x, \tilde v)) \}$$. The leapfrog integrator has an error of $$O(\eta^3)$$ per step and $$O(\eta^2)$$ globally. 
