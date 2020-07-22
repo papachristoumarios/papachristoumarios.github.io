@@ -81,7 +81,7 @@ $$\mathcal H(x, v) = - \log \pi(x, v) = \mathcal K(v \mid x) + \mathcal U(x)$$
   It is straightforward to observe that the Hamiltonian $$\mathcal H(x, v)$$ is preserved over time, that is 
 
 <center>
-    $$\dot \mathcal H = \frac {\partial H}{\partial x} \dot x + \frac {\partial H}{\partial v} \dot v = - \dot x \dot v + \dot x \dot v = 0$$
+    $$\dot }\mathcal H} = \frac {\partial H}{\partial x} \dot x + \frac {\partial H}{\partial v} \dot v = - \dot x \dot v + \dot x \dot v = 0$$
 </center>
 
 
