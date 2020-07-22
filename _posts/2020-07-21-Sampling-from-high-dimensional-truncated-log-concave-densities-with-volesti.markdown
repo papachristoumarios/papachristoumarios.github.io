@@ -90,11 +90,19 @@ since the stationary measure is proportional to $$\pi(x, v) \propto \exp(- \math
     $$\mathcal H(x, v) = \frac 1 2 \| v \|^2 + f(x)$$
 </center>
 
+In a computer, the HMC equations are usually solved using the _leapfrog integrator_ more specifically the equations evolve according to the following rule
+
+<center>
+    $$\hat v = v - \frac \eta 2 \nabla f(x)$$
+    $$\tilde x = x + \eta \hat v$$
+    $$\tilde v = \hat v - \frac {\eta} 2 \nabla f(x)$$
+</center>
+
+The algorithm produces a proposal $$(\tilde x, \tilde v)$$ doing a half-step for the velocity term, then doing a full-step to upgrade the position and, finally, another half-step to update the velocity. Then, one uses a Metropolis filter to measure the change in the Hamiltonian, that is $$\min \{ 1, \exp(\mathcal H(x, v) - \mathcal H(\tilde x, \tilde v)) \}$$. 
 
 
 
-
-## References
+### References
 
 1. mc-stan Reference Manual for Hamiltonian Monte Carlo. [Source](https://mc-stan.org/docs/2_19/reference-manual/hamiltonian-monte-carlo.html).
 
