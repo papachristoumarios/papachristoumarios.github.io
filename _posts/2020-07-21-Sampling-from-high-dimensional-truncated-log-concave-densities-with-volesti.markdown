@@ -100,7 +100,14 @@ In a computer, the HMC equations are usually solved using the _leapfrog integrat
     $$\tilde v = \hat v - \frac {\eta} 2 \nabla f(\tilde x)$$
 </center>
 
-The algorithm produces a proposal $$(\tilde x, \tilde v)$$ doing a half-step for the velocity term, then doing a full-step to upgrade the position and, finally, another half-step to update the velocity. Then, one uses a Metropolis filter to measure the change in the Hamiltonian, that is $$\min \{ 1, \exp(\mathcal H(x, v) - \mathcal H(\tilde x, \tilde v)) \}$$. The leapfrog integrator has an error of $$O(\eta^3)$$ per step and $$O(\eta^2)$$ globally. 
+The algorithm produces a proposal $$(\tilde x, \tilde v)$$ doing a half-step for the velocity term, then doing a full-step to upgrade the position and, finally, another half-step to update the velocity. Then, one uses a Metropolis filter to measure the change in the Hamiltonian, that is $$\min \{ 1, \exp(\mathcal H(x, v) - \mathcal H(\tilde x, \tilde v)) \}$$. The leapfrog integrator has an error of $$O(\eta^3)$$ per step and $$O(\eta^2)$$ globally. Note here that someone can use other ODE solvers, such as the Euler method, Runge-Kutta or the Collocation Method to solve the resulting ODE, each one with different guarantees regarding the error, the step and the mixing time of the walkers. Currently, GeomScale [supports](https://github.com/GeomScale/volume_approximation/pull/90) the following solvers for HMC
+
+* Euler Method.
+* Runge-Kutta Method.
+* Leapfrog Method.
+* Collocation Method (both for the differential and the integral equations).
+
+ 
 
 
 
