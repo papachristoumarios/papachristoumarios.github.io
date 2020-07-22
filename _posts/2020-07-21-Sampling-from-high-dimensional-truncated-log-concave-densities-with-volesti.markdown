@@ -55,11 +55,47 @@ which is approximated by the ergodic sum of $$T$$ samples
     $$\frac 1 T \sum_{t = 1}^T g(x_t)$$
 </center>
 
-where $$\{ x_t \}_{t \in [T]}$$ is a series of samples. The ergodic theorem states that for $$T \to \infty$$ the sum and the integral coincide, which gives MCMC methods a very powerful advantage application-wise. 
-
-
-
-The next question now becomes
+where $$\{ x_t \}_{t \in [T]}$$ is a series of samples. The ergodic theorem states that for $$T \to \infty$$ the sum and the integral coincide, which gives MCMC methods a very powerful advantage application-wise (more below). Back to the algorithm, the next important question becomes
 
 > In a continuous process how does one choose the proposal point $$\tilde x$$ given the current position of the walker at $$x$$? 
 
+The following section partially answers this question.
+
+
+
+### Hamiltonian Monte Carlo
+
+The Hamiltonian Monte Carlo (HMC) algorithm introduced by Duane et al. (1987) assumes the existence of an imaginary particle with a state $$(x, v) \in \mathbb R^d \times \mathbb R^d$$ where $$x$$ is the position (the variable we want to sample from) and $$v$$ is the velocity of the particle. In most applications, the auxiliary variable $$v$$ comes from a normal distribution, that is $$v \sim \mathcal N (0, I_d)$$. The HMC algorithm aims to sample from the joint density $$\pi(x, v) = \pi(x) \pi(v \mid x)$$. The negative logarithm of the joint density defines a _Hamiltonian Function_ 
+
+<center>
+$$\mathcal H(x, v) = - \log \pi(x, v) = \mathcal K(v \mid x) + \mathcal U(x)$$    
+</center>
+
+ One can note that if $$\pi(x) = \exp(-f(x))$$, then $$\mathcal U(x) = f(x)$$. Moreover, usually the variable $$v$$ is independent of $$x$$ and thus the Hamiltonian depends on $$v$$ only. Now, starting from an initial state, the walker generates proposals via evolving Hamilton's equations, that is 
+
+<center>
+	$$\dot x = + \frac {\partial \mathcal K} {\partial v}$$ <br>
+    $$\dot v = - \frac {\partial \mathcal U} {\partial x}$$ 
+</center>
+
+  
+
+
+
+## References
+
+1. mc-stan Reference Manual for Hamiltonian Monte Carlo. [Source](https://mc-stan.org/docs/2_19/reference-manual/hamiltonian-monte-carlo.html).
+
+2. TensorFlow Reference Manual for Hamiltonian Monte Carlo. [Source](https://www.tensorflow.org/probability/api_docs/python/tfp/mcmc/HamiltonianMonteCarlo). 
+
+3. Betancourt, Michael. "A conceptual introduction to Hamiltonian Monte Carlo." *arXiv preprint arXiv:1701.02434* (2017).
+
+4. Lee, Yin Tat, Ruoqi Shen, and Kevin Tian. "Logsmooth Gradient Concentration and Tighter Runtimes for Metropolized Hamiltonian Monte Carlo." *arXiv preprint arXiv:2002.04121* (2020).
+
+5. Shen, Ruoqi, and Yin Tat Lee. "The randomized midpoint method for log-concave sampling." *Advances in Neural Information Processing Systems*. 2019.
+
+6. Chevallier, Augustin, Sylvain Pion, and Frédéric Cazals. "Hamiltonian Monte Carlo with boundary reflections, and application to polytope volume calculations." (2018).
+
+7. Duane, Simon, et al. "Hybrid monte carlo." *Physics letters B* 195.2 (1987): 216-222.
+
+   
