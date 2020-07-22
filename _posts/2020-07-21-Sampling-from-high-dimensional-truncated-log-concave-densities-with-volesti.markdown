@@ -118,7 +118,7 @@ A more challenging, from an algorithmic standpoint, setting is when the distribu
    $$\pi_S(x) = \frac {\pi(x) \mathbf 1 \{ x \in S \}} {\int_S \pi(s) ds}$$
 </center>
 
-Generally, GeomScale considers $$S$$ to be a convex polytope $$Ax \le b$$ where $$A \in \mathbb R^{m \times d}$$, $$x \in \mathbb R^d$$, and $$b \in \mathbb R^m$$. 
+The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary normal. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection.  
 
 
 
