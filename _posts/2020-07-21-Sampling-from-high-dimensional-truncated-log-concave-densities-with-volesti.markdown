@@ -24,7 +24,7 @@ where $$\{x_i, y_i \}_{i =1}^m$$ is a set of $$m$$ samples. This kind of distrib
 	$$Z = \int_K \exp(-f(x)) d x$$    
 </center>
 
- where $$K = \mathrm{supp} (\pi) = \left \{ x \in \mathbb R^d | \pi(x) > 0 \right \}$$ is the _support_ of the distribution. Copmuting $$Z$$ is very hard, even for simple distributions, and one has to reside in better ideas than direct computation in order to sample efficiently. 
+ where $$K$$ is the _support_ of the distribution. Computing $$Z$$ is very hard, even for simple distributions, and one has to reside in better ideas than direct computation in order to sample efficiently. 
 
 
 
@@ -32,5 +32,6 @@ where $$\{x_i, y_i \}_{i =1}^m$$ is a set of $$m$$ samples. This kind of distrib
 
 A solution to this problem brings the Markov Chain Monte Carlo (MCMC) Algorithm which simulates a Markov Chain with a stationary distribution identical to the target distribution. The general MCMC algorithm proceeds as follows:
 
-1.  Initialize the Markov Chain to an initial state $$X_0 \sim \pi_0$$ where $$\pi_0$$ is a (carefully) chosen initial distribution.
-2. At each step $$t$$, where the sampler is at state $$X_t$$, make a proposal from a neighboring state $$\tilde X_t$$ and set $$X_{t + 1} = \tilde X_t$$ with probability equal to $$\min \left \{ 1, \frac {\pi(\tilde X_t)} {\pi(X_t)} \right \}$$ . Otherwise, set $$X_{t + 1} = X_t$$. This probability filter is called a Metropolis filter and gives the algorithm _incentive_ to move towards areas of higher density. (Note that the more general transition probability is equal to $$\min \left \{ 1, \frac {a(\tilde X_t | X_t) \pi(\tilde X_t)} {a(X_t | \tilde X_t) \pi(X_t)} \right \}$$ and $$a(. | .)$$ is a transition distribution between the states, which is usually taken to be symmetric). 
+1.  Initialize the Markov Chain to an initial state $$x_0 \sim \pi_0$$ where $$\pi_0$$ is a (carefully) chosen initial distribution.
+2. At each step $$t$$, where the sampler is at state $$x_t$$, make a proposal from a neighboring state $$\tilde x_t$$ and set $$x_{t + 1} = \tilde x_t$$ with probability equal to $$\min \left \{ 1, \frac {\pi(\tilde x_t)} {\pi(x_t)} \right \}$$ . Otherwise, set $$x_{t + 1} = x_t$$. This probability filter is called a Metropolis filter and gives the algorithm _incentive_ to move towards areas of higher density. (Note that the more general transition probability is equal to $$\min \left \{ 1, \frac {a(\tilde x_t | x_t) \pi(\tilde x_t)} {a(x_t | \tilde x_t) \pi(x_t)} \right \}$$ and $$a(. | .)$$ is a transition distribution between the states, which is usually taken to be symmetric). 
+
