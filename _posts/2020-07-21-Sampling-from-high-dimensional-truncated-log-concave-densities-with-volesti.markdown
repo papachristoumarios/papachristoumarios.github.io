@@ -8,7 +8,7 @@ hidden: true
 
 > This article serves as a reference article for my _Google Summer of Code 2020_ internship at the GeomScale organization. The project repository can be found [here](https://github.com/GeomScale/volume_approximation).
 
-**THE ARTICLE IS A WORK IN PROGRESS., AND IS UPDATED DAILY**
+**THE ARTICLE IS A WORK IN PROGRESS AND IS UPDATED DAILY. WILL CONTAIN MISTAKES**
 
 
 
@@ -261,9 +261,7 @@ void test_hmc(){
 
     for (int i = 0; i < n_samples; i++) {
       hmc.apply(rng, 1);
-      if (i > n_samples / 3) {
-        mean = mean + hmc.x;
-      }
+      mean = mean + hmc.x;
     }
 
     mean = (1.0 / n_samples) * mean;
