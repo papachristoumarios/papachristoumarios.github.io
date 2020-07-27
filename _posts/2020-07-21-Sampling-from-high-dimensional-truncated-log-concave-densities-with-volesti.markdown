@@ -118,8 +118,9 @@ A more challenging, from an algorithmic standpoint, setting is when the distribu
 <center>
    $$\pi_S(x) = \frac {\pi(x) \mathbf 1 \{ x \in S \}} {\int_S \pi(s) ds}$$
 </center>
+The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary, that corresponds to the smallest $$t_0 \in [0, 1]$$ such that the point $$t_0 x + (1 - t_0) \tilde x \in \partial S$$. The resulting boundary point is used as a pivot point for the reflection of the position and the velocity term. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection. When the trajectory between the initial point and the proposed point is more complicated, for example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves) or interior-point methods (using COIN-OR IPOPT) in case the problem is approached from a non-linear optimization perspective or a transform-based approach (such as the Chebyshev transform). 
 
-The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary normal, that corresponds to the smallest $$t_0 \in [0, 1]$$ such that the point $$t_0 x + (1 - t_0) \tilde x \in \partial S$$. The resulting boundary point is used as a pivot point for the reflection of the position and the velocity term. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection. When the trajectory between the initial point and the proposed point is more complicated, for example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves) or interior-point methods in case the problem is approached from a non-linear optimization perspective or a transform-based approach (such as the Chebyshev transform). 
+
 
 ### Using the R API of GeomScale (for beginners)
 
@@ -265,11 +266,26 @@ void test_hmc(){
     }
 
     mean = (1.0 / n_samples) * mean;
+    
+    std::cout << "Mean of " << n_samples << " is: " << mean.getCoefficients() << std::endl;
+    
 }
 
 ```
 
 
+
+### Scaling
+
+#### Un-truncated Setting
+
+VolEsti is able to scale efficiently to multiple dimensions and compete with libraries like TensorFlow or mc-stan. Below we showcase an comparison of drawing 1000 samples using the Leapfrog method in VolEsti, mc-stan, and Tensorflow for a range of dimensions $$d \in \{1, \dots 100 \} $$. We provide a semilog-y plot of the ETA as a function of the dimensions. As we observe VolEsti is significantly faster than its counterparts from 1000 to 100 times, for a large number of dimensions. We have used the density $$f(x) = (x + \mathbf 1)^T x$$ with a gradient of $$\nabla f(x) = x + \mathbf 1$$, where $$\mathbf 1$$ is the $$d$$-dimensional vector with all entries equal to 1.
+
+#### Truncated Setting
+
+Below we compare how VolEsti scales when truncation is imposed. More specifically, we use the same density negative log-probability of $$f(x) =  (x + \mathbf 1)^T x$$, defined either on $$\mathbb R^d$$ (un-truncated setting) or to the $$d$$-dimensional cube $$\mathbb H_d = \{ x \in \mathbb R^d \mid \| x \|_{\infty} \le 1  \}$$. 
+
+  
 
 
 
