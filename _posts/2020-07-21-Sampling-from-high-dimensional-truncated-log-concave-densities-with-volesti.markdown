@@ -296,6 +296,7 @@ VolEsti is able to scale efficiently to multiple dimensions and compete with Ten
 
 <center>
     <img src="https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/_posts/figures/performance.png">
+    Figure. Performance of VolEsti compared to TensorFlow and mc-stan HMC algorithms
 </center>
 
 
