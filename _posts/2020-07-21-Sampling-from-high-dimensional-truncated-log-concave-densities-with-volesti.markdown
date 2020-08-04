@@ -292,7 +292,13 @@ void test_hmc(){
 
 ### Scaling
 
-VolEsti is able to scale efficiently to multiple dimensions and compete with libraries like TensorFlow or mc-stan. Below we showcase an comparison of drawing 1000 samples using the Leapfrog method in VolEsti, mc-stan, and Tensorflow for a range of dimensions $$d \in \{1, \dots 100 \} $$. We provide a semilog-y plot of the ETA as a function of the dimensions. As we observe VolEsti is significantly faster than its counterparts from 1000 to 100 times, for a large number of dimensions. We have used the density $$f(x) = (x + \mathbf 1)^T x$$ with a gradient of $$\nabla f(x) = x + \mathbf 1$$, where $$\mathbf 1$$ is the $$d$$-dimensional vector with all entries equal to 1. We also compare how VolEsti scales when truncation is imposed. More specifically, we use the same density negative log-probability of $$f(x) =  (x + \mathbf 1)^T x$$, defined either on $$\mathbb R^d$$ (un-truncated setting) or to the $$d$$-dimensional cube $$\mathbb H_d = \{ x \in \mathbb R^d \mid \| x \|_{\infty} \le 1  \}$$. The comparisons are compiled to a Colab notebook [here](https://colab.research.google.com/drive/104i-N1Na0nsj_zEK5l0d-VHnAOw67hXt?usp=sharing). 
+VolEsti is able to scale efficiently to multiple dimensions and compete with TensorFlow and mc-stan. Below we showcase an comparison of drawing $$N = 1000$$ samples using the Leapfrog method in VolEsti, mc-stan, and Tensorflow for a range of dimensions $$d \in \{1, \dots 100 \} $$. We provide a semilog-y plot of the ETA as a function of the dimensions. As we observe VolEsti is significantly faster than its counterparts from 1000 to 100 times, for a large number of dimensions in the  truncated case. We have used the density $$f(x) = (x + \mathbf 1)^T x$$ with a gradient of $$\nabla f(x) = x + \mathbf 1$$, where $$\mathbf 1$$ is the $$d$$-dimensional vector with all entries equal to 1. We also compare how VolEsti scales when truncation is imposed. More specifically, we use the same density negative log-probability of $$f(x) =  (x + \mathbf 1)^T x$$, defined either on $$\mathbb R^d$$ (un-truncated setting) or to the $$d$$-dimensional cube $$\mathbb H_d = \{ x \in \mathbb R^d \mid \| x \|_{\infty} \le 1  \}$$. The comparisons are compiled to a Colab notebook [here](https://colab.research.google.com/drive/104i-N1Na0nsj_zEK5l0d-VHnAOw67hXt?usp=sharing).
+
+<center>
+    <img src=""
+</center>
+
+
 
  
 
