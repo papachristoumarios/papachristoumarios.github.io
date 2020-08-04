@@ -140,26 +140,42 @@ struct IsotropicQuadraticFunctor {
       typename NT
   >
   struct parameters {
-    NT alpha = NT(1);
-    unsigned int order = 1;
+    NT alpha;
+    unsigned int order;
+    NT L; // Lipschitz constant of gradient
+    NT m; // Strong-convexity parameter
+    NT kappa; // Condition number
+
+    parameters() :
+      alpha(NT(1)),
+      order(1),
+      L(NT(1)),
+      m(NT(1)),
+      kappa(1)
+     {};
+
+    parameters(
+      NT alpha_,
+      unsigned int order_) :
+      alpha(alpha_),
+      order(order_),
+      L(alpha_),
+      m(alpha_),
+      kappa(1)
+    {}
   };
 
   template
   <
       typename Point
   >
-  struct GradientFunctor { // defines - nabla f(x)
+  struct GradientFunctor {
     typedef typename Point::FT NT;
     typedef std::vector<Point> pts;
 
-    parameters<NT> params;
+    parameters<NT> &params;
 
-    GradientFunctor() {};
-
-    GradientFunctor(parameters<NT> &params_) {
-      params.order = params_.order;
-      params.alpha = params_.alpha;
-    };
+    GradientFunctor(parameters<NT> params_) : params(params_) {};
 
     // The index i represents the state vector index
     Point operator() (unsigned int const& i, pts const& xs, NT const& t) const {
@@ -176,19 +192,13 @@ struct IsotropicQuadraticFunctor {
   <
     typename Point
   >
-  struct FunctionFunctor { // defines f(x)
+  struct FunctionFunctor {
     typedef typename Point::FT NT;
 
-    parameters<NT> params;
+    parameters<NT> &params;
 
-    FunctionFunctor() {};
+    FunctionFunctor(parameters<NT> params_) : params(params_) {};
 
-    FunctionFunctor(parameters<NT> &params_) {
-      params.order = params_.order;
-      params.alpha = params_.alpha;
-    };
-
-    // The index i represents the state vector index
     NT operator() (Point const& x) const {
       return 0.5 * params.alpha * x.dot(x);
     }
@@ -239,9 +249,12 @@ void test_hmc(){
 
     RandomNumberGenerator rng(1);
     
-    // Define the sampler parameters
-    HamiltonianMonteCarloWalk::parameters<NT> hmc_params;
+    // Define dimensionality
     unsigned int dim = 10;
+    
+    // Define the sampler parameters
+    HamiltonianMonteCarloWalk::parameters<NT> hmc_params(F, dim);
+    
     
     // Generate the domain of truncation (H-Cube in 10 dimensions)
     Hpolytope P = gen_cube<Hpolytope>(dim, false);
@@ -257,14 +270,16 @@ void test_hmc(){
     // Initialize a point to calculate the ergodic mean	
     Point mean(dim);
     
-    // Draw 15000 samples 
+    // Plan to draw 15000 samples 
     int n_samples = 15000;
 
+    // Draw the samples
     for (int i = 0; i < n_samples; i++) {
       hmc.apply(rng, 1);
       mean = mean + hmc.x;
     }
 
+    // Scale the mean
     mean = (1.0 / n_samples) * mean;
     
     std::cout << "Mean of " << n_samples << " is: " << mean.getCoefficients() << std::endl;
@@ -277,19 +292,9 @@ void test_hmc(){
 
 ### Scaling
 
-#### Un-truncated Setting
+VolEsti is able to scale efficiently to multiple dimensions and compete with libraries like TensorFlow or mc-stan. Below we showcase an comparison of drawing 1000 samples using the Leapfrog method in VolEsti, mc-stan, and Tensorflow for a range of dimensions $$d \in \{1, \dots 100 \} $$. We provide a semilog-y plot of the ETA as a function of the dimensions. As we observe VolEsti is significantly faster than its counterparts from 1000 to 100 times, for a large number of dimensions. We have used the density $$f(x) = (x + \mathbf 1)^T x$$ with a gradient of $$\nabla f(x) = x + \mathbf 1$$, where $$\mathbf 1$$ is the $$d$$-dimensional vector with all entries equal to 1. We also compare how VolEsti scales when truncation is imposed. More specifically, we use the same density negative log-probability of $$f(x) =  (x + \mathbf 1)^T x$$, defined either on $$\mathbb R^d$$ (un-truncated setting) or to the $$d$$-dimensional cube $$\mathbb H_d = \{ x \in \mathbb R^d \mid \| x \|_{\infty} \le 1  \}$$. The comparisons are compiled to a Colab notebook [here](https://colab.research.google.com/drive/104i-N1Na0nsj_zEK5l0d-VHnAOw67hXt?usp=sharing). 
 
-VolEsti is able to scale efficiently to multiple dimensions and compete with libraries like TensorFlow or mc-stan. Below we showcase an comparison of drawing 1000 samples using the Leapfrog method in VolEsti, mc-stan, and Tensorflow for a range of dimensions $$d \in \{1, \dots 100 \} $$. We provide a semilog-y plot of the ETA as a function of the dimensions. As we observe VolEsti is significantly faster than its counterparts from 1000 to 100 times, for a large number of dimensions. We have used the density $$f(x) = (x + \mathbf 1)^T x$$ with a gradient of $$\nabla f(x) = x + \mathbf 1$$, where $$\mathbf 1$$ is the $$d$$-dimensional vector with all entries equal to 1.
-
-#### Truncated Setting
-
-Below we compare how VolEsti scales when truncation is imposed. More specifically, we use the same density negative log-probability of $$f(x) =  (x + \mathbf 1)^T x$$, defined either on $$\mathbb R^d$$ (un-truncated setting) or to the $$d$$-dimensional cube $$\mathbb H_d = \{ x \in \mathbb R^d \mid \| x \|_{\infty} \le 1  \}$$. 
-
-  
-
-
-
-
+ 
 
 ### References
 
