@@ -155,9 +155,11 @@ These ODEs can also be restricted to a Cartesian product of domains $$K_1, \dots
 
 
 
-Below, we give the reader a taste of the results using the function $$f(x) = \| x \|^2 + \mathbf 1^T x$$ which has a mode at $$x = - \frac 1 2 \mathbf 1$$ in $$d = 1$$  dimensions using HMC.
+Below, we give the reader a taste of the results using the function $$f(x) = \| x \|^2 + \mathbf 1^T x$$ which has a mode at $$x = - \frac 1 2 \mathbf 1$$ in $$d = 1$$  dimensions restricted to $$[-1, 1]$$ using HMC (via the C++ back-end).
 
-
+<center>
+    <img src="https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/_posts/figures/hmc_example.png">
+</center>
 
 ## Scaling
 
