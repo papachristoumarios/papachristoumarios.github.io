@@ -120,177 +120,46 @@ A more challenging, from an algorithmic standpoint, setting is when the distribu
 </center>
 The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary, that corresponds to the smallest $$t_0 \in [0, 1]$$ such that the point $$t_0 x + (1 - t_0) \tilde x \in \partial S$$. The resulting boundary point is used as a pivot point for the reflection of the position and the velocity term. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection. When the trajectory between the initial point and the proposed point is more complicated, for example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves) or interior-point methods (using COIN-OR IPOPT) in case the problem is approached from a non-linear optimization perspective or a transform-based approach (such as the Chebyshev transform). 
 
+## Using the API
 
+Currently, the project comes out with two API flavours: C++ and R. While the R interface will work better for beginner users and simpler applications, the C++ interface is in general faster (but harder to program). Both APIs are based on the same philosophy: One needs to define a functor for the negative log-probability $$f(x)$$ and  its negative gradient $$- \nabla f(x)$$ so that the HMC/ULD samplers can operate using this oracle information. For the R API we provide the following simple [example](https://raw.githubusercontent.com/papachristoumarios/volume_approximation/log-concave-samplers-temp/examples/logconcave/simple_hmc.r) which showcases the straightforward use of the R API to sample. All the user needs to do is to define the following functions
 
-### Using the R API of GeomScale (for beginners)
+```R
+f <- function(x) {
+	# Return negative log-probability
+}
 
-TBA.
-
-
-
-### Using the C++ API of GeomScale (for experts)
-
- First one has to define a custom density. For example, below we consider the density $$\pi(x) \propto \exp(-f(x))$$ with $$f(x) = \frac 1 2 a x^T x$$ . We need two classes for defining the density, one which defines $$f(x)$$ and the other which defines the _negative gradient_ $$-\nabla f(x) = - a x$$. The following piece of code defines such functions
-
-```cpp
-struct IsotropicQuadraticFunctor {
-
-  // Holds function oracle and gradient oracle for the function 1/2 a ||x||^2
-  template <
-      typename NT
-  >
-  struct parameters {
-    NT alpha;
-    unsigned int order;
-    NT L; // Lipschitz constant of gradient
-    NT m; // Strong-convexity parameter
-    NT kappa; // Condition number
-
-    parameters() :
-      alpha(NT(1)),
-      order(1),
-      L(NT(1)),
-      m(NT(1)),
-      kappa(1)
-     {};
-
-    parameters(
-      NT alpha_,
-      unsigned int order_) :
-      alpha(alpha_),
-      order(order_),
-      L(alpha_),
-      m(alpha_),
-      kappa(1)
-    {}
-  };
-
-  template
-  <
-      typename Point
-  >
-  struct GradientFunctor {
-    typedef typename Point::FT NT;
-    typedef std::vector<Point> pts;
-
-    parameters<NT> &params;
-
-    GradientFunctor(parameters<NT> params_) : params(params_) {};
-
-    // The index i represents the state vector index
-    Point operator() (unsigned int const& i, pts const& xs, NT const& t) const {
-      if (i == params.order - 1) {
-        return (-params.alpha) * xs[0]; // returns - a*x
-      } else {
-        return xs[i + 1]; // returns derivative
-      }
-    }
-
-  };
-
-  template
-  <
-    typename Point
-  >
-  struct FunctionFunctor {
-    typedef typename Point::FT NT;
-
-    parameters<NT> &params;
-
-    FunctionFunctor(parameters<NT> params_) : params(params_) {};
-
-    NT operator() (Point const& x) const {
-      return 0.5 * params.alpha * x.dot(x);
-    }
-
-  };
-
-};
+grad_f <- function(x) {
+	# Return negative log-probability gradient
+}
 ```
 
-We discern the following classes
+which are given (and wrapped) by the C++ back-bone through the `sample_points` function. For more information on how to use the R interface of the project, we redirect the interested reader to [this tutorial](https://vissarion.github.io/tutorials/volesti_tutorial_pydata.html). 
 
-* Note that the `GradientFunctor` is a functor responsible for returning all the derivatives of the HMC ODE, which is considered to have the general form of 
+For the C++ API we provide [this example](https://raw.githubusercontent.com/papachristoumarios/volume_approximation/log-concave-samplers-temp/examples/logconcave/simple_hmc.cpp) for operation. In this case we define the `CustomFunctor` super-class which contains three sub-classes:
+
+* The `GradientFunctor` which is a functor responsible for returning all the derivatives of the HMC ODE, which is considered to have the general form of 
 <center>
     $$\frac {d^n x}{dt^n} = F(x, t)$$
 </center>
-which in the case of HMC returns the pair $$(v, - \nabla f(x))$$ using the index counter after transforming the  higher-order ODE to a first-order ODE in a higher-dimensional space, namely
+which in the case of HMC has $$n = 2$$ and returns the pair $$(v, - \nabla f(x))$$ using the index counter after transforming the  higher-order ODE to a first-order ODE in a higher-dimensional space. The same functor definitions can be used to define higher-order ODEs (for other applications) via the same transformation:
+
 <center>
     $$\dot x_i = \begin{cases} F(x_1, t) & i = n \\ x_{i + 1} & 1 \le i \le n - 1 \end{cases}$$
 </center>
 
-One can also restrict the ODEs to a Cartesian product of domains $$K_1, \dots, K_n$$ (which in the case of HMC is $$K \times \mathbb R^d \subseteq \mathbb R^d \times \mathbb R^d$$).  
+These ODEs can also be restricted to a Cartesian product of domains $$K_1, \dots, K_n$$ (which in the case of HMC is $$K \times \mathbb R^d \subseteq \mathbb R^d \times \mathbb R^d$$).  
 
-*  `FunctionFunctor` class is a functor that returns $$f(x)$$ with the `operator()` method
+* `FunctionFunctor` class is a functor that returns $$f(x)$$ with the `operator()` method
 * The `parameters` class which holds any required parameters and must contain the derivative order of the oracle.
 
-One then can define the sampler as
 
-```cpp
-template <typename NT>
-void test_hmc(){
-	// typedefs
-    typedef Cartesian<NT>    Kernel;
-    typedef typename Kernel::Point    Point;
-    typedef std::vector<Point> pts;
-    typedef HPolytope<Point> Hpolytope;
-    typedef BoostRandomNumberGenerator<boost::mt19937, NT> RandomNumberGenerator;
-    typedef IsotropicQuadraticFunctor::GradientFunctor<Point> neg_gradient_func;
-    typedef IsotropicQuadraticFunctor::FunctionFunctor<Point> neg_logprob_func;
-    typedef LeapfrogODESolver<Point, NT, Hpolytope, neg_gradient_func> Solver;
 
-   	// Define and set the order for the HMC equations
-    IsotropicQuadraticFunctor::parameters<NT> params;
-    params.order = 2;
-
-    // Define the functors
-    neg_gradient_func F(params);
-    neg_logprob_func f(params);
-
-    RandomNumberGenerator rng(1);
-    
-    // Define dimensionality
-    unsigned int dim = 10;
-    
-    // Define the sampler parameters
-    HamiltonianMonteCarloWalk::parameters<NT> hmc_params(F, dim);
-    
-    
-    // Generate the domain of truncation (H-Cube in 10 dimensions)
-    Hpolytope P = gen_cube<Hpolytope>(dim, false);
-    
-    // Naively picked starting point. A warm start can be considered to be a truncated Gaussian sample with zero mean
-    Point x0(dim);
-
-    // Initialize the sampler	
-    HamiltonianMonteCarloWalk::Walk
-      <Point, Hpolytope, RandomNumberGenerator, neg_gradient_func, neg_logprob_func, Solver>
-      hmc(&P, x0, F, f, hmc_params);
-
-    // Initialize a point to calculate the ergodic mean	
-    Point mean(dim);
-    
-    // Plan to draw 15000 samples 
-    int n_samples = 15000;
-
-    // Draw the samples
-    for (int i = 0; i < n_samples; i++) {
-      hmc.apply(rng, 1);
-      mean = mean + hmc.x;
-    }
-
-    // Scale the mean
-    mean = (1.0 / n_samples) * mean;
-    
-    std::cout << "Mean of " << n_samples << " is: " << mean.getCoefficients() << std::endl;
-    
-}
-
-```
+Below, we give the reader a taste of the results using the function $$f(x) = \| x \|^2 + \mathbf 1^T x$$ which has a mode at $$x = - \frac 1 2 \mathbf 1$$ in $$d = 1$$  dimensions using HMC.
 
 
 
-### Scaling
+## Scaling
 
 VolEsti is able to scale efficiently to multiple dimensions and compete with TensorFlow and mc-stan. Below we showcase an comparison of drawing $$N = 1000$$ samples using the Leapfrog method in VolEsti, mc-stan, and Tensorflow for a range of dimensions $$d \in \{1, \dots 100 \} $$. We provide a semilog-y plot of the ETA as a function of the dimensions. As we observe VolEsti is significantly faster than its counterparts from 1000 to 100 times, for a large number of dimensions in the  truncated case. We have used the density $$f(x) = (x + \mathbf 1)^T x$$ with a gradient of $$\nabla f(x) = x + \mathbf 1$$, where $$\mathbf 1$$ is the $$d$$-dimensional vector with all entries equal to 1. We also compare how VolEsti scales when truncation is imposed. More specifically, we use the same density negative log-probability of $$f(x) =  (x + \mathbf 1)^T x$$, defined either on $$\mathbb R^d$$ (un-truncated setting) or to the $$d$$-dimensional cube $$\mathbb H_d = \{ x \in \mathbb R^d \mid \| x \|_{\infty} \le 1  \}$$. The comparisons are compiled to a Colab notebook [here](https://colab.research.google.com/drive/104i-N1Na0nsj_zEK5l0d-VHnAOw67hXt?usp=sharing).
 
@@ -301,7 +170,7 @@ VolEsti is able to scale efficiently to multiple dimensions and compete with Ten
 
 
 
- 
+
 
 ### References
 
