@@ -3,12 +3,10 @@ layout: post
 title: "Sampling from high-dimensional (truncated) log-concave densities with GeomScale: A Gentle Introduction"
 date: 2020-07-21 17:00:00 +0200
 categories:
-hidden: true
+hidden: false
 ---
 
 > This article serves as a reference article for my _Google Summer of Code 2020_ internship at the GeomScale organization. The project repository can be found [here](https://github.com/GeomScale/volume_approximation).
-
-**THE ARTICLE IS A WORK IN PROGRESS AND IS UPDATED DAILY. WILL CONTAIN MISTAKES**
 
 
 
@@ -120,7 +118,7 @@ A more challenging, from an algorithmic standpoint, setting is when the distribu
 </center>
 The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary, that corresponds to the smallest $$t_0 \in [0, 1]$$ such that the point $$t_0 x + (1 - t_0) \tilde x \in \partial S$$. The resulting boundary point is used as a pivot point for the reflection of the position and the velocity term. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection. When the trajectory between the initial point and the proposed point is more complicated, for example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves) or interior-point methods (using COIN-OR IPOPT) in case the problem is approached from a non-linear optimization perspective or a transform-based approach (such as the Chebyshev transform). 
 
-## Using the API
+## Using the API (C++ and R)
 
 Currently, the project comes out with two API flavours: C++ and R. While the R interface will work better for beginner users and simpler applications, the C++ interface is in general faster (but harder to program). Both APIs are based on the same philosophy: One needs to define a functor for the negative log-probability $$f(x)$$ and  its negative gradient $$- \nabla f(x)$$ so that the HMC/ULD samplers can operate using this oracle information. For the R API we provide the following simple [example](https://raw.githubusercontent.com/papachristoumarios/volume_approximation/log-concave-samplers-temp/examples/logconcave/simple_hmc.r) which showcases the straightforward use of the R API to sample. All the user needs to do is to define the following functions
 
@@ -165,7 +163,7 @@ and the same distribution (with the R API) truncated to the set $$K = [-1, 2]$$.
     <img src="https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/_posts/figures/simple_hmc_R.png">
 </center>
 
-## Scaling
+# Scaling
 
 VolEsti is able to scale efficiently to multiple dimensions and compete with TensorFlow and mc-stan. Below we showcase an comparison of drawing $$N = 1000$$ samples using the Leapfrog method in VolEsti, mc-stan, and Tensorflow for a range of dimensions $$d \in \{1, \dots 100 \} $$. We provide a semilog-y plot of the ETA as a function of the dimensions. As we observe VolEsti is significantly faster than its counterparts from 1000 to 100 times, for a large number of dimensions in the  truncated case. We have used the density $$f(x) = (x + \mathbf 1)^T x$$ with a gradient of $$\nabla f(x) = x + \mathbf 1$$, where $$\mathbf 1$$ is the $$d$$-dimensional vector with all entries equal to 1. We also compare how VolEsti scales when truncation is imposed. More specifically, we use the same density negative log-probability of $$f(x) =  (x + \mathbf 1)^T x$$, defined either on $$\mathbb R^d$$ (un-truncated setting) or to the $$d$$-dimensional cube $$\mathbb H_d = \{ x \in \mathbb R^d \mid \| x \|_{\infty} \le 1  \}$$. The comparisons are compiled to a Colab notebook [here](https://colab.research.google.com/drive/104i-N1Na0nsj_zEK5l0d-VHnAOw67hXt?usp=sharing).
 
