@@ -116,7 +116,29 @@ A more challenging, from an algorithmic standpoint, setting is when the distribu
 <center>
    $$\pi_S(x) = \frac {\pi(x) \mathbf 1 \{ x \in S \}} {\int_S \pi(s) ds}$$
 </center>
-The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary, that corresponds to the smallest $$t_0 \in [0, 1]$$ such that the point $$t_0 x + (1 - t_0) \tilde x \in \partial S$$. The resulting boundary point is used as a pivot point for the reflection of the position and the velocity term. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection. When the trajectory between the initial point and the proposed point is more complicated, for example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves) or interior-point methods (using COIN-OR IPOPT) in case the problem is approached from a non-linear optimization perspective or a transform-based approach (such as the Chebyshev transform). 
+The adjustment to the HMC equations is that in the truncated setting, is imposing reflections of the particle at the boundary $$\partial S$$ .  From a computational viewpoint, in the case of the leapfrog integrator, one has to find the point at which the trajectory between $$x$$ and $$\tilde x$$ , that is $$tx + (1 - t)\tilde x$$ for $$t \in [0, 1]$$, intersects with some boundary, that corresponds to the smallest $$t_0 \in [0, 1]$$ such that the point $$t_0 x + (1 - t_0) \tilde x \in \partial S$$. The resulting boundary point is used as a pivot point for the reflection of the position and the velocity term. In its simplest case, one can use the Cyrus-Beck algorithm to calculate this intersection. 
+
+For example, for an H-polytope $$H = \{ x \in \mathbb R^d \mid Ax \le b \}$$ where  $$A$$ is an $$m \times d$$ real matrix with rows $$\{ a_i \}_{i \in [m]}$$ and $$b$$ is an $$m \times 1$$ vector with entries $$\{ b_i \}_{i \in [m]}$$, the boundary intersection problem involves finding the smallest $$t_0 \in [0, 1]$$ such that 
+
+<center>
+    $$ a_i^T p(t) = b_i$$
+</center>
+
+where $$p(t)$$ is the trajectory between $$x$$ and $$\tilde x$$ (e.g. a line segment). When the trajectory between the initial point and the proposed point is more complicated, that is 
+
+<center>
+    $$p(t) = \sum_{i = 1}^k c_i \phi_i(t)$$
+</center>
+
+where $$\{ \phi_i \}_{i \in [k]}$$ is a set of basis functions  (e.g. polynomials $$\phi_j(t) = (t - t_0)^j$$) and $$\{ c_i \}_{i \in [k]}$$ is a set of $$k$$ points in $$\mathbb R^d$$, the equation becomes
+
+<center>
+    $$\sum_{j = 1}^k c_j^T a_i \phi_j(t) = b_i$$
+</center>
+
+which, in general, has no closed-form solution and needs numerical methods.  For example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves) or interior-point methods (using COIN-OR IPOPT) in case the problem is approached from a non-linear optimization perspective or a transform-based approach (such as the Chebyshev transform). 
+
+
 
 ## Using the API (C++ and R)
 
@@ -162,6 +184,11 @@ and the same distribution (with the R API) truncated to the set $$K = [-1, 2]$$.
 <center>
     <img src="https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/_posts/figures/simple_hmc_R.png">
 </center>
+### Bonus: ODE solvers API (C++ and R)
+
+We also provide the standalone ode solvers for solving an ODE of the form $$\frac {d^n x} {dt^n} = F(x, t)$$ where each temporal derivative of $$x$$ is restricted to a domain (H-polytopes supported only). Examples for C++ and R can be found [here](https://github.com/papachristoumarios/volume_approximation/tree/log-concave-samplers-temp/examples/logconcave). 
+
+
 
 # Scaling
 
