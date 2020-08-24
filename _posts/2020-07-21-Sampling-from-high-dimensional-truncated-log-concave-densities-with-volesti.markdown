@@ -135,7 +135,7 @@ where $$\{ \phi_i \}_{i \in [k]}$$ is a set of basis functions  (e.g. polynomial
 <center>
     $$\sum_{j = 1}^k c_j^T a_i \phi_j(t) = b_i$$
 </center>
-which, in general, has no closed-form solution and needs numerical methods.  For example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves) or interior-point methods (using COIN-OR IPOPT) in case the problem is approached from a non-linear optimization perspective or a transform-based approach (such as the Chebyshev transform). 
+which, in general, has no closed-form solution and needs numerical methods.  For example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves) or interior-point methods (using COIN-OR IPOPT) in case the problem is approached from a non-linear optimization perspective or a transform-based approach, such as the Chebyshev transform, for the Lagrange basis evaluated on the Chebyshev nodes. 
 
 
 
@@ -152,14 +152,14 @@ Back to sampling, the LD process evolves via the following SDE
 where $$B_t$$ is a standard Brownian Motion. If we discretize the above SDE with the Euler-Maruyamma  method, that is
 
 <center>
-    $$ x_{k + 1} = - \eta \nabla f(x_k) + \sqrt {2 \eta} z_k $$ <br>
+    $$ x_{k + 1} = - \eta \nabla f(x_k) + \sqrt {2 \eta} z_k $$
     $$ z_k \sim \mathcal N(0, I_d) $$
 </center>
 
 and combine it with a Metropolis filter, we can sample from a stationary measure proportional to $$\exp(-f(x))$$, that is the [Langevin MCMC](https://projecteuclid.org/euclid.bj/1178291835) algorithm. Moreover, the form that is most similar to HMC is the ULD process described by the following SDE
 
 <center>
-    $$dx = v \; dt$$ <br>
+    $$dx = v \; dt$$
     $$dv = - 2 v \; dt - u \nabla f(x(t)) \; dt + 2 \sqrt u \; d B_t $$
 </center>
 
