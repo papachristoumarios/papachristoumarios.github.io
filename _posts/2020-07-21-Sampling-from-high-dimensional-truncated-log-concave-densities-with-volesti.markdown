@@ -121,8 +121,9 @@ The adjustment to the HMC equations is that in the truncated setting, is imposin
 For example, for an H-polytope $$H = \{ x \in \mathbb R^d \mid Ax \le b \}$$ where  $$A$$ is an $$m \times d$$ real matrix with rows $$\{ a_i \}_{i \in [m]}$$ and $$b$$ is an $$m \times 1$$ vector with entries $$\{ b_i \}_{i \in [m]}$$, the boundary intersection problem involves finding the smallest $$t_0 \in [0, 1]$$ such that 
 
 <center>
-    $$ a_i^T p(t) = b_i$$
+    $$ a_i^T p(t_0) = b_i$$
 </center>
+
 
 where $$p(t)$$ is the trajectory between $$x$$ and $$\tilde x$$ (e.g. a line segment). When the trajectory between the initial point and the proposed point is more complicated, that is 
 
