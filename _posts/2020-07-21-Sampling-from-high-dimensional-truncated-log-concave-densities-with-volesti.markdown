@@ -135,10 +135,37 @@ where $$\{ \phi_i \}_{i \in [k]}$$ is a set of basis functions  (e.g. polynomial
 <center>
     $$\sum_{j = 1}^k c_j^T a_i \phi_j(t) = b_i$$
 </center>
-
 which, in general, has no closed-form solution and needs numerical methods.  For example in the collocation method, one should reside in Newton-based methods (for instance the [MPSolve](https://github.com/robol/MPSolve) package for polynomial curves) or interior-point methods (using COIN-OR IPOPT) in case the problem is approached from a non-linear optimization perspective or a transform-based approach (such as the Chebyshev transform). 
 
 
+
+### Langevin Diffusion
+
+Another method used for MCMC sampling is the (Underdamped) Langevin Diffusion. The Langevin Diffusion has a long story in physics: it is a Stochastic Differential Equation (SDE) that describes the Brownian Motion, which models the random movement of a molecule in a fluid due to collisions with other molecules.  The well-known formulations of the Langevin Diffusion process involve the standard Langevin Diffusion (LD), and the Underdamped Langevin Diffusion (ULD). 
+
+Back to sampling, the LD process evolves via the following SDE
+
+<center>
+    $$d x = - \nabla f(x(t)) \; dt + d B_t$$
+</center>
+
+where $$B_t$$ is a standard Brownian Motion. If we discretize the above SDE with the Euler-Maruyamma  method, that is
+
+<center>
+    $$ x_{k + 1} = - \eta \nabla f(x_k) + \sqrt {2 \eta} z_k $$ <br>
+    $$ z_k \sim \mathcal N(0, I_d) $$
+</center>
+
+and combine it with a Metropolis filter, we can sample from a stationary measure proportional to $$\exp(-f(x))$$, that is the [Langevin MCMC](https://projecteuclid.org/euclid.bj/1178291835) algorithm. Moreover, the form that is most similar to HMC is the ULD process described by the following SDE
+
+<center>
+    $$dx = v \; dt$$ <br>
+    $$dv = - 2 v \; dt - u \nabla f(x(t)) \; dt + 2 \sqrt u \; d B_t $$
+</center>
+
+where $$u = 1 / L$$, and $$L$$ is the smoothness constant of the negative log probability function $$f(x)$$, that converges to a stationary measure similar to HMC, that is $$\pi(x, v) \propto \exp \left (- f(x) + \frac L 2 \| v \|^2 \right )$$. Our current software supports ULD sampling using the Randomized Midpoint Method for discretization described in [this paper](https://papers.nips.cc/paper/8483-the-randomized-midpoint-method-for-log-concave-sampling.pdf) by Shen, and Lee.
+
+  
 
 ## Using the API (C++ and R)
 
@@ -211,12 +238,20 @@ VolEsti is able to scale efficiently to multiple dimensions and compete with Ten
 
 3. Betancourt, Michael. "A conceptual introduction to Hamiltonian Monte Carlo." *arXiv preprint arXiv:1701.02434* (2017).
 
-4. Lee, Yin Tat, Ruoqi Shen, and Kevin Tian. "Logsmooth Gradient Concentration and Tighter Runtimes for Metropolized Hamiltonian Monte Carlo." *arXiv preprint arXiv:2002.04121* (2020).
+4. Roberts, Gareth O., and Richard L. Tweedie. "Exponential convergence of Langevin distributions and their discrete approximations." *Bernoulli* 2.4 (1996): 341-363.
 
-5. Shen, Ruoqi, and Yin Tat Lee. "The randomized midpoint method for log-concave sampling." *Advances in Neural Information Processing Systems*. 2019.
+5. Gelfand, Saul B., and Sanjoy K. Mitter. "Recursive stochastic algorithms for global optimization in $$\mathbb R^d$$." *SIAM Journal on Control and Optimization* 29.5 (1991): 999-1018.
 
-6. Chevallier, Augustin, Sylvain Pion, and Frédéric Cazals. "Hamiltonian Monte Carlo with boundary reflections, and application to polytope volume calculations." (2018).
+6. Durmus, Alain, Szymon Majewski, and Blazej Miasojedow. "Analysis of Langevin Monte Carlo via Convex Optimization." *J. Mach. Learn. Res.* 20 (2019): 73-1.
 
-7. Duane, Simon, et al. "Hybrid monte carlo." *Physics letters B* 195.2 (1987): 216-222.
+7. Cheng, Xiang, et al. "Underdamped Langevin MCMC: A non-asymptotic analysis." *Conference on Learning Theory*. 2018.
 
-   
+8. Lee, Yin Tat, Ruoqi Shen, and Kevin Tian. "Logsmooth Gradient Concentration and Tighter Runtimes for Metropolized Hamiltonian Monte Carlo." *arXiv preprint arXiv:2002.04121* (2020).
+
+9. Shen, Ruoqi, and Yin Tat Lee. "The randomized midpoint method for log-concave sampling." *Advances in Neural Information Processing Systems*. 2019.
+
+10. Chevallier, Augustin, Sylvain Pion, and Frédéric Cazals. "Hamiltonian Monte Carlo with boundary reflections, and application to polytope volume calculations." (2018).
+
+11. Duane, Simon, et al. "Hybrid monte carlo." *Physics letters B* 195.2 (1987): 216-222.
+
+     
