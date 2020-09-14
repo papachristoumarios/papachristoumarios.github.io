@@ -17,7 +17,7 @@ My work is accessible via the following _profiles_
 
 A more detailed CV can be found [here](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf).
 
-**Contact:** (last\_name)(first\_name) [at\] gmail \[dot] com
+**Contact:** (last\_name)(first\_name) [at\] cs.cornell \[dot] edu
 
 ### Publications
 
