@@ -7,11 +7,19 @@ Most of my projects can be found via [my GitHub page](https://github.com/papachr
 
 Here you can have a look at my past and current projects
 
+### Sampling from high-dimensional truncated log-concave densities
+
+During my internship at Google Summer of Code 2020 at the [GeomScale](https://geomscale.github.io/) project, I developed algorithms for
+sampling from high-dimensional truncated log-concave densities using MCMC methods.
+I developed ODE and SDE solvers which can be used for sampling when the negative log-probability function and its gradient are provided
+as oracles, and the MCMC chain is constrained in a convex domain.
+You can find the software [here](https://github.com/papachristoumarios/volume_approximation), and a [related blog post here](https://papachristoumarios.github.io/2020/07/21/Sampling-from-high-dimensional-truncated-log-concave-densities-with-volesti/).
+
 ### Autogyro Control for the CanSat Competition
 
-Develop an autogyro control system for the descent of a payload as part of the CanSat Competition, organized by NASA and the American Astronautical Society as part of the [White Noise](https://whitenoise.gr) Team, winning the 4th position, out of 93 teams. 
+Develop an autogyro control system for the descent of a payload as part of the CanSat Competition, organized by NASA and the American Astronautical Society as part of the [White Noise](https://whitenoise.gr) Team, winning the 4th position, out of 93 teams.
 
-My responsibilities included the descent control system design which controlled the payload through control fins. I used optimal control for the control of the system and clustering for inverting the fin model used for simulation. The control software can be found [here](https://github.com/white-noise-ntua/autogyro-control) and the rest of the code for the mission [here](https://github.com/white-noise-ntua). 
+My responsibilities included the descent control system design which controlled the payload through control fins. I used optimal control for the control of the system and clustering for inverting the fin model used for simulation. The control software can be found [here](https://github.com/white-noise-ntua/autogyro-control) and the rest of the code for the mission [here](https://github.com/white-noise-ntua).
 
 ### SADE
 
