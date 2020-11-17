@@ -4,8 +4,7 @@ title: Talks
 permalink: /talks/
 ---
 
-* GeomScale Project. Tutorial on log-concave sampling
-  * [Log-concave sampling (Part I)](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/publications/presentations/log_concave_sampling/log_concave_sampling.pdf)
+* [Sampling from truncated log-concave densities](https://www.youtube.com/watch?v=P7YfC8Nn6sY&t=5s), PyData Global 2020.
 
 ---
 
