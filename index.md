@@ -22,5 +22,7 @@ A more detailed CV can be found [here](https://github.com/papachristoumarios/pap
 **Contact**
 
 :e-mail: papachristoumarios@cs.cornell.edu
+
 :office: 301 Bill and Melinda Gates Hall
+
 :octocat: papachristoumarios
