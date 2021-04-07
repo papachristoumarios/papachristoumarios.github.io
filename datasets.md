@@ -18,6 +18,13 @@ Data in this category consist of unweighted directed networks where each node ha
 * [pokec](https://drive.google.com/file/d/1mYF3E5adntiTbwb4EWp4SrAhYMD9yPMU/view?usp=sharing). Derived from [soc-pokec](https://snap.stanford.edu/data/soc-pokec.html). The data contains users of the pokec social network where users with private information have been filtered out. The attributes of each user are derived by looking at his/her corresponding profile interests (described in the original network).
 * [github](https://drive.google.com/file/d/1tqP-1uJvmKq96XsGmXCKTaHZV-FXs5i2/view?usp=sharing). Contains data gathered from [GHTorrent](https://ghtorrent.org) where nodes are github projects and attributes are programming languages that the corresponding project contains.
 
+#### Call Graphs
+
+These datasets contain call graphs derived using the [cscout](https://github.com/dspinellis/cscout) tool. Each file represents a directed call graph where each line corresponds to a directed edge between two entities (files, functions etc.).
+
+ * [Linux Kernel 4.21](https://zenodo.org/record/2652487#.YG0GLhNKjlw). The data was used to conduct [this study](https://dl.acm.org/doi/10.1145/3338906.3342483). 
+ * [Call Graphs of many open-source projects](https://github.com/papachristoumarios/call-graphs). Contains call graphs of multiple open-source projects (described in the README). 
+
 ### Other resources 
 
  * Network Science
