@@ -13,16 +13,16 @@ __Under construction__
 
 ### Other resources 
 
-* Network Science
- * [SNAP](http://snap.stanford.edu/)
- * [Network Repository](http://networkrepository.com/index.php)
- * [GHTorrent](https://ghtorrent.org/)
- * [UCINET](https://networkdata.ics.uci.edu/resources.php)
- * [Austin Benson's Data Webpage](https://www.cs.cornell.edu/~arb/data/)
-* Computational Geometry & Computational Biology
- * [BiGG Models](http://bigg.ucsd.edu/)
- * [Netlib LPs](https://www.netlib.org/lp/data/index.html)
-* Dataset Search Engines
- * [data.world](https://data.https//data.world/)
- * [Dataset Search](https://datasetsearch.research.google.com/)  
- * [Kaggle](https://www.kaggle.com/)
+ * Network Science
+   * [SNAP](http://snap.stanford.edu/)
+   * [Network Repository](http://networkrepository.com/index.php)
+   * [GHTorrent](https://ghtorrent.org/)
+   * [UCINET](https://networkdata.ics.uci.edu/resources.php)
+   * [Austin Benson's Data Webpage](https://www.cs.cornell.edu/~arb/data/)
+ * Computational Geometry & Computational Biology
+   * [BiGG Models](http://bigg.ucsd.edu/)
+   * [Netlib LPs](https://www.netlib.org/lp/data/index.html)
+ * Dataset Search Engines
+   * [data.world](https://data.https//data.world/)
+   * [Dataset Search](https://datasetsearch.research.google.com/)  
+   * [Kaggle](https://www.kaggle.com/)
