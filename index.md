@@ -5,7 +5,7 @@ title:
 
 
 {:.profile}
-![profile](profile_small.png){: style="float: left, margin: 35px"}
+![profile](profile_small.png){: style="float: left; margin: 35px"}
 
 
 I am a first-year PhD student in the _Computer Science Department_ at _Cornell University_; extremely fortunate to be advised by Prof. [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/). I received my undergraduate degree from the School of Electrical and Computer Engineering at the National Technical University of Athens in July 2020 where I completed my Thesis under the supervision of Prof. [Dimitris Fotakis](https://www.softlab.ntua.gr/~fotakis/) working on recommendation systems for very large social networks. I have also been a researcher for the [Business Analytics Lab (BALab)](https://www.balab.aueb.gr), supervised by Prof. [Diomidis Spinellis](https://www2.dmst.aueb.gr/dds/) working on applications of machine learning on software architecture recovery. 
