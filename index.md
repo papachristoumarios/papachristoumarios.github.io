@@ -19,10 +19,3 @@ My _research_ is accessible via the following _profiles_
 
 A more detailed CV can be found [here](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf).
 
-**Contact**
-
-:e-mail: papachristoumarios@cs.cornell.edu
-
-:office: 301 Bill and Melinda Gates Hall
-
-:octocat: papachristoumarios
