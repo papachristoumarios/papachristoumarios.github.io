@@ -23,6 +23,13 @@
 \newcommand{\uf}[2]{\noindent \textbf{#1} \hfill \url{#2} \\}
 \newcommand{\uff}[2]{\item[--] #1 \\ \url{#2}}
 \newcommand{\alphabeticalorder}[0]{\ensuremath  {^\flat}}
+\newcommand{\specialurl}[2]{\href { #2 } {\nolinkurl{[#1]}}}
+\newcommand{\preprint}[1]{\specialurl {preprint} {#1}}
+\newcommand{\code}[1]{\specialurl {code} {#1}}
+\newcommand{\data}[1]{\specialurl {data} {#1}}
+\newcommand{\paper}[1]{\specialurl {paper} {#1}}
+\newcommand{\authorref}[1]{\underline {\textbf{#1}}}
+\newcommand{\authorme}{\authorref{Papachristou, Marios}}
 
 % Increase text height
 \textheight=680pt
@@ -39,12 +46,12 @@
 % -email addresses
 % -linked-in profile
 
-\address{\textsc{GitHub}: \href{http://github.com/papachristoumarios}{\nolinkurl{papachristoumarios}}
+% \address{\textsc{GitHub}: \href{http://github.com/papachristoumarios}{\nolinkurl{papachristoumarios}}
 % \\ 
 %\textsc{Address: Archadjikaki 5, Athens, Greece, 17237 }
-}
-\address{\textsc{email}: \url{papachristoumarios@cs.cornell.edu} % \\ \textsc{Mobile:} (+30) 6979614463
-}
+%}
+% \address{\textsc{email}: \url{papachristoumarios@cs.cornell.edu} % \\ \textsc{Mobile:} (+30) 6979614463
+%}
 
 % Uncomment to add a third address
 %\address{Address 3 line 1\\Address 3 line 2\\Address 3 line 3}
@@ -53,7 +60,14 @@
 
 \begin{resume}
 
-\section{Research \\ Interests} Data Science (information networks, statistical methods, fairness in networks)
+\section{Contact \\ Information} 
+E-mail \hfill \url{papachristoumarios@cs.cornell.edu} \\
+GitHub \hfill \href{http://github.com/papachristoumarios}{\nolinkurl{papachristoumarios}} \\
+Office \hfill 301 Gates Hall, Cornell University \\
+Google Scholar \hfill \specialurl{profile}{https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en}
+
+
+\section{Interests} Data Science (information networks, statistical methods, fairness in networks)
 
 \section{Education}
 \field {Cornell University} {\emph{2020 -- exp. 2026}}
@@ -75,15 +89,19 @@ Diploma (5-year joint degree, 300 ECTS) Electrical \& Computer Engineering (ECE)
 %    Apolytirion, Valedictorian, GPA: 19.8/20.0, top 2\% in National Exams (18,971/20,000)
 
 
-\section{Publications \\ \href{https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en}{\nolinkurl{[Google Scholar]}}}
+\section{Publications}
 
-\begin{compactitem}
+\begin{compactenum}
     %\item[1.] \underline{\textbf{Papachristou, Marios}} and Dimitris Fotakis. "Learning user interests from Influencers in Online Social Networks". \emph{Work in progress}.
-    \item [1.] \underline{\textbf{Papachristou, Marios}} ``Sublinear Domination and Core--periphery networks''. 2021, Preprint. \href{https://arxiv.org/abs/2103.03135} {\nolinkurl{[arxiv]}} 
-    \item [2.] Chalkis, Apostolos, Fisikopoulos Vissarion, \underline{\textbf{Papachristou, Marios\alphabeticalorder}}, and Tsigaridas, Elias. ``Truncated Log-concave Sampling with Reflective Hamiltonian Monte Carlo''. 2021, Preprint. \href{https://arxiv.org/abs/2102.13068}{\nolinkurl{[arxiv]}}
-    \item[3.] \underline{\textbf{Papachristou, Marios}},and Fotakis, Dimitris. ``Stochastic Opinion Dynamics for User Interest Prediction in Online Social Networks''. 2020, \emph{Submitted.}
-    \item[4.] \underline{\textbf{Papachristou, Marios}}. ``Software clusterings with vector semantics and the call graph''. ESEC/FSE 2019. DOI: 10.1145/3338906.3342483. \href{https://dl.acm.org/citation.cfm?id=3342483}{\nolinkurl{[link]}}
-    \item[5.] Kostakis, Vasilis, and \underline{\textbf{Papachristou, Marios}}. ``Commons-based peer production and digital fabrication: The case of a RepRap-based, Lego-built 3D printing-milling machine''. T\&I, 2014. DOI: 10.1016/j.tele.2013.09.006. \href{https://bit.ly/2JRoisV}{\nolinkurl{[link]}} \end{compactitem}
+    
+   \item  \authorme, and Kleinberg, Jon. ``Allocating Stimulus Checks in Times of Crisis''. 2021, \emph{Submitted.} \preprint{https://arxiv.org/abs/2106.07560} \code{https://github.com/papachristoumarios/financial-contagion}     
+    \item \authorme ``Sublinear Domination and Core--periphery networks''. 2021,  \emph{Submitted.}  \preprint{https://arxiv.org/abs/2103.03135} \code{https://bit.ly/3wKNGI0}
+    \item \alphabeticalorder Chalkis, Apostolos, Fisikopoulos Vissarion, \authorme, and Tsigaridas, Elias. ``Truncated Log-concave Sampling with Reflective Hamiltonian Monte Carlo''. 2021 \preprint{https://arxiv.org/abs/2102.13068} \code{https://github.com/GeomScale/volume_approximation}
+    \item \authorme, and Fotakis, Dimitris. ``Stochastic Opinion Dynamics for User Interest Prediction in Online Social Networks''. 2020, \emph{Submitted.}
+    \item \authorme. ``Software clusterings with vector semantics and the call graph''. ESEC/FSE 2019.. \paper{https://dl.acm.org/citation.cfm?id=3342483} \code{https://github.com/papachristoumarios/sade} \data{http://doi.org/10.5281/zenodo.2652487}
+    \item Kostakis, Vasilis, and \authorme. ``Commons-based peer production and digital fabrication: The case of a RepRap-based, Lego-built 3D printing-milling machine''. Telematics and Informatics,  \paper{https://bit.ly/2JRoisV} 
+    
+\end{compactenum}
 
 \alphabeticalorder  = alphabetical order.
 
@@ -134,25 +152,21 @@ Diploma (5-year joint degree, 300 ECTS) Electrical \& Computer Engineering (ECE)
 \field{Google Summer of Code 2020 (GeomScale)}  {\emph{June 2020--}}
 \begin{compactitem}
 \item[--] \emph{Project: Sampling from high-dimensional log-concave densities} 
-\item[--] Develop software for the efficient sampling from high-dimensional log-concave densities using first-order oracles in (un)-truncated settings \href{https://GeomScale/volume_approximation}{\nolinkurl{[github]}} \href{https://papachristoumarios.github.io/2020/07/21/Sampling-from-high-dimensional-truncated-log-concave-densities-with-volesti/}{\nolinkurl{[post]}} \href{https://www.youtube.com/watch?v=P7YfC8Nn6sY}{\nolinkurl{[talk]}}
+\item[--] Develop software for the efficient sampling from high-dimensional log-concave densities using first-order oracles in (un)-truncated settings \code{https://GeomScale/volume_approximation}
+%{\nolinkurl{[github]}} \href{https://papachristoumarios.github.io/2020/07/21/Sampling-from-high-dimensional-truncated-log-concave-densities-with-volesti/}{\nolinkurl{[post]}} \href{https://www.youtube.com/watch?v=P7YfC8Nn6sY}{\nolinkurl{[talk]}}
 \item[--] The software includes ODE and SDE solver and samplers for convex body domains (convex polytopes).
 \end{compactitem}
 
 \field{Google Summer of Code 2018 (GFOSS-OTA)}  {\emph{April 2018--September 2018}}
 \begin{compactitem}
-\item[--] Developed a fully functional project for text mining, cross-linking and automated codification of Greek Legislation using Natural Languaging Processing Methods and Practices. Project is hosted at \href{https://3gm.ellak.gr}{\nolinkurl{3gm.ellak.gr}} \href{https://github.com/eellak/gsoc2018-3gm}{\nolinkurl{[repository]}}
+\item[--] Developed a fully functional project for text mining, cross-linking and automated codification of Greek Legislation using Natural Languaging Processing \& Data Mining Methods and Practices.  \code{https://github.com/eellak/gsoc2018-3gm}. Internet Archive Dataset: \data{https://archive.org/details/greekgovernmentgazette} 
+
+% \href{https://3gm.ellak.gr}{\nolinkurl{3gm.ellak.gr}} \href{https://github.com/eellak/gsoc2018-3gm}{\nolinkurl{[repository]}}
 \begin{compactitem}
-\item[--] Cross-linking into Dynamic Graphs
-\item[--] Automated Codification
-\item[--] Custom Version Control System
-\item[--] Topic Modeling 
-\item[--] Embeddings
-\item[--] Ranking (PageRank)
-\item[--] Language Modeling and Legal Text Generation with DNNs
-\item[--] Greek Legislative Texts Internet Archive Collection \href{https://archive.org/details/greekgovernmentgazette}{\nolinkurl{[link]}}
-\end{compactitem} 
-\item[--] Project is in active development and receives funding
-\item[--] Supervise graduate student for Google Summer of Code 2019 
+\item[--] Cross-linking into Dynamic Graphs, Automated Codification
+\item[--] Topic Modeling, Embeddings, Ranking (PageRank)
+\item[--] Greek Legislative Texts Internet Archive Collection 
+\end{compactitem}
 \end{compactitem}
 
 \field{Ratle (Co-founder)} {\emph{October 2017--October 2018}}
