@@ -19,3 +19,13 @@ My _research_ is accessible via the following _profiles_
 
 A more detailed CV can be found [here](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf).
 
+**Contact**
+
+302 Gates Hall
+Campus Rd, 
+Ithaca, NY 14853
+
+e-mail: papachristoumarios (at] cs [dot) cornell (dot] edu
+
+
+
