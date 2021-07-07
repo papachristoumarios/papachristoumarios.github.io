@@ -19,6 +19,8 @@ My _research_ is accessible via the following _profiles_
 
 A more detailed CV can be found [here](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf).
 
+<script src="https://bibbase.org/show?bib=https%3A%2F%2Fraw.githubusercontent.com%2Fpapachristoumarios%2Fpapachristoumarios.github.io%2Fmaster%2Fcv%2Fpubs.bib&commas=true&jsonp=1"></script>
+
 **Contact**
 
 302 Gates Hall
