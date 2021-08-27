@@ -1,0 +1,38 @@
+@article{papachristou2021allocating,
+  title={Allocating {S}timulus {C}hecks in {T}imes of {C}risis},
+  author={Papachristou, M. and Kleinberg, J.},
+  journal={EAAMO '21 (poster). arXiv:2106.07560},
+  year={2021}
+}
+
+@article{papachristou2021sublinear,
+  title={{S}ublinear {D}omination and {C}ore-periphery {N}etworks},
+  author={Papachristou, M.},
+  journal={Scientific Reports},
+  year={2021},
+  volume={11},
+  publisher={Nature Publishing Group},
+}
+
+@article{eisenberg2001systemic,
+  title={Systemic risk in {F}inancial {S}ystems},
+  author={Eisenberg, L. and Noe, T.H.},
+  journal={Management Science},
+  year={2001},
+  publisher={INFORMS}
+}
+
+@article{papachristou2021stochastic,
+  title={Stochastic {O}pinion {D}ynamics for {I}nterest {P}rediction in {S}ocial {N}etworks},
+  author={Papachristou, M. and Fotakis, D.},
+  journal={arXiv:2107.03449},
+  year={2021}
+}
+
+@inproceedings{abebe2020subsidy,
+  title={Subsidy {A}llocations in the {P}resence of {I}ncome {S}hocks},
+  author={Abebe, R. and Kleinberg, J. and Weinberg, S.M.},
+  booktitle={AAAI 2020},
+
+}
+
