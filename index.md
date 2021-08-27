@@ -17,7 +17,7 @@ My _research_ is accessible via the following _profiles_
  * [Google Scholar](https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en)
  * [GitHub](https://github.com/papachristoumarios)
 
-[CV](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf), [Research Statement]([CV](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/research-statement/research-statement.pdf).
+[CV](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/cv/cv.pdf), [Research Statement](https://github.com/papachristoumarios/papachristoumarios.github.io/raw/master/research-statement/research-statement.pdf).
 
 My personal pronouns are _he/him/his_.
 
