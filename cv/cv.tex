@@ -1,5 +1,5 @@
-\documentclass[margin, 10pt]{res}  
-\usepackage[hidelinks]{hyperref}
+\documentclass[margin]{res}  
+\usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{paralist}
 \usepackage{comment}
@@ -8,7 +8,6 @@
 \newcommand\myshade{85}
 \colorlet{mylinkcolor}{blue}
 \definecolor{chestnut}{rgb}{0.8, 0.36, 0.36}
-\newcommand{\marios}[1]{\textcolor{chestnut}{Marios: #1}}
 \hypersetup{
   linkcolor  = mylinkcolor!\myshade!black,
   citecolor  = mylinkcolor!\myshade!black,
@@ -16,14 +15,11 @@
   colorlinks = true,
 }
 
-
-
-\usepackage{helvet}
 \newcommand{\field}[2]{\noindent \textbf{#1} \hfill #2 \\}
 \newcommand{\uf}[2]{\noindent \textbf{#1} \hfill \url{#2} \\}
 \newcommand{\uff}[2]{\item[--] #1 \\ \url{#2}}
 \newcommand{\alphabeticalorder}[0]{\ensuremath {^{\alpha \beta}}}
-\newcommand{\specialurl}[2]{\href { #2 } {\nolinkurl{[#1]}}}
+\newcommand{\specialurl}[2]{\href {#2} {\texttt{[#1]}}}
 \newcommand{\preprint}[1]{\specialurl {preprint} {#1}}
 \newcommand{\code}[1]{\specialurl {code} {#1}}
 \newcommand{\data}[1]{\specialurl {data} {#1}}
