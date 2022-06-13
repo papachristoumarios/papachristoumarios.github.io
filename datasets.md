@@ -7,9 +7,7 @@ permalink: /datasets/
 Here you will find a collection of datasets available on the public domain for various tasks.
 I strive to make the data I use for my research open. In case anything is not working please contact me at [papachristoumarios@cs.cornell.edu](mailto:papachristoumarios@cs.cornell.edu).
 
-__Under construction__
-
-### Social Networks 
+### Graph Datasets
 
 #### Opinion Dynamics
 
@@ -22,10 +20,18 @@ Data in this category consist of unweighted directed networks where each node ha
 
 These datasets contain call graphs derived using the [cscout](https://github.com/dspinellis/cscout) tool. Each file represents a directed call graph where each line corresponds to a directed edge between two entities (files, functions etc.).
 
- * [Linux Kernel 4.21](https://zenodo.org/record/2652487#.YG0GLhNKjlw). The data was used to conduct [this study](https://dl.acm.org/doi/10.1145/3338906.3342483). 
- * [Call Graphs of many open-source projects](https://github.com/papachristoumarios/call-graphs). Contains call graphs of multiple open-source projects (described in the README). 
+ * [Linux Kernel 4.21](https://zenodo.org/record/2652487#.YG0GLhNKjlw). The data was used to conduct [this study](https://dl.acm.org/doi/10.1145/3338906.3342483).
+ * [Call Graphs of many open-source projects](https://github.com/papachristoumarios/call-graphs). Contains call graphs of multiple open-source projects (described in the README).
 
-### Other resources 
+### Hypergraph Datasets
+
+#### GHTorrent Datasets
+
+In these datasets the nodes of a hypergraph represent users and hyperedges represent repositories, org members etc. that these users belong to. Each user comes with features (such as number of commits, number of followers etc.) used for experiments for [this paper](https://arxiv.org/abs/2206.00783). We provide the SQL queries to create the datasets based on the [GHTorrent MySQL schema](https://ghtorrent.org/relational.html). The post-processed datasets follow the convention of [these](https://www.cs.cornell.edu/~arb/data) hypergraph datasets.
+
+ * [Datasets & MySQL Queries](https://doi.org/10.5281/zenodo.6639983).
+
+### Other resources
 
  * Network Science
    * [SNAP](http://snap.stanford.edu/)
