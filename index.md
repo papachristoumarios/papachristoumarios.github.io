@@ -10,7 +10,7 @@ I am a third-year PhD candidate in the _Computer Science Department_ at _Cornell
 
 I received my undergraduate degree from the School of Electrical and Computer Engineering at the National Technical University of Athens in July 2020 where I completed my thesis under the supervision of Prof. [Dimitris Fotakis](https://www.softlab.ntua.gr/~fotakis/). I have also been a researcher for the [Business Analytics Lab (BALab)](https://www.balab.aueb.gr) at the Department of Management Science and Technology at the Athens University of Economics and Bussiness, supervised by Prof. [Diomidis Spinellis](https://www2.dmst.aueb.gr/dds/) working on applications of machine learning and networks on the topic of software architecture recovery.
 
-[[Google Scholar]](https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en) [[GitHub]](https://github.com/papachristoumarios) [[cv]](https://papachristoumarios.github.io/cv/cv.pdf) [[Twitter]](https://twitter.com/papachristoum) <a rel="me noopener" href="https://mas.to/@papachristoum" target="_blank">[Mastodon]</a> [[LinkedIn]](https://www.linkedin.com/in/papachristoumarios)
+[[Google Scholar]](https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en) [[GitHub]](https://github.com/papachristoumarios) [[CV]](https://papachristoumarios.github.io/cv/cv.pdf) [[Twitter]](https://twitter.com/papachristoum) <a rel="me noopener" href="https://mas.to/@papachristoum" target="_blank">[Mastodon]</a> [[LinkedIn]](https://www.linkedin.com/in/papachristoumarios)
 
 My personal pronouns are _he/him/his_.
 
