@@ -10,9 +10,9 @@ title:
 
 I am a fourth-year Ph.D. candidate in the _Computer Science Department_ at _Cornell University_; extremely fortunate to be advised by Prof. [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/).
 
-My interests lie in algorithms and networks, exploring their roles within large-scale social and information systems, and understanding their wider societal implications. More specifically, I have worked on problems regarding statistical models of graphs and hypergraphs, financial contagion, and supply chain networks.
+My interests lie in algorithms and networks, exploring their roles within large-scale social and information systems, and understanding their wider societal implications.
 
-I currently intern at the [Office of Applied Research](https://www.microsoft.com/en-us/research/group/office-of-applied-research/) at Microsoft Research researching the use of large language models to enchance productivity and user experience. During my Ph.D., I interned at the User Modeling Research Team at [Twitter Cortex](https://cortex.twitter.com), where I worked on scalable methods for node classification. I have also contributed to the open-source [GeomScale](https://geomscale.github.io) organization and the [volesti](https://github.com/GeomScale/volesti) package. 
+During Summer 2023, I interned at the [Office of Applied Research](https://www.microsoft.com/en-us/research/group/office-of-applied-research/) at Microsoft researching the use of large language models in collective intelligence. During my Ph.D., I interned at the User Modeling Research Team at [Twitter Cortex](https://cortex.twitter.com), where I worked on scalable methods for node classification. I have also contributed to the open-source [GeomScale](https://geomscale.github.io) organization and the [volesti](https://github.com/GeomScale/volesti) package. 
 
 My research is supported by the [Onassis Scholarship](https://www.onassis.org/initiatives/scholarships), and has been supported in the past by a [LinkedIn Ph.D. Fellowship](https://cis.cornell.edu/inaugural-grants-announced-strategic-partnership-linkedin), a grant from the [A.G. Leventis Foundation](https://www.leventisfoundation.org/), a grant from the Gerondelis Foundation, and a [Cornell University Fellowship](https://gradschool.cornell.edu/financial-support/fellowships/new-student-fellowships/).
 
