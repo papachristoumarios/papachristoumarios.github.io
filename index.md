@@ -6,6 +6,13 @@ title:
 {:.profile}
 ![profile](profile.png){: style="float: left; width: 45%; margin: 25px"}
 
+## Contact
+
+Office: 302 Gates Hall, Campus Rd, Ithaca, NY 14853
+
+e-mail: papachristoumarios (at] cs [dot) cornell (dot] edu
+
+
 ## Bio
 
 I am a fourth-year Ph.D. candidate in the _Computer Science Department_ at _Cornell University_; extremely fortunate to be advised by Prof. [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/).
@@ -26,12 +33,3 @@ My personal pronouns are _he/him/his_.
 
 <script src="https://bibbase.org/show?bib=https%3A%2F%2Fraw.githubusercontent.com%2Fpapachristoumarios%2Fpapachristoumarios.github.io%2Fmaster%2Fcv%2Fpubs.bib&commas=true&theme=side&jsonp=1"></script>
 
-**Contact**
-
-302 Gates Hall
-
-Campus Rd,
-
-Ithaca, NY 14853
-
-e-mail: papachristoumarios (at] cs [dot) cornell (dot] edu
