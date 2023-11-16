@@ -28,8 +28,10 @@ My personal pronouns are _he/him/his_.
 
 **Contact**
 
-324 Gates Hall
+302 Gates Hall
+
 Campus Rd,
+
 Ithaca, NY 14853
 
 e-mail: papachristoumarios (at] cs [dot) cornell (dot] edu
