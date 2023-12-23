@@ -31,5 +31,5 @@ My personal pronouns are _he/him/his_.
 
 ## Papers
 
-<script src="https://bibbase.org/show?bib=https%3A%2F%2Fraw.githubusercontent.com%2Fpapachristoumarios%2Fpapachristoumarios.github.io%2Fmaster%2Fcv%2Fpubs.bib&commas=true&theme=side&jsonp=1"></script>
+<script src="https://bibbase.org/show?bib=https%3A%2F%2Fraw.githubusercontent.com%2Fpapachristoumarios%2Fpapachristoumarios.github.io%2Fmaster%2Fcv%2Fpubs.bib&commas=true&theme=simple&jsonp=1"></script>
 
