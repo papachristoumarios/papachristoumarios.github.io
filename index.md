@@ -17,7 +17,7 @@ e-mail: papachristoumarios (at] cs [dot) cornell (dot] edu
 
 I am a fourth-year Ph.D. candidate in the _Computer Science Department_ at _Cornell University_; extremely fortunate to be advised by Prof. [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/).
 
-My interests lie in algorithms and networks, exploring their roles within large-scale social and information systems, and understanding their wider societal implications.
+My interests lie in algorithms and networks, exploring their roles within large-scale social and information systems, and understanding their wider societal implications. I am also affiliated with [Cornell's Artificial Intelligence, Policy and Practice Initiative](https://aipp.cis.cornell.edu/). 
 
 During Summer 2023, I interned at the [Office of Applied Research](https://www.microsoft.com/en-us/research/group/office-of-applied-research/) at Microsoft researching the use of large language models in collective intelligence. During my Ph.D., I interned at the User Modeling Research Team at [Twitter Cortex](https://cortex.twitter.com), where I worked on scalable methods for node classification. I have also contributed to the open-source [GeomScale](https://geomscale.github.io) organization and the [volesti](https://github.com/GeomScale/volesti) package. 
 
