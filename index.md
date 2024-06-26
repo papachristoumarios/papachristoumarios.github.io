@@ -4,7 +4,7 @@ title:
 ---
 
 {:.profile}
-![profile](profile.png){: style="float: left; width: 45%; margin: 25px"}
+![profile](profile.jpg){: style="float: left; width: 45%; margin: 25px"}
 
 ## Contact
 
