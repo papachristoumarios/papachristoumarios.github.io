@@ -6,14 +6,11 @@ title:
 {:.profile}
 ![profile](profile.jpg){: style="float: left; width: 45%; margin: 25px"}
 
-## Bio
-
 **I am on the 2024-2025 academic job market looking for academic positions or research industry positions.**
 
 I am a rising fifth-year Ph.D. candidate in the _Computer Science Department_ at _Cornell University_; extremely fortunate to be advised by Prof. [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/).
 
 I work on algorithms and networks, exploring their roles within large-scale social and information systems, and understanding their wider societal implications. I am also affiliated with [Cornell's Artificial Intelligence, Policy, and Practice (AIPP)](https://aipp.cis.cornell.edu/) initiative. 
-
 
 I am interested in 
 
@@ -21,8 +18,6 @@ I am interested in
  * **Privacy Preserving AI.** Exploring how agents learn in a distributed way subject to privacy considerations. Examples include learning with [continuous state spaces](https://www.tandfonline.com/doi/epdf/10.1080/24725854.2024.2337068?needAccess=true), and [discrete state spaces](https://arxiv.org/abs/2402.08156). 
  * **Network Models.** Exploring how (hyper)-graphs form. Examples include learning the structure of [core-periphery graphs](https://www.nature.com/articles/s41598-021-94105-8) and [hypergraphs](https://dl.acm.org/doi/abs/10.1145/3534678.3539272).
  * **LLMs for Social Science.** Exploring the capabilities of LLMs in social science, simulating human behavior, and simulating complex socio-technical systems. Recent examples include [network formation](https://arxiv.org/pdf/2402.10659.pdf) with LLM agents, and [collective decision-making](https://arxiv.org/abs/2311.04928). 
-
-
 
 During my Ph.D., I have interned at the [Office of Applied Research](https://www.microsoft.com/en-us/research/group/office-of-applied-research/) at Microsoft researching the use of LLMs in collective decision-making, and the User Modeling Research Team at [Twitter Cortex](https://web.archive.org/web/20220802140832/https://cortex.twitter.com/), where I worked on scalable methods for node classification. I have also contributed to the open-source [volesti](https://github.com/GeomScale/volesti) package. 
 
