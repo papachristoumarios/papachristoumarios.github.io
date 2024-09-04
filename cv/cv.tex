@@ -1,4 +1,6 @@
 \documentclass[margin]{res}  
+\usepackage{palatino}
+% \usepackage[nott]{newtxtext}
 
 \usepackage{hyperref}
 \usepackage{enumitem}
@@ -15,13 +17,15 @@
   colorlinks = true,
 }
 
+\usepackage{xifthen}
+
 \newcommand{\field}[2]{\noindent \textbf{#1} \hfill #2 \\}
 \newcommand{\uf}[2]{\noindent \textbf{#1} \hfill \url{#2} \\}
 \newcommand{\uff}[2]{\item[--] #1 \\ \url{#2}}
 \newcommand{\alphabeticalorder}[0]{\ensuremath {^{\alpha \beta}}}
 \newcommand{\scheduled}[0]{\ensuremath {^\dagger}}
 \newcommand{\presentedbycoauthor}[0]{\ensuremath {^{\star}}}
-\newcommand{\specialurl}[2]{\href {#2} {\texttt{[#1]}}}
+\newcommand{\specialurl}[2]{\href {#2} {{{[#1]}}}}
 \newcommand{\preprint}[1]{\specialurl {preprint} {#1}}
 \newcommand{\code}[1]{\specialurl {code} {#1}}
 \newcommand{\data}[1]{\specialurl {data} {#1}}
@@ -30,10 +34,14 @@
 \newcommand{\poster}[1]{\specialurl {poster} {#1}}
 \newcommand{\paper}[1]{\specialurl {paper} {#1}}
 \newcommand{\workshop}[1]{\specialurl {workshop} {#1}}
-\newcommand{\authorref}[1]{\underline {\textbf{#1}}}
+\newcommand{\authorref}[1]{{\textit{\textbf{#1}}}}
 \newcommand{\news}[1]{\specialurl {news} {#1}}
 \newcommand{\authorme}{\authorref{Marios Papachristou}}
 \newcommand{\bemph}[1]{\textbf{\emph{#1}}}
+\newcommand{\publication}[5]{\textbf{#1}\\{#2}\\\emph{#3}, {#4}\\{#5}\smallskip}
+\newcommand{\diamondsection}[1]{$\diamond$\quad \textbf{#1} \smallskip}
+\newcommand{\referee}[3]{\textbf{#1} (\texttt{#3})\\{#2}\smallskip \\}
+\newcommand{\award}[3]{\ifthenelse{\isempty{#3}}{\textbf{#1} \hfill \emph{#2}}{\textbf{#1} \hfill \emph{#2} \\ #3}\smallskip}
 
 % Increase text height
 %\textheight=700pt
@@ -47,163 +55,155 @@
 
 \begin{resume}
 
-\section{Contact \\ Information} 
-E-mail \hfill \url{papachristoumarios@cs.cornell.edu} \\
-GitHub \hfill \href{http://github.com/papachristoumarios}{\nolinkurl{papachristoumarios}} \\
-Office \hfill 302 Gates Hall, Cornell University, 107 Hoy Rd \\
-Google Scholar \hfill \specialurl{profile}{https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en} \\
-Twitter \hfill \href{https://twitter.com/papachristoum}{\nolinkurl {@papachristoum}} \\
-Website \hfill \href{https://papachristoumarios.github.io}{\nolinkurl {papachristoumarios.github.io}}
+\section{Personal \\ Information} 
+E-mail \hfill mp2242@cornell.edu \\
+Phone \hfill (607)-262-5495 \\
+% GitHub \hfill \href{http://github.com/papachristoumarios}{\nolinkurl{papachristoumarios}} \\
+% Office \hfill 302 Gates Hall \\
+% Google Scholar \hfill \specialurl{profile}{https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en} \\
+% Twitter \hfill \href{https://twitter.com/papachristoum}{\nolinkurl {@papachristoum}} \\
+Website \hfill \href{https://papachristoumarios.github.io}{{papachristoumarios.github.io}} \\
+Nationality \hfill Greek, US Permanent Resident (Green Card Holder)
+  
 
-\section{Areas} Algorithms, Information Networks, LLMs, Differential Privacy, Machine Learning, Data Mining
+\section{Research Interests} Algorithms, Information Networks, Network Economics, Systemic Risk, LLMs, Differential Privacy, Machine Learning, Data Mining, Computational Social Science
 % \emph{Foci:} Statistical Modeling of Networks, Financial Networks, Graph ML 
 
 \section{Education}
-\field {Cornell University} {\emph{2020 -- exp. 2025}}
+\field {Cornell University} {\emph{2020 -- Expected 2025}}
 Ph.D. in Computer Science, Minor: \emph{Applied Mathematics}
 \begin{itemize}[nosep]    
 \item[--] \emph{Advisor:} Jon Kleinberg
-%\emph{Committee:} Jon Kleinberg, Emma Pierson, Sid Banerjee 
-% \item[--] \emph{Relevant Coursework:} Analysis of Algorithms, Information Networks, Numerical Methods for Data Science, Design of Online Marketplaces, ML Theory
 \end{itemize} 
 
 M.S. in Computer Science \hfill {\emph{2020 -- 2022}}
  
 \field{National Technical University of Athens}  {\emph{2015 -- 2020}} 
-Diploma in Electrical and Computer Engineering (\emph{top 2\%}). Major: \emph{Computer Science}.
+Diploma in Electrical and Computer Engineering \\ Major: \emph{Computer Science}.
 \begin{itemize}[nosep]
 \item[--] \emph{Advisor:} Dimitris Fotakis
+\item[--] Top 2\% of graduating class
 
 \end{itemize} 
 
-\section{Refereed Publications\\ {
+
+\section{Industry \\ Experience}
+
+\field{Microsoft Research}{\emph{Summer 2023}}{Office of Applied Research, \emph{with Chin-Chia Hsu and Longqi Yang}}
+
+\field{Twitter}{\emph{Summer 2022}}{User Modeling Research Group, \emph{with Rishab Goel, Frank Portman, Matt Miller}}
+
+
+
+\section{Selected \\ Honors \& \\ Awards} 
+\begin{itemize}[nosep]
+	\item[--] \award{Onassis Scholarship}{2023}{Three-year fellowship for Greek Ph.D. students. Acceptance rate: 1-2\%.}
+	\item[--] \award{LinkedIn Ph.D. Fellowship}{2022}{One-year fully funded fellowship by LinkedIn. Acceptance rate 14\%.} 	
+	\item[--] \award{A.G. Leventis Scholarship}{2022}{Award for graduate students of Greek origin. Acceptance rate 12.5\%.}
+	% \item[--] \award{Gerondelis Scholarship}{2022}{One-time award for graduate students of Greek descent.}
+	\item[--] \award{Chateaubriand Fellowship}{2022}{Fellowship granted by the French Embassy in the US for studies in France (declined for personal reasons). Acceptance rate 33\%.}	
+	\item[--] \award{Cornell Fellowship}{2020}{One-year fully funded fellowship by the CS department based on ``exceptional preparation and promise''.}
+	% \item[--] \award{Thomaidion Award}{2019}{}
+	% \item[--] \award{ESEC/FSE 2019 ACM Student Research Competition Finalist}{2019}{}
+
+	% \item[--] \award{CanSat International Space Engineering  Competition}{2019}{4th out of 93 teams. Organized by the American Astronautical Society (AAS).}
+	
+    %\item[--] 2nd Award at the \emph{``be finnovative 2.0 accelerator''} \hfill \emph{2018}
+   	%\item[--] 1st Award at \emph{``Crowdhackathon Fintech \#2''} \hfill \emph{2017}
+   	\item[--] \award{IEEEXtreme 11.0 Programming Competition}{2017}{Top 1\%  worldwide in IEEE's algorithms competition.}
+    %\item [--] Touramanoglu Scholarship \hfill \emph{2015}
+    %\item [--] ``The Great Moment of Education'' Scholarship \hfill \emph{2015}
+
+\end{itemize}
+
+
+
+
+\section{Papers \\ {
 \footnotesize
 \textup{\href{https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en}{Google Scholar Profile}} \\\alphabeticalorder  = \textup{alphabetical order} \\ $*$ = \textup{equal contribution}
 }}
 
-\begin{enumerate}[nosep, label={[P\arabic*]}]    
 
+\field{Selected Papers}{}{
+\begin{enumerate}[nosep, label={[S\arabic*]}]
+	\item \publication{Optimal Resource Allocation for Remediating Networked Contagions}{\authorme, Sid Banerjee, Jon Kleinberg}{Major Revision, Management Science}{2024}{\preprint{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4880536}} 
+	
+	\item  \publication{Network Formation and Dynamics among Multi-LLMs}{\authorme, Yuan Yuan}{Under review}{2024}{\preprint{http://arxiv.org/abs/2402.10659} \slides{https://drive.google.com/file/d/13Qm_82D0WrkmN1LAv2AUmjcputMOdm_y/view?usp=drive_link}} 
+	
+	\item \publication{Allocating Stimulus Checks in Times of Crisis}{\authorme, Jon Kleinberg}{ACM Web Conference (WWW)}{2022}{\paper{https://doi.org/10.1145/3485447.3512047} \code{https://github.com/papachristoumarios/financial-contagion}  \talk{https://youtu.be/WUmPBztK8Mo} \slides{https://drive.google.com/file/d/1v4v4jPOTzFtP8a5dhAFLoIjZSRDxAjBz/view?usp=sharing} \news{https://www.minneapolisfed.org/article/2022/social-policy-in-the-age-of-algorithms-an-interview-with-jon-kleinberg}}   
+	% \item \publication{Dynamic Interventions for Networked Contagions}{\authorme, Sid Banerjee, Jon Kleinberg}{ACM Web Conference (WWW)}{2023}{\paper{https://dl.acm.org/doi/abs/10.1145/3543507.3583470} \code{https://github.com/papachristoumarios/dynamic-clearing} \poster{https://drive.google.com/file/d/1l0TCsoZNo3NoOOHsPSh1ofctXD4ivFir/view?usp=sharing} \slides{https://drive.google.com/file/d/1ZZ6F6PFNsBjYKFyurkwM2IbenuzXJEAs/view?usp=share_link}}
+\end{enumerate}}
 
-   \item \authorme, Amin Rahimian. ``Differentially Private Distributed Estimation and Learning''. \emph{IISE Transactions. Special Issue on Federated, Distributed Learning and Analytics} 2024. \\
-   	   \preprint{https://arxiv.org/abs/2306.15865} \code{https://github.com/papachristoumarios/dp-distributed-estimation} \poster{https://drive.google.com/file/d/149A7tdByRdOGHo_Xa_9H55qxExtESVhJ/view?usp=drive_link}
+\field{Journal Papers}{}{
+\begin{enumerate}[nosep, label={[J\arabic*]}]    
+   \item \publication{Differentially Private Distributed Estimation and Learning}{\authorme, Amin Rahimian}{IISE Transactions}{2024}{
+   	   	\paper{https://doi.org/10.1080/24725854.2024.2337068} \code{https://github.com/papachristoumarios/dp-distributed-estimation} \talk{https://www.youtube.com/watch?v=Kmm5HEMuS4w}}
 
- 
-   \item \authorme, Sid Banerjee, Jon Kleinberg. ``Dynamic Interventions for Networked Contagions''. \emph{ACM Web Conference (WWW) 2023}. \\
-		\preprint{https://arxiv.org/abs/2205.13394} \code{https://github.com/papachristoumarios/dynamic-clearing} \poster{https://drive.google.com/file/d/1l0TCsoZNo3NoOOHsPSh1ofctXD4ivFir/view?usp=sharing}
-		\paper{https://dl.acm.org/doi/abs/10.1145/3543507.3583470}
-		\slides{https://drive.google.com/file/d/1ZZ6F6PFNsBjYKFyurkwM2IbenuzXJEAs/view?usp=share_link}
-
-
-   \item \authorme, Jon Kleinberg. ``Core-periphery Models for Hypergraphs''. \emph{ACM SIGKDD Intl. Conf. on Knowledge Discovery and Data Mining (KDD) 2022.} \\
-   \paper{https://arxiv.org/abs/2206.00783} \code{https://doi.org/10.5281/zenodo.5965849} \data{https://doi.org/10.5281/zenodo.5943043} \slides{https://drive.google.com/file/d/1k9pjPaeDtg7jhUivjlEmyunimcUb-DxL/view?usp=sharing} \poster{https://drive.google.com/file/d/1RJ3C7KKhTemfj5OBAiEXUHMVp-TJhTDs/view?usp=sharing}
-   \item  \authorme, Jon Kleinberg. ``Allocating Stimulus Checks in Times of Crisis''. \emph{ACM Web Conference (WWW) 2022.} \\\preprint{https://arxiv.org/abs/2106.07560} \code{https://github.com/papachristoumarios/financial-contagion} \paper{https://doi.org/10.1145/3485447.3512047} \talk{https://youtu.be/WUmPBztK8Mo} \slides{https://drive.google.com/file/d/1v4v4jPOTzFtP8a5dhAFLoIjZSRDxAjBz/view?usp=sharing} \news{https://www.minneapolisfed.org/article/2022/social-policy-in-the-age-of-algorithms-an-interview-with-jon-kleinberg}   
-   \item \authorme. ``Sublinear Domination and Core--periphery Networks''. \emph{Scientific Reports (Nature)}, 2021. \\ \paper{http://www.nature.com/articles/s41598-021-94105-8} \code{https://bit.ly/3wKNGI0} 
-    \item \alphabeticalorder Apostolos Chalkis, Vissarion Fisikopoulos, \authorme, Elias Tsigaridas. ``Truncated Log-concave Sampling for Convex Bodies with Reflective Hamiltonian Monte Carlo''.   \emph{ACM Transactions on Mathematical Software (TOMS)}, 2023. This paper incorporates and supersedes our previous \href{https://arxiv.org/abs/2102.13068}{preprint}. \\ \paper{https://doi.org/10.1145/3589505} \code{https://github.com/GeomScale/volume_approximation}
-    \item \authorme. ``Software clusterings with vector semantics and the call graph''. \emph{ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE) 2019}. \\ \paper{https://dl.acm.org/citation.cfm?id=3342483} \code{https://github.com/papachristoumarios/sade} \data{http://doi.org/10.5281/zenodo.2652487} \\\textbf{\emph{(ESEC/FSE Student Research Competition Finalist Paper)}}
-    \item Vasilis Kostakis*, and \authorme*. ``Commons-based peer production and digital fabrication: The case of a RepRap-based, Lego-built 3D printing-milling machine''. \emph{Telematics and Informatics}, 2014. \\ \paper{https://bit.ly/2JRoisV} 
+  
+   \item \publication{Sublinear Domination and Core--periphery Networks}{\authorme}{Scientific Reports (Nature Portfolio)}{2021}{\paper{http://www.nature.com/articles/s41598-021-94105-8} \code{https://bit.ly/3wKNGI0}}
+    \item \publication{Truncated Log-concave Sampling for Convex Bodies with Reflective Hamiltonian Monte Carlo}{\alphabeticalorder Apostolos Chalkis, Vissarion Fisikopoulos, \authorme, Elias Tsigaridas}{ACM Transactions on Mathematical Software (TOMS)}{2023}{\paper{https://doi.org/10.1145/3589505} \code{https://github.com/GeomScale/volume_approximation}}
+    \item \publication{Commons-based peer production and digital fabrication: The case of a RepRap-based, Lego-built 3D printing-milling machine}{Vasilis Kostakis*, and \authorme*}{Telematics and Informatics}{2014}{\paper{https://bit.ly/2JRoisV}} 
     
-\end{enumerate}
+\end{enumerate}}
 
-\section{Working Papers}
-
-
-\begin{enumerate}[nosep, label={[W\arabic*]}]  
-   \item \authorme, Yuan Yuan. ``Network Formation and Dynamics among Multi-LLMs''. \emph{Under review}. 2024. \\
-   		\preprint{http://arxiv.org/abs/2402.10659} \slides{https://drive.google.com/file/d/13Qm_82D0WrkmN1LAv2AUmjcputMOdm_y/view?usp=drive_link}
-
-   \item \authorme, Sid Banerjee, Jon Kleinberg. ``Optimal Resource Allocation for Remediating Networked Contagions''. \emph{R\&R in Management Science.} 2023. 
-
-   
-   \emph{This paper extends our previous works in \href{https://doi.org/10.1145/3485447.3512047}{WWW 2022} and \href{https://arxiv.org/abs/2205.13394}{WWW 2023}}. \\
-       \preprint{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4880536} \slides{https://drive.google.com/file/d/1DgOCnJ5Pf3Je-F7a-Adiy2TTZ7oZUbbB/view?usp=sharing}
-
-   \item \authorme, Longqi Yang, Chin-Chia Hsu, ``Leveraging Large Language Models for Collective Decision-Making''. \emph{Major revision at CSCW 2024.} \\
-  	\preprint{https://arxiv.org/abs/2311.04928}
-
-   \item \authorme, Amin Rahimian. ``Group Decision-Making among Privacy-aware Agents''. \emph{Under review.} 2023. \\
-  	\emph{Preliminary version accepted at the AAAI Workshop on Privacy-Preserving Artificial Intelligence.} 2023. \\
-  		\preprint{https://arxiv.org/pdf/2402.08156.pdf} \poster{https://drive.google.com/file/d/149A7tdByRdOGHo_Xa_9H55qxExtESVhJ/view?usp=drive_link}
-   	   
-   \item \authorme, Amin Rahimian. ``Production Networks Resilience: Cascading Failures, Power Laws and Optimal Interventions''. \emph{Under review.} 
-   		\emph{Preliminary poster presented at the ACM Conference of Economics and Computation (EC).} 2023. \\ \preprint{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4392226} \code{https://github.com/papachristoumarios/supply-chain-resilience} \slides{https://drive.google.com/file/d/13kgKnjTHyO8j4BOJVykWwt43hSt3JrLw/view?usp=drive_link}
+\field{Refereed CS Conference Proceedings}{}{
+\begin{enumerate}[nosep, label={[C\arabic*]}]    
  
-   \item \authorme, Rishab Goel, Frank Portman, Matt Miller, Rong Jin. ``GLINKX: A Scalable Unified Framework for Homophilous and Heterophilous Graphs''. \emph{Under Review}. 2023 \\\emph{Preliminary version presented at NeurIPS workshop on Graph Learning Frontiers (GLFrontriers)}, 2022. \\ \preprint{https://arxiv.org/abs/2211.00550} \poster{https://drive.google.com/file/d/14LwkvoH7sUe6qGvINGqTuMSHid16J3Av/view?usp=share_link} \workshop{https://openreview.net/forum?id=GlViaJSwnlK}
-    \item \authorme, Dimitris Fotakis. ``Stochastic Opinion Dynamics for User Interest Prediction in Online Social Networks''.  \emph{Preprint}, 2020. \\ \preprint{https://www.researchgate.net/publication/353006940_Stochastic_Opinion_Dynamics_for_Interest_Prediction_in_Social_Networks}
-\end{enumerate}
+   \item \publication{Dynamic Interventions for Networked Contagions}{\authorme, Sid Banerjee, Jon Kleinberg}{ACM Web Conference (WWW), Economics and Markets Track}{2023}{\paper{https://dl.acm.org/doi/abs/10.1145/3543507.3583470} \code{https://github.com/papachristoumarios/dynamic-clearing} \poster{https://drive.google.com/file/d/1l0TCsoZNo3NoOOHsPSh1ofctXD4ivFir/view?usp=sharing}
+		\slides{https://drive.google.com/file/d/1ZZ6F6PFNsBjYKFyurkwM2IbenuzXJEAs/view?usp=share_link}}
+
+   \item \publication{Core-periphery Models for Hypergraphs}{\authorme, Jon Kleinberg}{ACM Intl. Conf. on Knowledge Discovery and Data Mining (KDD)}{2022}{\paper{https://arxiv.org/abs/2206.00783} \code{https://doi.org/10.5281/zenodo.5965849} \data{https://doi.org/10.5281/zenodo.5943043} \slides{https://drive.google.com/file/d/1k9pjPaeDtg7jhUivjlEmyunimcUb-DxL/view?usp=sharing} \poster{https://drive.google.com/file/d/1RJ3C7KKhTemfj5OBAiEXUHMVp-TJhTDs/view?usp=sharing}}
+   \item \publication{Allocating Stimulus Checks in Times of Crisis}{\authorme, Jon Kleinberg}{ACM Web Conference (WWW), Economics and Markets Track}{2022}{\paper{https://doi.org/10.1145/3485447.3512047} \code{https://github.com/papachristoumarios/financial-contagion}  \talk{https://youtu.be/WUmPBztK8Mo} \slides{https://drive.google.com/file/d/1v4v4jPOTzFtP8a5dhAFLoIjZSRDxAjBz/view?usp=sharing} \news{https://www.minneapolisfed.org/article/2022/social-policy-in-the-age-of-algorithms-an-interview-with-jon-kleinberg}}   
+      \item \publication{Software Clusterings with Vector Semantics and the Call Graph}{\authorme}{ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)}{2019}{\paper{https://dl.acm.org/citation.cfm?id=3342483} \code{https://github.com/papachristoumarios/sade} \data{http://doi.org/10.5281/zenodo.2652487} \\\textbf{\emph{(ESEC/FSE Student Research Competition Finalist Paper)}}}
+    
+\end{enumerate}}
 
 
-\section{Research \\ Experience}
+\field{Preprints \& Working Papers}{}{
+\begin{enumerate}[nosep, label={[WP\arabic*]}]  
 
- \textbf{Applied Research Intern -- Microsoft} \hfill \emph{May 2023 -- August 2023}
-
-\begin{itemize}[nosep]
-	\item[--] Large Language Models (LLMs) for collective intelligence. 	
-	\item[--] \emph{Office of Applied Research, with Chin-Chia Hsu and Longqi Yang}
-\end{itemize}
-
-
-\textbf{Engineering Intern -- Twitter} \hfill \emph{May 2022 -- August 2022}
-\begin{itemize}[nosep]
-\item[--] Scalable Graph Machine Learning on graphs. 
-\item[--] \emph{User Modeling Research, with Rishab Goel, Frank Portman, and Matthew Miller}
-\end{itemize}
-
-\textbf{Graduate Researcher -- Cornell University} \hfill \emph{Sept. 2020 -- ongoing}
-\begin{itemize}[nosep]
-	\item[--] Research in social and information networks, (allocation algorithms to mitigate contagion in financial and supply-chain networks, statistical graph and hypergraph models)
-\end{itemize}
+   \item \publication{Optimal Resource Allocation for Remediating Networked Contagions}{\authorme, Sid Banerjee, Jon Kleinberg}{Major Revision, Management Science}{2024}{\preprint{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4880536} \slides{https://drive.google.com/file/d/1DgOCnJ5Pf3Je-F7a-Adiy2TTZ7oZUbbB/view?usp=sharing}} 
+      \item \publication{Group Decision-Making among Privacy-aware Agents}{\authorme, Amin Rahimian}{Under review at Operations Research}{2024}{
+  		\emph{Preliminary version presented at the Theory and Practice of Differential Privacy Workshop (TPDP)} \\ \preprint{https://arxiv.org/pdf/2402.08156.pdf} \talk{https://www.youtube.com/watch?v=Kmm5HEMuS4w}}
+  		
+   \item \publication{Network Formation and Dynamics among Multi-LLMs}{\authorme, Yuan Yuan}{Working paper}{2024}{\emph{Preliminary version presented at the International Conference on Computational Social Science (IC2S2)} \\ \preprint{http://arxiv.org/abs/2402.10659} \slides{https://drive.google.com/file/d/13Qm_82D0WrkmN1LAv2AUmjcputMOdm_y/view?usp=drive_link}} 
+      
+   \item \publication{Leveraging Large Language Models for Collective Decision-Making}{\authorme, Longqi Yang, Chin-Chia Hsu}{Major revision at CSCW}{2024}{\emph{Preliminary version presented at the LLMs as Research Tools at CHI 2024} \\ \preprint{https://arxiv.org/abs/2311.04928} \slides{https://docs.google.com/presentation/d/13IsUt68rFoKdtq8wquL9fxVFHwH0hgvN/edit?usp=drive_link&ouid=109899272296285628946&rtpof=true&sd=true}}
 
 
-\textbf{Researcher -- GeomScale Organization} \hfill \emph{May 2020 -- March 2020}
+   	   
+   \item \publication{Structural Measures of Resilience for Supply Chains}{\authorme, Amin Rahimian}{Under review at Management Science}{2024}{ 
+   		\preprint{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4392226} \code{https://github.com/papachristoumarios/supply-chain-resilience} \slides{https://drive.google.com/file/d/13kgKnjTHyO8j4BOJVykWwt43hSt3JrLw/view?usp=drive_link}}
+   		
+   	\item \publication{The Power of Choice in Random Sampling}{\authorme, Jon Kleinberg}{Under review}{2024}{Preprint available upon request}
+   
+   	\item \publication{Echoes of Disagreement: Measuring Disparity in Social Consensus}{\authorme, Jon Kleinberg}{Under review}{2024}{Preprint available upon request}
+    \end{enumerate}}
 
-\begin{itemize}[nosep]
-	\item[--] Part-time research on sampling from truncated log-concave densities, and convex optimization, working on the \href{https://github.com/GeomScale/volesti}{volesti} open-source package.
-	\item[--] \emph{Mentors:} Apostolos Chalkis, Vissarion Fisikopoulos, Elias Tsigaridas
-\end{itemize}
+
+\field{Refereed CS Workshops}{}{
+\begin{enumerate}[nosep, label={[W\arabic*]}]  
+	\item \publication{GLINKX: A Scalable Unified Framework for Homophilous and Heterophilous Graphs}{\authorme, Rishab Goel, Frank Portman, Matt Miller, Rong Jin}{NeurIPS workshop on Graph Learning Frontiers (GLFrontriers)}{2022}{\paper{https://openreview.net/forum?id=GlViaJSwnlK} \poster{https://drive.google.com/file/d/14LwkvoH7sUe6qGvINGqTuMSHid16J3Av/view?usp=share_link}}
+\end{enumerate}}
+
+\section{Other \\ Experience}
 
 
-\textbf{Researcher -- Athens University of Economics and Business} \hfill \emph{2018 -- 2020}
-\begin{itemize}[nosep]
-\item[--] Software architecture recovery via call graphs, source code embeddings, and clustering methods.
-\item[--] \emph{Mentor: Diomidis Spinellis}
-\end{itemize}
+\field{GeomScale Open-source Organization}{\emph{May 2020 -- March 2020}}{Sampling from truncated log-concave densities, and convex optimization, working on the \href{https://github.com/GeomScale/volesti}{\texttt{volesti}} open-source package \emph{with Dr. Apostolos Chalkis, Dr. Vissarion Fisikopoulos, and Dr. Elias Tsigaridas}}
 
-\textbf{Google Summer of Code 2020 (GeomScale)}  \hfill \emph{June 2020 -- August 2020}
-\begin{itemize}[nosep]
-\item[--] \emph{Project: Sampling from high-dimensional truncated log-concave densities.} \\ \code{https://GeomScale/volesti} \specialurl{talk1}{https://www.youtube.com/watch?v=P7YfC8Nn6sY} \specialurl{talk2}{https://www.cs.utah.edu/~jeffp/WaGoML/index.html}
-\end{itemize}
+\field{Athens University of Economics and Business}{\emph{2018 -- 2020}}{Department of Management Science and Technology, \emph{with Prof. Diomidis Spinellis}}
 
-\textbf{Google Summer of Code 2018 (GFOSS-OTA)}  \hfill {\emph{April 2018--September 2018}}
-\begin{itemize}[nosep]
-\item[--] \emph{Project: 3gm}. Automated codification of Greek Legislation. \\ \code{https://github.com/eellak/gsoc2018-3gm} \data{https://archive.org/details/greekgovernmentgazette} \talk{https://www.youtube.com/watch?v=_UIGsy85Ehw}
-\end{itemize}
+\field{Google Summer of Code 2020 (GeomScale)}{\emph{June 2020 -- August 2020}}{{Sampling from high-dimensional truncated log-concave densities, \emph{with Dr. Apostolos Chalkis, Dr. Vissarion Fisikopoulos, and Dr. Elias Tsigaridas}} \\ \code{https://GeomScale/volesti} \talk{https://www.youtube.com/watch?v=P7YfC8Nn6sY}}
 
-\textbf{Researcher -- P2P Lab}  \hfill {\emph{2013 -- 2014}}
+\field{Google Summer of Code 2018 (GFOSS-OTA)}{\emph{April 2018--September 2018}}{Automated codification of Greek Legislation, \emph{with Prof. Diomidis Spinellis} \\ \code{https://github.com/eellak/gsoc2018-3gm} \data{https://archive.org/details/greekgovernmentgazette} \talk{https://www.youtube.com/watch?v=_UIGsy85Ehw}}
+
+\field{Researcher -- P2P Lab}{\emph{2013 -- 2014}}{}
 
 
 %\textbf{Hellenic Center for Marine Research} \hfill \emph{June 2014 -- August 2014}
 
-\section{Honors \& \\ Awards} 
-\begin{itemize}[nosep]
-	\item[--] Onassis Scholarship \hfill \emph{2023}
-	\item[--] LinkedIn Ph.D. Fellowship (14.8\% acceptance rate) \hfill \emph{2022} 	
-	\item[--] Gerondelis Scholarship \hfill \emph{2022}
-	\item[--] A.G. Leventis Scholarship (12.5\% acceptance rate) \hfill \emph{2022}
-	\item[--] Chateaubriand Fellowship \emph{(declined)} \hfill \emph{2022}
-	\item[--] Cornell Fellowship \hfill \emph{2020}
-	\item[--] Thomaidion Award \hfill \emph{2019}
-	\item[--] ESEC/FSE 2019 ACM Student Research Competition Finalist \hfill \emph{2019}
-
-	\item[--] 4th (out of 93) in International Space Engineering  Competition (CanSat) \hfill \emph{2019}
-    \item[--] 2nd Award at the \emph{``be finnovative 2.0 accelerator''} \hfill \emph{2018}
-   	\item[--] 1st Award at \emph{``Crowdhackathon Fintech \#2''} \hfill \emph{2017}
-   	\item[--] Top \%1 worldwide in IEEEXtreme 11.0 Programming Competition \hfill \emph{2017}
-    \item [--] Touramanoglu Scholarship \hfill \emph{2015}
-    \item [--] ``The Great Moment of Education'' Scholarship \hfill \emph{2015}
-
-\end{itemize}
-
-\section{Teaching \\ Experience} 
+\section{Teaching \& Mentorship \\ Experience} 
 \begin{itemize}[nosep]
 	\item[--] The Structure of Information Networks (PhD-level, Cornell) \hfill \emph{Spring \& Fall 2023} 
     \item[--] Discrete Mathematics (NTUA) \hfill \emph{Spring 2017}
@@ -211,8 +211,16 @@ Diploma in Electrical and Computer Engineering (\emph{top 2\%}). Major: \emph{Co
     \item[--] Introduction to Computer Programming (NTUA) \hfill \emph{Fall 2016, Fall 2017}
 \end{itemize}
 
+\medskip
 
-\section{Talks \& \\ Presentations \\
+\begin{itemize}[nosep]
+	\item[--] Student-applicant Support Program at Cornell CIS \hfill \emph{2022}
+	\item[--] Google Summer of Code Mentor \hfill \emph{2019--2022}
+	\item[--] Volunteer lessons for the National Olympiad of Informatics (PDP)\hfill \emph{2019}
+\end{itemize}
+
+
+\section{Invited Talks \& \\ Lectures \\
 \footnotesize
 \scheduled  = \textup{scheduled} \\ \presentedbycoauthor = \textup{presented by co-author}
 }
@@ -245,7 +253,7 @@ Diploma in Electrical and Computer Engineering (\emph{top 2\%}). Major: \emph{Co
 		\item Microsoft Research, Invited Applied Research Talks \hfill \emph{August 2023}
 	\end{itemize}
 
-	\item \bemph{Production Networks Resilience: Cascading Failures, Power Laws, and Optimal Interventions}
+	\item \bemph{Structural Measures of Resilience for Supply Chains}
 	\begin{itemize}[nosep]
 		\item NSF Conference on Network Science and Economics \hfill \emph{April 2024}
 		\item Columbia University, Student Theory Seminar \hfill \emph{November 2023}
@@ -301,48 +309,34 @@ Diploma in Electrical and Computer Engineering (\emph{top 2\%}). Major: \emph{Co
 	
 \end{itemize}
 
-\section{Reviewing} 
-%\begin{itemize}[nosep]
-%
-%\item [--] \emph{Program Committee.} \href{https://facctconference.org/2022}{FAccT `22}
-%\item [--] \emph{Reviewer.} \href{https://kdd.org/kdd2023/}{KDD '23}, \href{https://2023.ecmlpkdd.org/}{ECML-PKDD '23}, \href{https://glfrontiers.github.io/overview/}{GLFrontiers@NeurIPS `22}, \href{https://joss.theoj.org/}{JOSS}, \href{https://sites.google.com/view/whmd2021}{WHMD@NeurIPS `21},  \href{https://www.springer.com/journal/291?gclid=Cj0KCQiAr5iQBhCsARIsAPcwROPwkZ2Nw4Ubg7i91Y2hITU4OE4lzk_56F09IS09b5wh-sMhuqgft0YaAgATEALw_wcB}{OR Spectrum}, \href{https://www.springer.com/journal/10994/}{Machine Learning}
-%\item [--] \emph{Mentorship:} Google Summer of Code (2019--), Cornell Undergraduate AI Group (2022--), Student-applicant support program at Cornell CS (2022). 
-%
-%\end{itemize}
+\section{Professional Service}
 
-\begin{itemize}[nosep]
-	\item \emph{Program Commitee}
+	\field{Program Commitee}{}{
 	\begin{itemize}[nosep]
-		\item ACM Conference on Fairness Accountability and Transparency (FAccT) \hfill \emph{2022}
-		\item ACM Conference on Knowledge Discovery and Data Mining (KDD) \hfill \emph{2023}
-	\end{itemize}
-	\item \emph{Reviewing}
+		\item[--] ACM Conference on Fairness Accountability and Transparency (FAccT) \hfill \emph{2022}
+		\item[--] ACM Conference on Knowledge Discovery and Data Mining (KDD) \hfill \emph{2023}
+	\end{itemize}}
+	\field{Reviewer}{}{ 
 	\begin{itemize}[nosep]
-		\item International Conference on Computational Social Science (IC2S2) \hfill \emph{2024}
-		\item ACM Web Conference (WWW) \hfill \emph{2024}
-		\item Innovations in Theoretical Computer Science (ITCS) \hfill \emph{2024}
-		\item ACM Conference on Human Factors in Computing (CHI) \hfill \emph{2024}
-		\item European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD) \hfill \emph{2023}
-		\item Machine Learning (Springer)
-		\item NeurIPS 2022 Workshop on Graph Learning Frontiers (GLFrontiers) \hfill \emph{2022}
-		\item NeurIPS 2021 Workshop on Human and Machine Decisions \hfill \emph{2021} 
-		\item Journal of Open Source Software \hfill \emph{2021--}
-	\end{itemize}
+		\item[--] International Conference on Computational Social Science (IC2S2) \hfill \emph{2024}
+		\item[--] ACM Web Conference (WWW) \hfill \emph{2024}
+		\item[--] Innovations in Theoretical Computer Science (ITCS) \hfill \emph{2024}
+		\item[--] ACM Conference on Human Factors in Computing (CHI) \hfill \emph{2024}
+		\item[--] European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD) \hfill \emph{2023}
+		\item[--] Machine Learning (Springer)
+		\item[--] NeurIPS 2022 Workshop on Graph Learning Frontiers (GLFrontiers) \hfill \emph{2022}
+		\item[--] NeurIPS 2021 Workshop on Human and Machine Decisions \hfill \emph{2021} 
+		\item[--] Journal of Open Source Software \hfill \emph{2021}
+	\end{itemize}}
+	
+\section{Referees} \referee{Jon Kleinberg}{Dept. of Computer and Information Science, Cornell University}{kleinberg@cornell.edu}
+\referee{Siddhartha Banerjee}{School of Operations Research and Information Engineering, Cornell University}{sbanerjee@cornell.edu}
+\referee{Amin Rahimian}{Deptartment of Industrial Engineering, University of Pittsburgh}{rahimian@pitt.edu}
+\referee{Yuan Yuan}{Graduate School of Management, UC Davis}{yuyuan@ucdavis.edu}
+\referee{Longqi Yang, Chin-Chia Hsu}{Office of Applied Research, Microsoft Research}{longqi.yang@microsoft.com}
+\referee{Yong-Yeol Ahn}{Dept. of Informatics, Computing, and Engineering, Indiana University}{yyahn@iu.edu}
 
-\end{itemize}
-
-	
-\section{Mentorship \& Volunteering}
-	
-	
-	\begin{itemize}[nosep]
-		\item Student-applicant Support Program at Cornell CIS \hfill \emph{2022}
-		\item Google Summer of Code Mentor \hfill \emph{2019--2022}
-		\item Volunteer lessons for the National Olympiad of Informatics (PDP) and other programming competitions  \hfill \emph{2019}
-	\end{itemize}
-	
-
-\section{Last Updated} \today
+% \section{Last Updated} \today
 
 
 \end{resume}
