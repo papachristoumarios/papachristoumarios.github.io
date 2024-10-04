@@ -35,7 +35,3 @@ Office: 302 Gates Hall, Campus Rd, Ithaca, NY 14853
 
 e-mail: papachristoumarios (at] cs [dot) cornell (dot] edu
 
-## Papers
-
-<script src="https://bibbase.org/show?bib=https%3A%2F%2Fraw.githubusercontent.com%2Fpapachristoumarios%2Fpapachristoumarios.github.io%2Fmaster%2Fcv%2Fpubs.bib&commas=true&theme=simple&jsonp=1"></script>
-
