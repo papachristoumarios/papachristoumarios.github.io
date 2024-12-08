@@ -6,7 +6,7 @@ title:
 {:.profile}
 ![profile](profile.jpg){: style="float: left; width: 45%; margin: 25px"}
 
-**I am on the 2024-2025 academic job market looking for academic positions or research industry positions.**
+**I will be joining the W.P. Carey School of Business as an Assistant Professor of Information Systems in Fall 2025. Please reach out if you are interested in collaborating with me!**
 
 I am a rising fifth-year Ph.D. candidate in the _Computer Science Department_ at _Cornell University_; extremely fortunate to be advised by Prof. [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/).
 
