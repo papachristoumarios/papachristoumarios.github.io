@@ -6,7 +6,7 @@ title:
 {:.profile}
 ![profile](profile.jpg){: style="float: left; width: 45%; margin: 25px"}
 
-**Excited to announce that I will be joining the W.P. Carey School of Business as an Assistant Professor of Information Systems in Fall 2025! Please reach out if you are interested in collaborating with me!**
+**Excited to announce that I will be joining the W.P. Carey School of Business at Arizona State University as a tenure-track Assistant Professor of Information Systems in Fall 2025! Please reach out if you are interested in collaborating with me!**
 
 I am a rising fifth-year Ph.D. candidate in the _Computer Science Department_ at _Cornell University_; extremely fortunate to be advised by Prof. [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/).
 
