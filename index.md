@@ -6,9 +6,7 @@ title:
 {:.profile}
 ![profile](profile.jpg){: style="float: left; width: 45%; margin: 25px"}
 
-I am an Assitant Professor of Information Systems at the W.P. Carey School of Business at Arizona State University. 
-
-I hold a Ph.D. in Computer Science from Cornell University; where I had the fortune to be advised by  [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/).
+I am an Assitant Professor of Information Systems at [Arizona State University, W.P. Carey School of Business](https://wpcarey.asu.edu/). 
 
 I work on the economics of networks, exploring their roles within large-scale social and information systems, and understanding their wider societal implications. I am also affiliated with [Cornell's Artificial Intelligence, Policy, and Practice (AIPP)](https://aipp.cis.cornell.edu/) initiative. 
 
@@ -19,7 +17,9 @@ I am interested in
  * **Network Models.** Exploring how (hyper)-graphs form. Examples include learning the structure of [core-periphery graphs](https://www.nature.com/articles/s41598-021-94105-8) and [hypergraphs](https://dl.acm.org/doi/abs/10.1145/3534678.3539272).
  * **LLMs for Social Science.** Exploring the capabilities of LLMs in social science, simulating human behavior, and simulating complex socio-technical systems. Recent examples include [network formation](https://arxiv.org/pdf/2402.10659.pdf) with LLM agents, and [collective decision-making](https://arxiv.org/abs/2311.04928). 
 
-I experience in industry and specifically I have closely collaborated with the [Office of Applied Research](https://www.microsoft.com/en-us/research/group/office-of-applied-research/) at Microsoft researching the use of LLMs in collective decision-making, and the User Modeling Research Team at [Twitter Cortex (now X)](https://web.archive.org/web/20220802140832/https://cortex.twitter.com/), where I worked on scalable methods for node classification. I have also contributed to the open-source statistical sampling software [volesti](https://github.com/GeomScale/volesti). 
+I hold a Ph.D. in Computer Science from Cornell University; where I had the fortune to be advised by  [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/).
+
+In the past, I have closely collaborated with the [Office of Applied Research](https://www.microsoft.com/en-us/research/group/office-of-applied-research/) at Microsoft Research, and the User Modeling Research Team at [Twitter Cortex (now X)](https://web.archive.org/web/20220802140832/https://cortex.twitter.com/), and have also contributed to the open-source statistical sampling software [volesti](https://github.com/GeomScale/volesti). 
 
 My research has been supported by an [Onassis Scholarship](https://www.onassis.org/initiatives/scholarships), a [LinkedIn Ph.D. Fellowship](https://cis.cornell.edu/inaugural-grants-announced-strategic-partnership-linkedin), a grant from the [A.G. Leventis Foundation](https://www.leventisfoundation.org/), a grant from the Gerondelis Foundation, and a [Cornell University Fellowship](https://gradschool.cornell.edu/financial-support/fellowships/new-student-fellowships/).
 
