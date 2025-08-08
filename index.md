@@ -4,7 +4,7 @@ title:
 ---
 
 {:.profile}
-![profile](profile.jpg){: style="margin: 0 auto; width: 45%"}
+![profile](profile.jpg){: style="object-fit: cover; border-radius: 50%; margin: 0 auto; max-width: 45%; width: 45%;"}
 
 I am an Assitant Professor of Information Systems at [Arizona State University, W.P. Carey School of Business](https://wpcarey.asu.edu/). 
 
