@@ -24,6 +24,7 @@ My research has been supported by an [Onassis Scholarship](https://www.onassis.o
 
 * [[Google Scholar]](https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en) 
 * [[GitHub]](https://github.com/papachristoumarios) 
-* [[CV]](https://papachristoumarios.github.io/cv/cv.pdf) [[Twitter]](https://twitter.com/papachristoum)  
+* [[CV]](https://papachristoumarios.github.io/cv/cv.pdf) 
+* [[Twitter]](https://twitter.com/papachristoum)  
 * [[LinkedIn]](https://www.linkedin.com/in/papachristoumarios)
 * [[School Website]](https://search.asu.edu/profile/5338999)
