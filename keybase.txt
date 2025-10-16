@@ -1,1 +1,56 @@
-This is a file used for verification with keybase
+==================================================================
+https://keybase.io/papachristoum
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://papachristoumarios.github.io
+  * I am papachristoum (https://keybase.io/papachristoum) on keybase.
+  * I have a public key ASDjF6YjlDBgrkwCyYgNApRO14RE6AonDySmj0L-eGpU3Qo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120b03d20d49cb74eba834657a3869c748a061432c21c8babc3852a1d9c0c5019860a",
+      "host": "keybase.io",
+      "kid": "0120e317a623943060ae4c02c9880d02944ed78444e80a270f24a68f42fe786a54dd0a",
+      "uid": "edbdce0f79f9e86ddc23ef0e53051b19",
+      "username": "papachristoum"
+    },
+    "merkle_root": {
+      "ctime": 1760631089,
+      "hash": "340880b13a198b5deed1150a6718f1112386ad26f70d9c0fae96cf026c1c64e5528799912a1ce3704618ea557ba0ff3c0821963cf795dea0166a95a59b4a961b",
+      "hash_meta": "271ed32bd78cccd7d31fe31e13f35672a65dfd9641902521df7826c744bbb1e2",
+      "seqno": 27172545
+    },
+    "service": {
+      "entropy": "oRQljmTqH0ydKEPKuje68G/g",
+      "hostname": "papachristoumarios.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.5.4"
+  },
+  "ctime": 1760631173,
+  "expire_in": 504576000,
+  "prev": "50b26c8807999298b4e2fa38e5ff7d4ec896b73331528d9e9d8422bf637981b5",
+  "seqno": 10,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEg4xemI5QwYK5MAsmIDQKUTteEROgKJw8kpo9C/nhqVN0Kp3BheWxvYWTESpcCCsQgULJsiAeZkpi04vo45f99TsiWtzMxUo2enYQiv2N5gbXEIF927PdIb2wwHrKL3EpZAfMz3GY/YsDxfRRvGxhe/HKtAgHCo3NpZ8RAMXFJ3ZO+Mh3KsAgfv2+3Prlm02KJ1oIz/6wK38w426yCaumWlYUyRQZtb5IOkYt8zHrOqStOj9noSOq2IiH2BqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIE1KL+XQF6rEbsoX/pFcRBqcoYK7nSyVHemuyzrQ/Uqo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/papachristoum
+
+==================================================================
