@@ -8,6 +8,9 @@ title:
 
 I am an Assitant Professor of Information Systems in the [W. P. Carey School of Business](https://wpcarey.asu.edu/) at Arizona State University. I work on the economics of networks, exploring their roles within large-scale social and information systems, and understanding their wider societal implications. I am also affiliated with [W. P. Carey's Center for AI and Data Analytics Center](https://aida.wpcarey.asu.edu/). 
 
+I hold a Ph.D. in Computer Science from Cornell University; where I had the fortune to be advised by  [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/). My [thesis](https://drive.google.com/file/d/1hn-xa1mJ9SLPJdiCbQezk8VIp0cF_xKB/view?usp=sharing) focused on studying the resilience of sociotechnical systems. 
+
+
 I am interested in 
 
  * **LLMs for Social Science.** Exploring the capabilities of LLMs in social science, simulating human behavior, and simulating complex socio-technical systems. Recent examples include network formation ([PNAS Nexus 2025](https://arxiv.org/pdf/2402.10659.pdf)) with LLM agents, and collective decision-making ([ACM CSCW 2025](https://arxiv.org/abs/2311.04928), [ACM Featured Article](https://www.growkudos.com/publications/10.1145%25252F3757418/reader)). 
@@ -15,8 +18,6 @@ I am interested in
  * **Privacy Preserving AI.** Exploring how agents learn in a distributed way subject to privacy considerations. Examples include learning with continuous state spaces ([IISE Transactions 2025](https://www.tandfonline.com/doi/epdf/10.1080/24725854.2024.2337068?needAccess=true), [ISE Magazine Featured Article](https://content.presspage.com/uploads/2602/19858d8c-d2d3-497e-9dcc-3f6eff36c157/ise-junefeature.pdf?10000), [Pitt News Article](https://news.engineering.pitt.edu/who-sees-who)), and discrete state spaces ([arXiV 2024](https://arxiv.org/abs/2402.08156)). 
  * **Network Models.** Exploring how (hyper)-graphs form. Examples include learning the structure of core-periphery graphs ([Scientific Reports 2021](https://www.nature.com/articles/s41598-021-94105-8)) and hypergraphs ([ACM KDD 2022](https://dl.acm.org/doi/abs/10.1145/3534678.3539272)), and statistical sampling from constrained spaces ([ACM TOMS 2023](https://dl.acm.org/doi/full/10.1145/3589505), [JOSS 2025](https://joss.theoj.org/papers/10.21105/joss.07886)).
 
-
-I hold a Ph.D. in Computer Science from Cornell University; where I had the fortune to be advised by  [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/). My [thesis](https://drive.google.com/file/d/1hn-xa1mJ9SLPJdiCbQezk8VIp0cF_xKB/view?usp=sharing) focused on studying the resilience of sociotechnical systems. 
 
 In the past, I have closely collaborated with the [Office of Applied Research](https://www.microsoft.com/en-us/research/group/office-of-applied-research/) at Microsoft Research, and the User Modeling Research Team at [Twitter Cortex (now X)](https://web.archive.org/web/20220802140832/https://cortex.twitter.com/), and have also contributed to the open-source statistical sampling software [volesti](https://github.com/GeomScale/volesti). 
 
