@@ -43,10 +43,28 @@
 \newcommand{\news}[1]{\specialurl {news} {#1}}
 \newcommand{\authorme}{\authorref{Marios Papachristou}}
 \newcommand{\bemph}[1]{\textbf{\emph{#1}}}
-\newcommand{\publication}[5]{\textbf{#1}\\{#2}\\\emph{#3}, {#4}\\{#5}\smallskip}
 \newcommand{\diamondsection}[1]{$\diamond$\quad \textbf{#1} \smallskip}
 \newcommand{\referee}[3]{\textbf{#1} (\texttt{#3})\\{#2}\smallskip \\}
 \newcommand{\award}[3]{\ifthenelse{\isempty{#3}}{\textbf{#1} \hfill \emph{#2}}{\textbf{#1} \hfill \emph{#2} \\ #3}\smallskip}
+\newcommand{\accoladeitems}[1]{\emph {\small
+  \begin{itemize}[label=\textit{--}, nosep]
+    #1
+  \end{itemize}}}
+
+\newcommand{\publication}[6][]{%
+  % Core publication fields
+  \textbf{#2}\\
+  {#3}\\
+  \emph{#4}, {#5}\\
+  {#6}%
+  % Optional accolades
+  \if\relax\detokenize{#1}\relax
+  \else
+    \accoladeitems{#1}%
+  \fi
+  % Add vertical space after each publication
+  \par\medskip
+}
 
 % Increase text height
 %\textheight=700pt
@@ -163,16 +181,17 @@ Diploma in Electrical and Computer Engineering
 
 \field{Journal Papers}{}{
 \begin{enumerate}[nosep, label={[J\arabic*]}]
+ 			
  		
-   \item \publication{Network Formation and Dynamics among Multi-LLMs}{\authorme, Yuan Yuan}{PNAS Nexus (forthcoming)}{2025}{\emph{Preliminary version presented at the International Conference on Computational Social Science (IC2S2) and the NSF Conference in Network Science and Economics \\ \textbf{Taught in courses at UIUC, Stanford, and UC Berkeley}} \\ \paper{https://doi.org/10.1093/pnasnexus/pgaf317} \preprint{http://arxiv.org/abs/2402.10659} \code{https://github.com/papachristoumarios/llm-network-formation}} 
+   \item \publication[\item Taught at UC Berkeley, Stanford, UIUC and others]{Network Formation and Dynamics among Multi-LLMs}{\authorme, Yuan Yuan}{PNAS Nexus}{2025}{\preprint{http://arxiv.org/abs/2402.10659} \code{https://github.com/papachristoumarios/llm-network-formation}} 
       
    	
-   \item \publication{Leveraging Large Language Models for Collective Decision-Making}{\authorme, Longqi Yang, Chin-Chia Hsu}{PACM HCI Journal (presented at ACM CSCW '25)}{2025}{\textbf{\emph{Invited talk at the LLMs as Research Tools Workshop at ACM CHI 2024 \\ Selected as a featured article by the Association of Computing Machinery}} \\ {\paper{https://doi.org/10.1145/3757418} \news{https://link.growkudos.com/1elazzumi9s}} 
+   \item \publication[\item Invited talk at the LLMs as Research Tools Workshop at ACM CHI 2024 \item Featured by the ACM  \news{https://link.growkudos.com/1elazzumi9s}]{Leveraging Large Language Models for Collective Decision-Making}{\authorme, Longqi Yang, Chin-Chia Hsu}{PACM HCI Journal (presented at ACM CSCW '25)}{2025}{\paper{https://doi.org/10.1145/3757418}}
    
-	\item \publication{\texttt{volesti}: A C++ library for sampling and volume computation on convex bodies}{\alphabeticalorder Apostolos Chalkis*, Vissarion Fisikopoulos*, \authorme*, Elias Tsigaridas*}{Journal of Open Source Software}{2025}{\paper{https://joss.theoj.org/papers/10.21105/joss.07886} \code{https://github.com/GeomScale/volesti}}}
+	\item \publication{\texttt{volesti}: A C++ library for sampling and volume computation on convex bodies}{\alphabeticalorder Apostolos Chalkis*, Vissarion Fisikopoulos*, \authorme*, Elias Tsigaridas*}{Journal of Open Source Software}{2025}{\paper{https://joss.theoj.org/papers/10.21105/joss.07886} \code{https://github.com/GeomScale/volesti}}
 
-   \item \publication{Differentially Private Distributed Estimation and Learning}{\authorme, Amin Rahimian}{IISE Transactions}{2025}{\bemph{Featured at the July 2025 issue of the ISE Magazine (10\% of published articles at IISE Transactions during 2025) and the University of Pittsburgh Swanson School of Engineering} \\
-   	   	\paper{https://doi.org/10.1080/24725854.2024.2337068} \code{https://github.com/papachristoumarios/dp-distributed-estimation} \talk{https://www.youtube.com/watch?v=Kmm5HEMuS4w} \news{https://news.engineering.pitt.edu/who-sees-who/} \news{https://content.presspage.com/uploads/2602/19858d8c-d2d3-497e-9dcc-3f6eff36c157/ise-junefeature.pdf?10000}}
+   \item \publication[\item Featured at the July 2025 issue of the ISE Magazine \news{https://content.presspage.com/uploads/2602/19858d8c-d2d3-497e-9dcc-3f6eff36c157/ise-junefeature.pdf?10000} \item Featured by the University of Pittsburgh Swanson School of Engineering \news{https://news.engineering.pitt.edu/who-sees-who}]{Differentially Private Distributed Estimation and Learning}{\authorme, Amin Rahimian}{IISE Transactions}{2025}{\bemph{ and the University of Pittsburgh Swanson School of Engineering} \\
+   	   	\paper{https://doi.org/10.1080/24725854.2024.2337068} \code{https://github.com/papachristoumarios/dp-distributed-estimation} \talk{https://www.youtube.com/watch?v=Kmm5HEMuS4w}  }
    	   	
    \item \publication{Truncated Log-concave Sampling for Convex Bodies with Reflective Hamiltonian Monte Carlo}{\alphabeticalorder Apostolos Chalkis, Vissarion Fisikopoulos, \authorme, Elias Tsigaridas}{ACM Transactions on Mathematical Software (TOMS)}{2023}{\paper{https://doi.org/10.1145/3589505} \code{https://github.com/GeomScale/volume_approximation}}
 % 
@@ -185,27 +204,19 @@ Diploma in Electrical and Computer Engineering
 \field{Top-tier CS Conference Proceedings}{}{
 \begin{enumerate}[nosep, label={[C\arabic*]}]
 
-   \item \publication{Dynamic Interventions for Networked Contagions}{\authorme, Sid Banerjee, Jon Kleinberg}{WWW '23: ACM Web Conference (WWW)}{2023}{\emph{Acceptance rate: 17\%} \\ \paper{https://dl.acm.org/doi/abs/10.1145/3543507.3583470} \code{https://github.com/papachristoumarios/dynamic-clearing}}
+   \item \publication[\item Acceptance rate: 17\%]{Dynamic Interventions for Networked Contagions}{\authorme, Sid Banerjee, Jon Kleinberg}{WWW '23: ACM Web Conference (WWW)}{2023}{\paper{https://dl.acm.org/doi/abs/10.1145/3543507.3583470} \code{https://github.com/papachristoumarios/dynamic-clearing}}
 
-   \item \publication{Core-periphery Models for Hypergraphs}{\authorme, Jon Kleinberg}{KDD '22: ACM Intl. Conf. on Knowledge Discovery and Data Mining (KDD)}{2022}{\emph{Acceptance rate: 15\%} \\ \paper{https://arxiv.org/abs/2206.00783} \code{https://doi.org/10.5281/zenodo.5965849} \data{https://doi.org/10.5281/zenodo.5943043}}
+   \item \publication[\item Acceptance rate: 15\% \item Taught at tutorials at KDD and CIKM]{Core-periphery Models for Hypergraphs}{\authorme, Jon Kleinberg}{KDD '22: ACM Intl. Conf. on Knowledge Discovery and Data Mining (KDD)}{2022}{\paper{https://arxiv.org/abs/2206.00783} \code{https://doi.org/10.5281/zenodo.5965849} \data{https://doi.org/10.5281/zenodo.5943043}}
  
-   \item \publication{Allocating Stimulus Checks in Times of Crisis}{\authorme, Jon Kleinberg}{WWW '22: ACM Web Conference (WWW)}{2022}{\emph{Acceptance rate: 17\%} \\ \bemph{Featured by the Federal Reserve Bank of Minneapolis \\ Taught at UC Berkeley} \\ \paper{https://doi.org/10.1145/3485447.3512047} \code{https://github.com/papachristoumarios/financial-contagion}  \talk{https://youtu.be/WUmPBztK8Mo} \news{https://www.minneapolisfed.org/article/2022/social-policy-in-the-age-of-algorithms-an-interview-with-jon-kleinberg}}   
-      \item \publication{Software Clusterings with Vector Semantics and the Call Graph}{\authorme}{ESEC/FSE '19: ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)}{2019}{\emph{Acceptance rate: 21\%} \\ \textbf{\emph{ESEC/FSE Student Research Competition Finalist Paper}} \\\paper{https://dl.acm.org/citation.cfm?id=3342483} \code{https://github.com/papachristoumarios/sade} \data{http://doi.org/10.5281/zenodo.2652487}}
+   \item \publication[\item Acceptance rate: 17\% \item Featured by the Federal Reserve Bank of Minneapolis \news{https://www.minneapolisfed.org/article/2022/social-policy-in-the-age-of-algorithms-an-interview-with-jon-kleinberg} \item Taught at UC Berkeley]{Allocating Stimulus Checks in Times of Crisis}{\authorme, Jon Kleinberg}{WWW '22: ACM Web Conference (WWW)}{2022}{\paper{https://doi.org/10.1145/3485447.3512047} \code{https://github.com/papachristoumarios/financial-contagion}} 
+      
+   \item \publication[\item Acceptance rate: 21\% \item ESEC/FSE Student Research Competition Finalist Paper]{Software Clusterings with Vector Semantics and the Call Graph}{\authorme}{ESEC/FSE '19: ACM Joint Meeting on European Software Engineering Conference and Symposium on the Foundations of Software Engineering (ESEC/FSE)}{2019}{\paper{https://dl.acm.org/citation.cfm?id=3342483} \code{https://github.com/papachristoumarios/sade} \data{http://doi.org/10.5281/zenodo.2652487}}
     
 \end{enumerate}}
 
 
 \field{Revisions \& Working Papers}{}{
 \begin{enumerate}[nosep, label={[WP\arabic*]}]  
-	\item \publication{Enabling Large-scale Experimentation accross Recommender System Platforms with Large Language Models}{\authorme, Nikhil Garg, Panos Adamopoulos}{Work in progress}{2025}{\preprint{https://arxiv.org/pdf/2502.15931} \code{https://github.com/papachristoumarios/strategic-opinion-dynamics}}
-	
-	\item \publication{Learning in Two-Sided Markets: LLM-Agent Simulations of Startup-Client Engagement}{Julian Lehmann*, \authorme*}{Work in progress}{2025}{\preprint{https://arxiv.org/pdf/2502.15931} \code{https://github.com/papachristoumarios/strategic-opinion-dynamics}}
-	
-	\item \publication{The Paradox of Noise: Corrupted Pretraining Enables Denoised Large Language Models to Generalize Better}{Giannis Daras*, Alkis Kalavasis*, \authorme*, Costis Daskalakis}{Work in progress}{2025}{}
-	
-	\item \publication{Assessing the Human-Likeness of Large Language Models through the General Social Survey}{Rachith Aiyappa, Junsol Kim, \authorme, Yong-Yeol Ahn, Byungkyu Lee}{Work in progress}{2025}{}
-	
-   	\item \publication{The Power of Choice in Random Sampling}{\authorme, Jon Kleinberg}{Under review, Operations Research}{2025}{}
    
    	\item \publication{Echoes of Disagreement: Measuring Disparity in Social Consensus}{\authorme, Jon Kleinberg}{Under review, INFORMS Journal of Computing}{2024}{\preprint{https://arxiv.org/abs/2504.07480} \code{https://github.com/papachristoumarios/disparity-optimization}}
    
@@ -213,7 +224,7 @@ Diploma in Electrical and Computer Engineering
 	\item \publication{The Price of Misreporting: Measuring the Effect of Adversarial Behavior in Online Platforms}{\authorme, Akhil Jalan}{Conference version under review at ACM Web Conference (WWW), \\ Journal version under prepartion for submission to Information Systems Research}{2025}{\preprint{https://arxiv.org/pdf/2502.15931} \code{https://github.com/papachristoumarios/strategic-opinion-dynamics}}
 
    \item \publication{Optimal Resource Allocation for Remediating Networked Contagions}{\authorme, Sid Banerjee, Jon Kleinberg}{Under preparation for submission to Operations Research}{2024}{\preprint{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4880536} \slides{https://drive.google.com/file/d/1DgOCnJ5Pf3Je-F7a-Adiy2TTZ7oZUbbB/view?usp=sharing}} 
-      \item \publication{Group Decision-Making among Privacy-aware Agents}{\authorme, Amin Rahimian}{Under prepartion for submission to INFORMS Journal of Computing}{2024}{
+      \item \publication{Differentially Private Distributed Inference}{\authorme, Amin Rahimian}{Under prepartion for submission to INFORMS Journal of Computing}{2024}{
   		\emph{Preliminary version presented at the Theory and Practice of Differential Privacy Workshop (TPDP)} \\ \preprint{https://arxiv.org/pdf/2402.08156.pdf} \talk{https://www.youtube.com/watch?v=Kmm5HEMuS4w}}
    	   
    \item \publication{Structural Measures of Resilience for Supply Chains}{\authorme, Amin Rahimian}{Reject and resubmit, Management Science}{2024}{ 
