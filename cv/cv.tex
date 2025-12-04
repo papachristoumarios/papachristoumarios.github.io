@@ -28,9 +28,12 @@
 \newcommand{\uf}[2]{\noindent \textbf{#1} \hfill \url{#2} \\}
 \newcommand{\uff}[2]{\item[--] #1 \\ \url{#2}}
 \newcommand{\alphabeticalorder}[0]{\ensuremath {^{\alpha \beta}}}
+\newcommand{\equalcontribution}[0]{\ensuremath{^*}}
+\newcommand{\correspondingauthor}[0]{\ensuremath{^\circ}}
+
 \newcommand{\scheduled}[0]{\ensuremath {^\dagger}}
 \newcommand{\presentedbycoauthor}[0]{\ensuremath {^{\star}}}
-\newcommand{\specialurl}[2]{\mbox{\href {#2} {{{\texttt{[#1]}}}}}\hspace{0pt}}
+\newcommand{\specialurl}[2]{\href {#2} {{{\texttt{[#1]}}}}\hspace{0pt}}
 \newcommand{\preprint}[1]{\specialurl {preprint} {#1}}
 \newcommand{\code}[1]{\specialurl {code} {#1}}
 \newcommand{\data}[1]{\specialurl {data} {#1}}
@@ -161,7 +164,10 @@ Diploma in Electrical and Computer Engineering
 
 \section{Journal Papers \\ {
 \footnotesize
-\textup{\href{https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en}{Google Scholar Profile}} \\\alphabeticalorder  = \textup{alphabetical order} \\ $*$ = \textup{equal contribution}
+\textup{\href{https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en}{Google Scholar Profile}} \\
+\alphabeticalorder  = \textup{alphabetical order} \\ 
+\equalcontribution = \textup{equal contribution} \\
+\correspondingauthor = \textup{corresponding author}
 }}
 %
 %
@@ -185,7 +191,7 @@ Diploma in Electrical and Computer Engineering
 \begin{enumerate}[nosep, label={[J\arabic*]}]
  			
  		
-   \item \publication[\item Taught at UC Berkeley, Stanford, UIUC and others]{Network Formation and Dynamics among Multi-LLMs}{\authorme, Yuan Yuan}{PNAS Nexus}{2025}{\preprint{http://arxiv.org/abs/2402.10659} \code{https://github.com/papachristoumarios/llm-network-formation}} 
+   \item \publication[\item Taught at UC Berkeley, Stanford, UIUC and others \item Featured by PNAS Nexus at EurekAlert! \news{https://www.eurekalert.org/news-releases/1107359} \item Featured by TechXplore \news{https://techxplore.com/news/2025-12-llms-friends-colleagues-people.html}]{Network Formation and Dynamics among Multi-LLMs}{\authorme, Yuan Yuan}{PNAS Nexus}{2025}{\preprint{http://arxiv.org/abs/2402.10659} \code{https://github.com/papachristoumarios/llm-network-formation}} 
       
    	
    \item \publication[\item Invited talk at the LLMs as Research Tools Workshop at ACM CHI 2024 \item Featured by the ACM  \news{https://link.growkudos.com/1elazzumi9s}]{Leveraging Large Language Models for Collective Decision-Making}{\authorme, Longqi Yang, Chin-Chia Hsu}{PACM HCI Journal (presented at ACM CSCW '25)}{2025}{\paper{https://doi.org/10.1145/3757418}}
@@ -195,7 +201,7 @@ Diploma in Electrical and Computer Engineering
    \item \publication[\item Featured at the July 2025 issue of the ISE Magazine \news{https://content.presspage.com/uploads/2602/19858d8c-d2d3-497e-9dcc-3f6eff36c157/ise-junefeature.pdf?10000} \item Featured by the University of Pittsburgh Swanson School of Engineering \news{https://news.engineering.pitt.edu/who-sees-who}]{Differentially Private Distributed Estimation and Learning}{\authorme, Amin Rahimian}{IISE Transactions}{2025}{\bemph{ and the University of Pittsburgh Swanson School of Engineering} \\
    	   	\paper{https://doi.org/10.1080/24725854.2024.2337068} \code{https://github.com/papachristoumarios/dp-distributed-estimation} \talk{https://www.youtube.com/watch?v=Kmm5HEMuS4w}  }
    	   	
-   \item \publication{Truncated Log-concave Sampling for Convex Bodies with Reflective Hamiltonian Monte Carlo}{\alphabeticalorder Apostolos Chalkis, Vissarion Fisikopoulos, \authorme, Elias Tsigaridas}{ACM Transactions on Mathematical Software (TOMS)}{2023}{\paper{https://doi.org/10.1145/3589505} \code{https://github.com/GeomScale/volume_approximation}}
+   \item \publication[\item Featured at ODBMS.org \news{https://www.odbms.org/2025/12/on-high-dimensional-computational-geometry-and-database-qa-with-vissarion-fisikopoulos}]{Truncated Log-concave Sampling for Convex Bodies with Reflective Hamiltonian Monte Carlo}{\alphabeticalorder Apostolos Chalkis, Vissarion Fisikopoulos, \authorme\correspondingauthor, Elias Tsigaridas}{ACM Transactions on Mathematical Software (TOMS)}{2023}{\paper{https://doi.org/10.1145/3589505} \code{https://github.com/GeomScale/volume_approximation}}
  
    \item \publication{Sublinear Domination and Core--periphery Networks}{\authorme}{Scientific Reports}{2021}{\paper{http://www.nature.com/articles/s41598-021-94105-8} \code{https://bit.ly/3wKNGI0}}
   
@@ -219,6 +225,10 @@ Diploma in Electrical and Computer Engineering
 
 \section{Revisions \& Working Papers}
 \begin{enumerate}[nosep, label={[WP\arabic*]}]  
+
+	\item \publication{Structural Measures of Resilience for Supply Chains}{\authorme, Amin Rahimian}{Major revision, Production and Operations Management}{2024}{ 
+   		\preprint{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4392226} \code{https://github.com/papachristoumarios/supply-chain-resilience} \slides{https://drive.google.com/file/d/13kgKnjTHyO8j4BOJVykWwt43hSt3JrLw/view?usp=drive_link}}
+
    
    	\item \publication{Echoes of Disagreement: Measuring Disparity in Social Consensus}{\authorme, Jon Kleinberg}{Under review, INFORMS Journal of Computing}{2024}{\preprint{https://arxiv.org/abs/2504.07480} \code{https://github.com/papachristoumarios/disparity-optimization}}
    
@@ -229,9 +239,7 @@ Diploma in Electrical and Computer Engineering
       \item \publication{Group Decision-Making among Privacy-aware Agents}{\authorme, Amin Rahimian}{Under prepartion for submission to INFORMS Journal of Computing}{2024}{
   		\emph{Preliminary version presented at the Theory and Practice of Differential Privacy Workshop (TPDP)} \\ \preprint{https://arxiv.org/pdf/2402.08156.pdf} \talk{https://www.youtube.com/watch?v=Kmm5HEMuS4w}}
    	   
-   \item \publication{Structural Measures of Resilience for Supply Chains}{\authorme, Amin Rahimian}{Major revision, Production and Operations Management}{2024}{ 
-   		\preprint{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4392226} \code{https://github.com/papachristoumarios/supply-chain-resilience} \slides{https://drive.google.com/file/d/13kgKnjTHyO8j4BOJVykWwt43hSt3JrLw/view?usp=drive_link}}
-   	
+      	
    
     \end{enumerate}
 	
@@ -285,10 +293,13 @@ Diploma in Electrical and Computer Engineering
 	\item[--] Volunteer lessons for the National Olympiad of Informatics (PDP)\hfill \emph{2019}
 \end{itemize}
 
-\medskip
+\section{Mentees}
 \begin{itemize}[nosep]
-	\item[--] Student Mentees: Jasmine Li (Undergraduate Cornell CS), Ioannis Iakovidis (Google Summer of Code 2022; now Ph.D. student at Johns Hopkins), Zhang Zhuyan
- (Google Summer of Code 2022; now Technology analyst at Bank of America), Souraj Choubey (Google Summer of Code 2021
+	\item[--] Yuxin Liu (Ph.D. student at the University of Pittsburgh)
+	\item[--] Jasmine Li (Undergraduate Cornell CS)
+	\item[--] Ioannis Iakovidis (Google Summer of Code 2022; now Ph.D. student at Johns Hopkins)
+	\item[--] Zhang Zhuyan
+ (Google Summer of Code 2022; now Technology analyst at Bank of America)
 \end{itemize}
 
 
