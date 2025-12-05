@@ -8,7 +8,7 @@ title:
 
 I am an Assitant Professor of Information Systems in the [W. P. Carey School of Business](https://wpcarey.asu.edu/) at Arizona State University. I work on the economics of networks, exploring their roles within large-scale social and information systems, and understanding their wider societal implications. I am also affiliated with the [AI and Data Analytics Center](https://aida.wpcarey.asu.edu/). 
 
-I hold a Ph.D. in Computer Science from Cornell University; where I had the fortune to be advised by  [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/). My [thesis](https://drive.google.com/file/d/1hn-xa1mJ9SLPJdiCbQezk8VIp0cF_xKB/view?usp=sharing) focused on studying the resilience of sociotechnical systems. 
+I hold a Ph.D. in Computer Science from Cornell University; where I had the fortune to be advised by  [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/). My [thesis](https://papachristoumarios.github.io/theses/phd-thesis.pdf) focused on studying the resilience of sociotechnical systems. 
 
 I am interested in 
 
