@@ -6,6 +6,15 @@ title:
 {:.profile}
 ![profile](profile.jpg){: style="object-fit: cover; border-radius: 50%; margin: 0 auto; max-width: 45%; width: 45%;"}
 
+[[Google Scholar]](https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en)
+[[GitHub]](https://github.com/papachristoumarios) 
+[[CV]](https://papachristoumarios.github.io/cv/cv.pdf) 
+[[Twitter]](https://twitter.com/papachristoum)  
+[[LinkedIn]](https://www.linkedin.com/in/papachristoumarios)
+[[School Website]](https://search.asu.edu/profile/5338999)
+[[Blog]](https://papachristoumarios.substack.com/)
+
+
 I am an Assitant Professor of Information Systems in the [W. P. Carey School of Business](https://wpcarey.asu.edu/) at Arizona State University. I work on the economics of networks, exploring their roles within large-scale social and information systems, and understanding their wider societal implications. I am also affiliated with the [AI and Data Analytics Center](https://aida.wpcarey.asu.edu/). 
 
 I hold a Ph.D. in Computer Science from Cornell University; where I had the fortune to be advised by  [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/). My [thesis](https://papachristoumarios.github.io/theses/phd-thesis.pdf) focused on studying the resilience of sociotechnical systems. 
@@ -23,9 +32,4 @@ In the past, I have closely collaborated with the [Office of Applied Research](h
 
 My research has been supported by an [Onassis Scholarship](https://www.onassis.org/initiatives/scholarships), a [LinkedIn Ph.D. Fellowship](https://cis.cornell.edu/inaugural-grants-announced-strategic-partnership-linkedin), a grant from the [A.G. Leventis Foundation](https://www.leventisfoundation.org/), a grant from the Gerondelis Foundation, and a [Cornell University Fellowship](https://gradschool.cornell.edu/financial-support/fellowships/new-student-fellowships/).
 
-* [[Google Scholar]](https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en) 
-* [[GitHub]](https://github.com/papachristoumarios) 
-* [[CV]](https://papachristoumarios.github.io/cv/cv.pdf) 
-* [[Twitter]](https://twitter.com/papachristoum)  
-* [[LinkedIn]](https://www.linkedin.com/in/papachristoumarios)
-* [[School Website]](https://search.asu.edu/profile/5338999)
+
