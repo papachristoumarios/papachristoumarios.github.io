@@ -10,7 +10,7 @@ I am an Assitant Professor of Information Systems in the [W. P. Carey School of 
 
 My research develops models of resilience in AI-enabled socio-technical systems, focusing on how network structure, algorithmic agents, and information dynamics jointly determine systemic resilience of socio-technical systems.
 
-I am also affiliated with the [AI and Data Analytics Center](https://aida.wpcarey.asu.edu/). 
+I am also affiliated with the [AI and Data Analytics Center](https://aida.wpcarey.asu.edu/), and I am a graduate field member of [Data Science, Analytics and Engineering](https://dsae.engineering.asu.edu/), and [Computer Science](https://faculty.engineering.asu.edu/directory/scai/computer-science-and-engineering). 
 
 I hold a Ph.D. from Cornell University; where I had the fortune to be advised by  [Jon Kleinberg](http://www.cs.cornell.edu/home/kleinber/). My [thesis](https://papachristoumarios.github.io/theses/phd-thesis.pdf) can be found here.
 
