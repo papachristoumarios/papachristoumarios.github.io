@@ -2,7 +2,7 @@
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
-plugins: [jekyll-paginate, jemoji]
+plugins: [jekyll-paginate, jemoji, jekyll-sitemap]
 paginate: 5
 paginate_path: "/blog/page:num/"
 
@@ -11,7 +11,9 @@ paginate_path: "/blog/page:num/"
 title:               Marios Papachristou
 tagline:             'Personal Homepage'
 description:         'Hello! This is the personal homepage of Marios Papachristou built with Jekyll and the Lanyon Theme. For more visit <a href="https://github.com/papachristoumarios">my GitHub account</a>'
-url:                 http://github.com/papachristoumarios
+# Plain-text description used for SEO/social meta tags (no HTML)
+description_meta:     'Marios Papachristou is an Assistant Professor of Information Systems at the W. P. Carey School of Business, Arizona State University, researching resilience in AI-enabled socio-technical systems.'
+url:                 https://papachristoumarios.github.io
 baseurl:             ''
 paginate:            5
 

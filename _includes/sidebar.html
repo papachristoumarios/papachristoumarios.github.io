@@ -4,7 +4,7 @@
 
 <!-- Toggleable sidebar -->
 <div class="sidebar" id="sidebar">
-  <nav class="sidebar-nav">
+  <nav class="sidebar-nav" aria-label="Main navigation">
     <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="/blog">Blog</a>
 
     {% comment %}
@@ -24,5 +24,12 @@
 
   </nav>
 
+  <nav class="sidebar-nav sidebar-social" aria-label="Profiles and contact">
+    <a class="sidebar-nav-item" href="https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en" title="Google Scholar" aria-label="Google Scholar" target="_blank" rel="noopener"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
+    <a class="sidebar-nav-item" href="https://orcid.org/0000-0002-1728-0729" title="ORCID" aria-label="ORCID" target="_blank" rel="noopener"><i class="fab fa-orcid" aria-hidden="true"></i></a>
+    <a class="sidebar-nav-item" href="https://www.linkedin.com/in/papachristoumarios/" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+    <a class="sidebar-nav-item" href="https://github.com/papachristoumarios" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i></a>
+    <a class="sidebar-nav-item" href="mailto:{{ site.author.email }}" title="Email" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+  </nav>
 
 </div>

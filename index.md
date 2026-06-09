@@ -4,9 +4,9 @@ title:
 ---
 
 {:.profile}
-![profile](profile.jpg){: style="object-fit: cover; border-radius: 50%; margin: 0 auto; max-width: 45%; width: 45%;"}
+![Marios Papachristou](profile.jpg){: style="object-fit: cover; border-radius: 50%; margin: 0 auto; max-width: 45%; width: 45%;"}
 
-I am an Assitant Professor of Information Systems in the [W. P. Carey School of Business](https://wpcarey.asu.edu/) at Arizona State University. 
+I am an Assistant Professor of Information Systems in the [W. P. Carey School of Business](https://wpcarey.asu.edu/) at Arizona State University. 
 
 My research develops models of resilience in AI-enabled socio-technical systems, focusing on how network structure, algorithmic agents, and information dynamics jointly determine systemic resilience of socio-technical systems.
 

@@ -3,7 +3,7 @@
 <script type="text/javascript" async
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
-<link rel="stylesheet" type="text/css" href="http://spratt.github.io/Computer-Modern/cmsans.css" />
+<link rel="stylesheet" type="text/css" href="https://spratt.github.io/Computer-Modern/cmsans.css" />
 
   <style>
     body {
@@ -17,12 +17,45 @@
       margin-bottom: 0.0em;
     }
 
+    /* Accessibility: visible-on-focus skip link */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      z-index: 1000;
+      padding: .5rem 1rem;
+      background: #fff;
+      color: #268bd2;
+    }
+    .skip-link:focus {
+      left: 0;
+    }
+
+    /* Social/profile icon row in the sidebar */
+    .sidebar-social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .25rem;
+      padding: .5rem 1rem 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      margin-top: .5rem;
+    }
+    .sidebar-social .sidebar-nav-item {
+      display: inline-block;
+      width: auto;
+      padding: .25rem .5rem;
+      border: 0;
+      font-size: 1.1rem;
+    }
+
   </style>
 
 
   {% include head.html %}
 
   <body class="theme-base-0d">
+
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
     {% include sidebar.html %}
 
@@ -38,12 +71,12 @@
         </div>
       </div>
 
-      <div class="container content">
+      <div class="container content" id="main-content">
         {{ content }}
       </div>
     </div>
 
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+    <label for="sidebar-checkbox" class="sidebar-toggle" role="button" tabindex="0" aria-label="Toggle navigation sidebar"></label>
 
     <script>
       (function(document) {

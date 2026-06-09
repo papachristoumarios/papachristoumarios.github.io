@@ -3,7 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dreampulse/computer-modern-web-font@master/fonts.css">
 
   <style>
       html, h1, h2, title {
@@ -12,16 +12,33 @@
       }
   </style>
 
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <!-- Enable responsiveness on mobile devices (zoom intentionally left enabled for accessibility) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>
-    {% if page.title == "Home" %}
-      {{ site.title }} &middot; {{ site.tagline }}
-    {% else %}
-      {{ page.title }} &middot; {{ site.title }}
-    {% endif %}
-  </title>
+  {% if page.title and page.title != "Home" %}
+    {% assign page_title = page.title | append: " &middot; " | append: site.title %}
+  {% else %}
+    {% assign page_title = site.title | append: " &middot; " | append: site.tagline %}
+  {% endif %}
+  {% assign page_desc = page.description | default: site.description_meta %}
+
+  <title>{{ page_title }}</title>
+
+  <!-- SEO / social meta -->
+  <meta name="description" content="{{ page_desc | strip_html | strip_newlines }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page_title | strip_html }}">
+  <meta property="og:description" content="{{ page_desc | strip_html | strip_newlines }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/profile.jpg' | absolute_url }}">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page_title | strip_html }}">
+  <meta name="twitter:description" content="{{ page_desc | strip_html | strip_newlines }}">
+  <meta name="twitter:image" content="{{ '/profile.jpg' | absolute_url }}">
 
   <!-- CSS -->
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/poole.css">
@@ -29,8 +46,8 @@
   <link rel="stylesheet" href="{{ site.baseurl }}/public/css/lanyon.css">
 
   <!-- Icons -->
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}/public/apple-touch-icon-precomposed.png">
-  <link rel="shortcut icon" href="{{ site.baseurl }}/public/apple-touch-icon-precomposed.png">
+  <link rel="icon" href="{{ site.baseurl }}/public/favicon.ico">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/public/favicon.ico">
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
@@ -43,6 +60,33 @@
 
   <script>
     new WOW().init();
+  </script>
+
+  <!-- Structured data: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marios Papachristou",
+    "url": "{{ site.url }}{{ site.baseurl }}/",
+    "image": "{{ '/profile.jpg' | absolute_url }}",
+    "jobTitle": "Assistant Professor of Information Systems",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "W. P. Carey School of Business, Arizona State University",
+      "url": "https://wpcarey.asu.edu/"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Cornell University"
+    },
+    "sameAs": [
+      "https://github.com/papachristoumarios",
+      "https://scholar.google.gr/citations?user=T12JO3MAAAAJ&hl=en",
+      "https://orcid.org/0000-0002-1728-0729",
+      "https://www.linkedin.com/in/papachristoumarios/"
+    ]
+  }
   </script>
 
 </head>

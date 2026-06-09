@@ -43,6 +43,6 @@ In these datasets the nodes of a hypergraph represent users and hyperedges repre
    * [BiGG Models](http://bigg.ucsd.edu/)
    * [Netlib LPs](https://www.netlib.org/lp/data/index.html)
  * Dataset Search Engines
-   * [data.world](https://data.https//data.world/)
+   * [data.world](https://data.world/)
    * [Dataset Search](https://datasetsearch.research.google.com/)  
    * [Kaggle](https://www.kaggle.com/)
