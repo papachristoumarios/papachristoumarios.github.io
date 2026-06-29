@@ -26,3 +26,11 @@ In the past, I have closely collaborated with the [Office of Applied Research](h
 My research has been supported by an [Onassis Scholarship](https://www.onassis.org/initiatives/scholarships), a [LinkedIn Ph.D. Fellowship](https://cis.cornell.edu/inaugural-grants-announced-strategic-partnership-linkedin), a grant from the [A.G. Leventis Foundation](https://www.leventisfoundation.org/), a grant from the Gerondelis Foundation, and a [Cornell University Fellowship](https://gradschool.cornell.edu/financial-support/fellowships/new-student-fellowships/).
 
 My CV can be found [here](https://papachristoumarios.github.io/cv/cv.pdf). 
+
+## News
+
+ * **2026** — "Opinion Dynamics with Multiple Adversaries" is forthcoming at the ACM Web Conference ([WWW '26](https://arxiv.org/abs/2502.15931)).
+ * **Dec 2025** — "Network Formation and Dynamics among Multi-LLMs" appeared in [PNAS Nexus](https://doi.org/10.1093/pnasnexus/pgaf317), featured by [TechXplore](https://techxplore.com/news/2025-12-llms-friends-colleagues-people.html) and [SingularityHub](https://singularityhub.com/2025/12/09/study-ai-chatbots-choose-friends-just-like-humans-do/).
+ * **2025** — "Leveraging Large Language Models for Collective Decision-Making" appeared at [ACM CSCW '25](https://doi.org/10.1145/3757418) ([ACM Featured Article](https://link.growkudos.com/1elazzumi9s)).
+ * **2025** — "Differentially Private Distributed Estimation and Learning" was published in [IISE Transactions](https://doi.org/10.1080/24725854.2024.2337068) and featured in the [ISE Magazine](https://content.presspage.com/uploads/2602/19858d8c-d2d3-497e-9dcc-3f6eff36c157/ise-junefeature.pdf?10000).
+ * **2025** — "volesti" was published in the [Journal of Open Source Software](https://joss.theoj.org/papers/10.21105/joss.07886).
