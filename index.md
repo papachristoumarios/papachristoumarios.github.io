@@ -8,7 +8,7 @@ title:
 
 I am an Assistant Professor at the [W. P. Carey School of Business](https://wpcarey.asu.edu/) at Arizona State University. 
 
-My research develops models for understanding and improving the )_resilience_ of modern socio-technical systems with downstream applications to platforms, supply chains, and organizations. I study the mechanisms causing fragility and devise analytical metrics to measure the resilience, prescriptive interventions, and decentralized decision-making under uncertainty and information constraints. 
+My research develops models for understanding and improving the _resilience_ of modern socio-technical systems with downstream applications to platforms, supply chains, and organizations. I study the mechanisms causing fragility and devise analytical metrics to measure the resilience, prescriptive interventions, and decentralized decision-making under uncertainty and information constraints. 
 
 I am also affiliated with the [AI and Data Analytics Center](https://aida.wpcarey.asu.edu/), and I am a graduate field member of [Data Science, Analytics and Engineering](https://dsae.engineering.asu.edu/), and [Computer Science](https://faculty.engineering.asu.edu/directory/scai/computer-science-and-engineering). 
 
